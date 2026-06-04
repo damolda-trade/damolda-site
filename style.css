@@ -303,47 +303,124 @@ body[data-page="journal"] .app{
 }
 
 
-/* v0.8: Brand mark in header - larger transparent stamp + DAMOLDA | 다몰다 text. */
+/* v0.8: DAMOLDA header brand + softer page-blended navigation */
+:root{
+  --rose-petal:#d8b6ad;
+  --rose-ink:#9a5e55;
+  --rose-deep:#8f554d;
+}
+.top{
+  background:linear-gradient(180deg,rgba(248,241,232,.38),rgba(248,241,232,.22));
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(40,35,31,.045);
+}
 .brand{
   display:inline-flex;
   align-items:center;
-  gap:13px;
+  gap:12px;
   min-width:max-content;
-  font-family:Arial,'Noto Sans KR',sans-serif;
-  font-weight:700;
-  letter-spacing:normal;
-  line-height:1;
+  font-family:Arial,sans-serif;
+  color:var(--ink);
+  letter-spacing:0;
 }
-.brand-stamp{
-  height:56px;
+.brand-mark{
+  height:46px;
   width:auto;
   display:block;
-  flex:0 0 auto;
 }
-.brand-name-en{
-  font-size:23px;
-  letter-spacing:.24em;
+.brand-en{
+  font-size:21px;
+  line-height:1;
   font-weight:700;
+  letter-spacing:.28em;
 }
 .brand-divider{
-  font-size:20px;
-  color:rgba(40,35,31,.45);
-  margin:0 2px 0 -2px;
-  font-weight:400;
+  font-size:18px;
+  line-height:1;
+  color:rgba(40,35,31,.55);
+  margin-left:2px;
 }
-.brand-name-ko{
-  font-size:19px;
-  letter-spacing:.08em;
+.brand-ko{
+  font-size:16px;
+  line-height:1;
   font-weight:700;
+  letter-spacing:.04em;
 }
+.nav{
+  gap:0;
+  font-family:Georgia,'Times New Roman','Noto Serif KR',serif;
+  font-size:15px;
+  font-weight:500;
+  font-style:italic;
+  letter-spacing:.08em;
+  text-transform:none;
+  color:var(--rose-deep);
+}
+.nav a{
+  color:var(--rose-deep);
+}
+.nav a + a::before{
+  content:' / ';
+  display:inline-block;
+  margin:0 28px;
+  color:var(--gold);
+  font-style:italic;
+}
+.lang{
+  font-family:Georgia,'Times New Roman','Noto Serif KR',serif;
+  font-size:14px;
+  font-weight:500;
+  font-style:italic;
+  letter-spacing:.06em;
+  color:var(--rose-deep);
+}
+.lang a,
+.lang a.active{
+  color:var(--rose-deep);
+}
+.search{
+  border-color:rgba(154,94,85,.28);
+  background:rgba(248,241,232,.18);
+  color:var(--rose-deep);
+}
+.search::placeholder{color:rgba(143,85,77,.62);}
+
+/* v0.8: Themes page rose-petal background, less pale than the base paper */
+body[data-page="themes"]{
+  background:var(--rose-petal);
+}
+body[data-page="themes"] .theme-shell{
+  background:linear-gradient(135deg,#d8b6ad 0%,#e3c8bf 42%,#cfa69d 100%);
+}
+body[data-page="themes"] .theme-tabs{
+  color:#7d4f49;
+}
+body[data-page="themes"] .theme-tab{
+  border-color:rgba(80,45,40,.18);
+  background:rgba(255,255,255,.12);
+  color:#7d4f49;
+}
+body[data-page="themes"] .theme-tab.active{
+  color:#3d2d29;
+  border-color:rgba(80,45,40,.42);
+  background:rgba(255,255,255,.24);
+}
+body[data-page="themes"] .theme-card{
+  background:linear-gradient(135deg,rgba(255,255,255,.30),rgba(188,125,116,.24));
+  border-color:rgba(80,45,40,.16);
+}
+body[data-page="themes"] .arrow{
+  background:rgba(255,255,255,.16);
+  border-color:rgba(80,45,40,.18);
+}
+body[data-page="themes"] .top{
+  background:linear-gradient(180deg,rgba(216,182,173,.42),rgba(216,182,173,.18));
+}
+
 @media(max-width:900px){
   .brand{gap:9px;}
-  .brand-stamp{height:44px;}
-  .brand-name-en{font-size:17px;letter-spacing:.18em;}
-  .brand-divider{font-size:16px;}
-  .brand-name-ko{font-size:15px;}
-}
-@media(max-width:520px){
-  .brand-name-ko,.brand-divider{display:none;}
-  .brand-stamp{height:40px;}
+  .brand-mark{height:38px;}
+  .brand-en{font-size:16px;letter-spacing:.22em;}
+  .brand-ko,.brand-divider{font-size:14px;}
+  .nav a + a::before{margin:0 18px;}
 }
