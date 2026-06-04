@@ -6,53 +6,226 @@
   <title>DAMOLDA</title>
   <meta name="description" content="DAMOLDA — quietly kept, keep what matters." />
   <style>
-    :root {
-      --bg-a: #fbf5eb;
-      --bg-b: #ead3b8;
-      --bg-c: #f7efe5;
-    }
-
     * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
+      width: 100%;
       min-height: 100%;
-      background:
-        radial-gradient(circle at 82% 8%, rgba(255, 242, 222, 0.95) 0%, rgba(255, 242, 222, 0.45) 28%, transparent 55%),
-        linear-gradient(115deg, var(--bg-a) 0%, var(--bg-c) 42%, var(--bg-b) 100%);
       color: #2b2926;
+      overflow-x: hidden;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     body {
-      overflow-x: hidden;
+      min-height: 100vh;
+      background: #efe0cf;
     }
 
     .page {
+      position: relative;
       width: 100%;
       min-height: 100vh;
+      overflow: hidden;
     }
 
-    .hero-image {
-      display: block;
+    .hero-bg {
+      position: fixed;
+      inset: 0;
       width: 100%;
-      height: auto;
-      min-height: 100vh;
-      object-fit: contain;
-      object-position: top center;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
     }
 
-    @media (max-width: 760px) {
-      .hero-image {
-        width: 170%;
-        max-width: none;
-        transform: translateX(-21%);
+    .page::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        90deg,
+        rgba(251, 245, 235, 0.78) 0%,
+        rgba(251, 245, 235, 0.52) 31%,
+        rgba(251, 245, 235, 0.18) 54%,
+        rgba(251, 245, 235, 0.02) 100%
+      );
+    }
+
+    .site-header,
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .site-header {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 32px;
+      width: 100%;
+      padding: 42px 48px 0;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .brand {
+      justify-self: start;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 29px;
+      letter-spacing: 0.34em;
+      font-weight: 700;
+      text-decoration: none;
+      color: #221f1c;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 56px;
+    }
+
+    .nav a,
+    .soon {
+      color: #221f1c;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .soon {
+      justify-self: end;
+      color: #a45f23;
+    }
+
+    .hero-copy {
+      width: min(620px, calc(100% - 96px));
+      margin-left: 9.7vw;
+      padding-top: 26vh;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(58px, 7vw, 104px);
+      line-height: 0.92;
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      color: #2a2927;
+    }
+
+    .tagline {
+      margin: 26px 0 0;
+      font-size: clamp(30px, 2.5vw, 43px);
+      line-height: 1.1;
+      color: #9b551d;
+    }
+
+    .rule {
+      width: 72px;
+      height: 1px;
+      margin: 60px 0 44px;
+      background: #9b551d;
+    }
+
+    .body-copy {
+      max-width: 330px;
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.45;
+      color: #2b2926;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 26px;
+      margin-top: 58px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #9b551d;
+      color: #9b551d;
+      text-decoration: none;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .cta span {
+      font-size: 32px;
+      line-height: 1;
+      letter-spacing: 0;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        grid-template-columns: 1fr auto;
+        padding: 28px 24px 0;
+        gap: 18px;
       }
+
+      .brand { font-size: 23px; }
+      .nav { display: none; }
+      .soon { font-size: 11px; }
+
+      .hero-bg {
+        object-position: 65% center;
+      }
+
+      .page::after {
+        background: linear-gradient(
+          90deg,
+          rgba(251, 245, 235, 0.82) 0%,
+          rgba(251, 245, 235, 0.56) 46%,
+          rgba(251, 245, 235, 0.16) 100%
+        );
+      }
+
+      .hero-copy {
+        width: calc(100% - 48px);
+        margin-left: 24px;
+        padding-top: 22vh;
+      }
+
+      .body-copy { font-size: 22px; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-bg { object-position: 70% center; }
+      .brand { font-size: 20px; letter-spacing: 0.25em; }
+      .soon { letter-spacing: 0.2em; }
+      .hero-copy { padding-top: 20vh; }
+      .rule { margin: 44px 0 34px; }
     }
   </style>
 </head>
 <body>
   <main class="page" aria-label="DAMOLDA landing page">
-    <img class="hero-image" src="assets/hero.png" alt="DAMOLDA quietly kept landing page with warm interior console table styling" />
+    <img class="hero-bg" src="assets/hero.png" alt="Warm interior scene with a wooden console table in sunlight" />
+
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="#">DAMOLDA</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#">About</a>
+        <a href="#">Collections</a>
+        <a href="#">Journal</a>
+      </nav>
+      <div class="soon">Coming Soon</div>
+    </header>
+
+    <section class="hero-copy" aria-label="Hero copy">
+      <h1>Quietly kept.</h1>
+      <p class="tagline">Keep what matters.</p>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="body-copy">Choose what stays, and give it a place in the room.</p>
+      <a class="cta" href="#">Explore <span aria-hidden="true">→</span></a>
+    </section>
   </main>
 </body>
 </html>
