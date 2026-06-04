@@ -301,3 +301,49 @@ body[data-page="journal"] .app{
 @media(max-width:900px){
   .about-shell{padding:104px 22px 34px;}
 }
+
+
+/* v0.8: Brand mark in header - larger transparent stamp + DAMOLDA | 다몰다 text. */
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:13px;
+  min-width:max-content;
+  font-family:Arial,'Noto Sans KR',sans-serif;
+  font-weight:700;
+  letter-spacing:normal;
+  line-height:1;
+}
+.brand-stamp{
+  height:56px;
+  width:auto;
+  display:block;
+  flex:0 0 auto;
+}
+.brand-name-en{
+  font-size:23px;
+  letter-spacing:.24em;
+  font-weight:700;
+}
+.brand-divider{
+  font-size:20px;
+  color:rgba(40,35,31,.45);
+  margin:0 2px 0 -2px;
+  font-weight:400;
+}
+.brand-name-ko{
+  font-size:19px;
+  letter-spacing:.08em;
+  font-weight:700;
+}
+@media(max-width:900px){
+  .brand{gap:9px;}
+  .brand-stamp{height:44px;}
+  .brand-name-en{font-size:17px;letter-spacing:.18em;}
+  .brand-divider{font-size:16px;}
+  .brand-name-ko{font-size:15px;}
+}
+@media(max-width:520px){
+  .brand-name-ko,.brand-divider{display:none;}
+  .brand-stamp{height:40px;}
+}
