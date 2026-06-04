@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <title>DAMOLDA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Da Molda</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #ffffff;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .coming-soon {
+      text-align: center;
+      padding: 32px;
+    }
+
+    .logo {
+      width: min(420px, 82vw);
+      height: auto;
+      display: block;
+      margin: 0 auto 28px;
+    }
+
+    .line {
+      width: 90px;
+      height: 1px;
+      background: #b49379;
+      margin: 0 auto 24px;
+    }
+
+    .text {
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      color: #7d6655;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>DAMOLDA</h1>
-  <p>Coming Soon.</p>
+  <main class="coming-soon">
+    <img class="logo" src="./logo.png" alt="Da Molda logo" />
+    <div class="line"></div>
+    <div class="text">Coming Soon.</div>
+  </main>
 </body>
 </html>
