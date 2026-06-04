@@ -35,7 +35,7 @@
       z-index: 1;
       width: 100%;
       min-height: 100vh;
-      padding: 42px 48px 72px;
+      padding: 42px 48px 76px;
     }
 
     .site-header {
@@ -61,234 +61,78 @@
       color: #221f1c;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 56px;
-    }
-
-    .nav a,
-    .soon {
-      color: #221f1c;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .nav a[aria-current="page"] {
-      color: #a45f23;
-    }
-
-    .soon {
-      justify-self: end;
-      color: #a45f23;
-    }
-
-    .intro {
-      max-width: 980px;
-      margin: 120px auto 70px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      margin: 0 0 26px;
-      color: #a45f23;
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.36em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(56px, 8vw, 116px);
-      line-height: 0.92;
-      font-weight: 500;
-      letter-spacing: -0.065em;
-      color: #282622;
-    }
-
-    .intro-copy {
-      max-width: 620px;
-      margin: 34px auto 0;
-      font-size: clamp(22px, 2.1vw, 32px);
-      line-height: 1.35;
-      color: #4a4239;
-    }
-
-    .theme-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-
-    .theme-card {
-      min-height: 510px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 34px;
-      border: 1px solid rgba(72, 55, 39, 0.2);
-      border-radius: 32px;
-      background: rgba(255, 249, 241, 0.42);
-      box-shadow: 0 30px 80px rgba(72, 55, 39, 0.13);
-      backdrop-filter: blur(18px);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .theme-card::before {
-      content: "";
-      position: absolute;
-      inset: 22px;
-      border: 1px solid rgba(164, 95, 35, 0.18);
-      border-radius: 24px;
-      pointer-events: none;
-    }
-
-    .object {
-      position: relative;
-      height: 240px;
-      margin: 22px 0 34px;
-      display: grid;
-      place-items: center;
-    }
-
-    .egg-shape {
-      width: 132px;
-      height: 176px;
-      border: 18px solid rgba(43, 41, 38, 0.78);
-      border-radius: 54% 54% 48% 48% / 62% 62% 42% 42%;
-      box-shadow: 24px 32px 44px rgba(43, 41, 38, 0.15);
-      transform: rotate(-7deg);
-    }
-
-    .plate-shape {
-      width: 210px;
-      height: 128px;
-      border: 17px solid rgba(43, 41, 38, 0.74);
-      border-radius: 50%;
-      box-shadow: 24px 32px 44px rgba(43, 41, 38, 0.13);
-      transform: rotate(-12deg);
-    }
-
-    .stone-shape {
-      width: 188px;
-      height: 132px;
-      border-radius: 48% 52% 44% 56% / 57% 43% 57% 43%;
-      background: rgba(43, 41, 38, 0.74);
-      box-shadow: 24px 32px 44px rgba(43, 41, 38, 0.14);
-      transform: rotate(9deg);
-    }
-
-    .theme-number {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 18px;
-      color: #a45f23;
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      position: relative;
-      z-index: 1;
-      margin: 0;
-      font-size: clamp(40px, 4vw, 58px);
-      line-height: 0.96;
-      font-weight: 500;
-      letter-spacing: -0.05em;
-    }
-
-    .theme-copy {
-      position: relative;
-      z-index: 1;
-      margin: 24px 0 0;
-      font-size: 22px;
-      line-height: 1.42;
-      color: #4a4239;
-    }
-
-    .theme-note {
-      position: relative;
-      z-index: 1;
-      margin-top: 34px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(164, 95, 35, 0.32);
-      color: #a45f23;
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .closing {
-      max-width: 880px;
-      margin: 80px auto 0;
-      text-align: center;
-      color: #4a4239;
-      font-size: clamp(24px, 2.6vw, 38px);
-      line-height: 1.28;
-    }
+    .nav { display: flex; align-items: center; justify-content: center; gap: 56px; }
+    .nav a, .soon { color: #221f1c; text-decoration: none; white-space: nowrap; }
+    .nav a[aria-current="page"] { color: #a45f23; }
+    .soon { justify-self: end; color: #a45f23; }
 
     .lang-switch {
       position: fixed;
       right: 48px;
-      bottom: 36px;
-      z-index: 3;
+      top: 34px;
+      z-index: 5;
       display: flex;
       gap: 12px;
       align-items: center;
       font-family: "Trebuchet MS", Arial, sans-serif;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #8b6b50;
     }
 
-    .lang-switch a {
-      color: #8b6b50;
-      text-decoration: none;
-    }
+    .lang-switch a { color: #8b6b50; text-decoration: none; }
+    .lang-switch a[aria-current="page"] { color: #a45f23; border-bottom: 1px solid #a45f23; padding-bottom: 4px; }
 
-    .lang-switch a[aria-current="page"] {
-      color: #a45f23;
-      border-bottom: 1px solid #a45f23;
-      padding-bottom: 4px;
-    }
+    .intro { max-width: 1030px; margin: 118px auto 72px; text-align: center; }
+    .eyebrow { margin: 0 0 26px; color: #a45f23; font-family: "Trebuchet MS", Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.36em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(54px, 7.6vw, 112px); line-height: 0.92; font-weight: 500; letter-spacing: -0.065em; color: #282622; }
+    .intro-copy { max-width: 690px; margin: 34px auto 0; font-size: clamp(22px, 2.1vw, 32px); line-height: 1.35; color: #4a4239; }
+
+    .theme-room { max-width: 1180px; margin: 0 auto 32px; padding: 34px; border: 1px solid rgba(72,55,39,0.18); border-radius: 36px; background: rgba(255,249,241,0.34); box-shadow: 0 30px 90px rgba(72,55,39,0.10); backdrop-filter: blur(18px); }
+    .room-header { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 28px; align-items: end; padding: 8px 6px 32px; }
+    .room-label { margin: 0 0 14px; color: #a45f23; font-family: "Trebuchet MS", Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(42px, 4.8vw, 72px); line-height: 0.94; font-weight: 500; letter-spacing: -0.055em; }
+    .room-copy { margin: 0; color: #4a4239; font-size: clamp(20px, 1.7vw, 27px); line-height: 1.38; }
+    .theme-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .theme-room.dynamic .theme-grid { grid-template-columns: 1fr; }
+
+    .theme-card { min-height: 450px; display: flex; flex-direction: column; justify-content: space-between; padding: 34px; border: 1px solid rgba(72,55,39,0.2); border-radius: 30px; background: rgba(255,249,241,0.48); overflow: hidden; position: relative; }
+    .theme-card::before { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(164,95,35,0.18); border-radius: 22px; pointer-events: none; }
+    .object { position: relative; height: 218px; margin: 18px 0 30px; display: grid; place-items: center; }
+    .egg-shape { width: 132px; height: 176px; border: 18px solid rgba(43,41,38,0.78); border-radius: 54% 54% 48% 48% / 62% 62% 42% 42%; box-shadow: 24px 32px 44px rgba(43,41,38,0.15); transform: rotate(-7deg); }
+    .plate-shape { width: 250px; height: 132px; border: 17px solid rgba(43,41,38,0.74); border-radius: 50%; box-shadow: 24px 32px 44px rgba(43,41,38,0.13); transform: rotate(-16deg); }
+    .plate-shape::after { content: ""; position: absolute; width: 94px; height: 1px; background: rgba(164,95,35,0.55); transform: translate(132px, 40px) rotate(-18deg); }
+    .stone-shape { width: 188px; height: 132px; border-radius: 48% 52% 44% 56% / 57% 43% 57% 43%; background: rgba(43,41,38,0.74); box-shadow: 24px 32px 44px rgba(43,41,38,0.14); transform: rotate(9deg); }
+    .theme-number { position: relative; z-index: 1; margin: 0 0 18px; color: #a45f23; font-family: "Trebuchet MS", Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; }
+    h3 { position: relative; z-index: 1; margin: 0; font-size: clamp(40px, 4vw, 58px); line-height: 0.96; font-weight: 500; letter-spacing: -0.05em; }
+    .theme-copy { position: relative; z-index: 1; margin: 24px 0 0; font-size: 22px; line-height: 1.42; color: #4a4239; }
+    .theme-note { position: relative; z-index: 1; margin-top: 34px; padding-top: 18px; border-top: 1px solid rgba(164,95,35,0.32); color: #a45f23; font-family: "Trebuchet MS", Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+    .closing { max-width: 880px; margin: 76px auto 0; text-align: center; color: #4a4239; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.28; }
 
     @media (max-width: 980px) {
       .page { padding: 28px 24px 56px; }
-
-      .site-header {
-        grid-template-columns: 1fr auto;
-        gap: 18px;
-      }
-
+      .site-header { grid-template-columns: 1fr auto; gap: 18px; }
       .brand { font-size: 23px; }
       .nav { display: none; }
       .soon { font-size: 11px; }
+      .lang-switch { right: 24px; top: 24px; }
       .intro { margin: 86px auto 48px; }
+      .room-header { grid-template-columns: 1fr; }
       .theme-grid { grid-template-columns: 1fr; }
-      .theme-card { min-height: 430px; }
-      .object { height: 180px; margin-bottom: 24px; }
+      .theme-card { min-height: 410px; }
+      .object { height: 170px; margin-bottom: 24px; }
     }
 
     @media (max-width: 560px) {
-      .lang-switch { right: 24px; bottom: 24px; }
       .brand { font-size: 20px; letter-spacing: 0.25em; }
       .soon { letter-spacing: 0.2em; }
+      .theme-room { padding: 22px; border-radius: 26px; }
       .theme-card { padding: 26px; border-radius: 24px; }
       .theme-copy { font-size: 20px; }
     }
+
   </style>
 </head>
 <body>
@@ -303,51 +147,70 @@
       <div class="soon">Coming Soon</div>
     </header>
 
+    <div class="lang-switch" aria-label="Language switch">
+      <a href="./collections-ko.html">한국어</a>
+      <span>|</span>
+      <a href="./collections.html" aria-current="page">EN</a>
+    </div>
+
     <section class="intro" aria-label="Collections introduction">
       <p class="eyebrow">Theme Rooms</p>
-      <h1>Objects for memories<br />not yet named.</h1>
-      <p class="intro-copy">Begin with three quiet forms: Shell, Sheets, and Stone. Each collection gives small keepsakes a shape, a surface, and a place to remain.</p>
+      <h1>Forms that hold<br />different kinds of memory.</h1>
+      <p class="intro-copy">DAMOLDA begins with three forms: Shell, Sheets, and Stone. They are arranged into two rooms — one still and grounded, one layered and in motion.</p>
     </section>
 
-    <section class="theme-grid" aria-label="Collection themes">
-      <article class="theme-card">
+    <section class="theme-room sessile" aria-label="Sessile theme room">
+      <div class="room-header">
         <div>
-          <p class="theme-number">Room 01</p>
-          <h2>Shell</h2>
-          <div class="object" aria-hidden="true"><div class="egg-shape"></div></div>
-          <p class="theme-copy">A hollow frame for beginnings, first attempts, seasons, and memories still becoming.</p>
+          <p class="room-label">Sessile Theme Room</p>
+          <h2>Still forms<br />that stay.</h2>
         </div>
-        <div class="theme-note">Opening Series</div>
-      </article>
-
-      <article class="theme-card">
-        <div>
-          <p class="theme-number">Room 02</p>
-          <h2>Sheets</h2>
-          <div class="object" aria-hidden="true"><div class="plate-shape"></div></div>
-          <p class="theme-copy">Layered surfaces for fragments, colors, pressed moments, and the small evidence of a day.</p>
-        </div>
-        <div class="theme-note">Layer Series</div>
-      </article>
-
-      <article class="theme-card">
-        <div>
-          <p class="theme-number">Room 03</p>
-          <h2>Stone</h2>
-          <div class="object" aria-hidden="true"><div class="stone-shape"></div></div>
-          <p class="theme-copy">A grounded form for weight, silence, touch, and memories that should not feel fragile.</p>
-        </div>
-        <div class="theme-note">Weight Series</div>
-      </article>
+        <p class="room-copy">Shell and Stone are quiet, anchored forms. They are made for memories that need weight, pause, and a fixed place in the room.</p>
+      </div>
+      <div class="theme-grid">
+        <article class="theme-card">
+          <div>
+            <p class="theme-number">Room 01</p>
+            <h3>Shell</h3>
+            <div class="object" aria-hidden="true"><div class="egg-shape"></div></div>
+            <p class="theme-copy">A hollow frame for beginnings, first attempts, seasons, and memories still becoming.</p>
+          </div>
+          <div class="theme-note">Opening Series</div>
+        </article>
+        <article class="theme-card">
+          <div>
+            <p class="theme-number">Room 02</p>
+            <h3>Stone</h3>
+            <div class="object" aria-hidden="true"><div class="stone-shape"></div></div>
+            <p class="theme-copy">A grounded form for weight, silence, touch, and memories that should not feel fragile.</p>
+          </div>
+          <div class="theme-note">Weight Series</div>
+        </article>
+      </div>
     </section>
 
-    <p class="closing">DAMOLDA collections are built as rooms: each form is a different way to keep what matters.</p>
+    <section class="theme-room dynamic" aria-label="Dynamic theme room">
+      <div class="room-header">
+        <div>
+          <p class="room-label">Dynamic Theme Room</p>
+          <h2>Layered surfaces<br />that move.</h2>
+        </div>
+        <p class="room-copy">Sheets is the active room. It is made for arranging, overlapping, pressing, and changing the way small fragments meet each other.</p>
+      </div>
+      <div class="theme-grid">
+        <article class="theme-card">
+          <div>
+            <p class="theme-number">Room 03</p>
+            <h3>Sheets</h3>
+            <div class="object" aria-hidden="true"><div class="plate-shape"></div></div>
+            <p class="theme-copy">Layered surfaces for fragments, colors, pressed moments, and the small evidence of a day.</p>
+          </div>
+          <div class="theme-note">Layer Series</div>
+        </article>
+      </div>
+    </section>
 
-    <div class="lang-switch" aria-label="Language switch">
-      <a href="./collections-ko.html">Kor</a>
-      <span>|</span>
-      <a href="./collections.html" aria-current="page">En</a>
-    </div>
+    <p class="closing">DAMOLDA collections are built as theme rooms: each form is a different way to keep what matters.</p>
   </main>
 </body>
 </html>
