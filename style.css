@@ -450,3 +450,16 @@ body.themes {
 .themes-card {
   background: rgba(255, 248, 240, 0.72) !important;
 }
+
+
+/* Theme page matches Journal/About */
+.theme-section,
+.themes-section,
+.theme-page,
+.themes-page,
+#themes,
+[data-page="themes"],
+body.theme,
+body.themes{
+  background: #f4ede3 !important;
+}
