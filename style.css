@@ -551,3 +551,23 @@ body[data-page="about"] .about-panel{background:rgba(255,255,255,.42) !important
   .brand-handwordmark{height:48px !important;}
   .nav{display:none !important;}
 }
+
+
+/* About copy compact fix */
+.about-shell .section-head {
+  margin-bottom: 18px;
+}
+.about-panel {
+  gap: 28px;
+}
+.about-title h1 {
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 1.02;
+}
+.about-text {
+  font-size: clamp(0.86rem, 1.05vw, 1rem);
+  line-height: 1.55;
+}
+.about-text p {
+  margin: 0 0 0.72em;
+}
