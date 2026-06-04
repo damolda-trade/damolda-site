@@ -14,7 +14,7 @@
       min-height: 100%;
       color: #2b2926;
       overflow-x: hidden;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", Georgia, serif;
     }
 
     body {
@@ -62,22 +62,22 @@
 
     .site-header {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
       gap: 32px;
       width: 100%;
       padding: 42px 48px 0;
       letter-spacing: 0.34em;
       text-transform: uppercase;
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      font-size: 13px;
+      font-family: "Avenir Next", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      font-size: 12px;
       font-weight: 600;
     }
 
     .brand {
       justify-self: start;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 29px;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", Georgia, serif;
+      font-size: 27px;
       letter-spacing: 0.34em;
       font-weight: 700;
       text-decoration: none;
@@ -88,19 +88,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 56px;
+      justify-self: center;
+      gap: 48px;
+      min-width: 0;
     }
 
-    .nav a,
-    .soon {
+    .nav a {
       color: #221f1c;
       text-decoration: none;
       white-space: nowrap;
-    }
-
-    .soon {
-      justify-self: end;
-      color: #a45f23;
     }
 
     .hero-copy {
@@ -135,7 +131,7 @@
     .body-copy {
       max-width: 330px;
       margin: 0;
-      font-size: 26px;
+      font-size: 24px;
       line-height: 1.45;
       color: #2b2926;
     }
@@ -149,8 +145,8 @@
       border-bottom: 1px solid #9b551d;
       color: #9b551d;
       text-decoration: none;
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      font-size: 16px;
+      font-family: "Avenir Next", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -164,42 +160,38 @@
     }
 
     .lang-switch {
-      position: fixed;
-      right: 48px;
-      top: 34px;
-      z-index: 3;
+      justify-self: end;
       display: flex;
       gap: 12px;
       align-items: center;
-      font-family: "Trebuchet MS", Arial, sans-serif;
+      font-family: "Avenir Next", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       color: #8b6b50;
     }
 
     .lang-switch a {
       color: #8b6b50;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .lang-switch a[aria-current="page"] {
       color: #a45f23;
       border-bottom: 1px solid #a45f23;
-      padding-bottom: 4px;
+      padding-bottom: 3px;
     }
 
     @media (max-width: 900px) {
       .site-header {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: auto auto;
         padding: 28px 24px 0;
         gap: 18px;
       }
 
-      .brand { font-size: 23px; }
+      .brand { font-size: 20px; }
       .nav { display: none; }
-      .soon { font-size: 11px; }
 
       .hero-bg {
         object-position: 65% center;
@@ -220,14 +212,12 @@
         padding-top: 22vh;
       }
 
-      .body-copy { font-size: 22px; }
+      .body-copy { font-size: 20px; }
     }
 
     @media (max-width: 560px) {
-      .lang-switch { right: 24px; top: 24px; }
       .hero-bg { object-position: 70% center; }
       .brand { font-size: 20px; letter-spacing: 0.25em; }
-      .soon { letter-spacing: 0.2em; }
       .hero-copy { padding-top: 20vh; }
       .rule { margin: 44px 0 34px; }
     }
@@ -244,7 +234,11 @@
         <a href="./collections.html">Collections</a>
         <a href="#">Journal</a>
       </nav>
-      <div class="soon">Coming Soon</div>
+      <div class="lang-switch" aria-label="Language switch">
+        <a href="./index-ko.html">한국어</a>
+        <span>|</span>
+        <a href="./index.html" aria-current="page">EN</a>
+      </div>
     </header>
 
     <section class="hero-copy" aria-label="Hero copy">
@@ -255,11 +249,6 @@
       <a class="cta" href="./collections.html">Explore <span aria-hidden="true">→</span></a>
     </section>
 
-    <div class="lang-switch" aria-label="Language switch">
-      <a href="./index-ko.html">한국어</a>
-      <span>|</span>
-      <a href="./index.html" aria-current="page">EN</a>
-    </div>
   </main>
 
   <script>
