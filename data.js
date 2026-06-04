@@ -6,6 +6,7 @@ window.DAMOLDA_DATA = {
     { id:'season', ko:'계절', en:'Season', open:false, noteKo:'봄 · 여름 · 가을 · 겨울 · 비 · 첫눈', noteEn:'Spring · Summer · Autumn · Winter · Rain · First Snow', objects:['spring','rain','snow'] },
     { id:'city', ko:'도시', en:'City', open:false, noteKo:'콘크리트 · 가로등 · 횡단보도 · 지하철 · 창문 · 옥상', noteEn:'Concrete · Streetlight · Crosswalk · Subway · Window · Rooftop', objects:['concrete','streetlight','window'] },
     { id:'village', ko:'시골', en:'Village', open:false, noteKo:'들판 · 울타리 · 우물 · 헛간 · 길 · 장작', noteEn:'Field · Fence · Well · Barn · Path · Firewood', objects:['field','path','firewood'] },
+    { id:'quietplay', ko:'조용한 놀이', en:'Quiet Play', open:true, noteKo:'클릭 · 회전 · 촉감 · 집중 · 휴식 · 반복 · 손의 기억', noteEn:'Click · Rotate · Texture · Focus · Rest · Repetition · Hand Memory', objects:['click','drift','loop'] },
     { id:'strategy', ko:'전략', en:'Strategy', open:true, noteKo:'선택 · 위험 · 균형 · 성장 · 교환 · 타이밍 · 흐름', noteEn:'Choice · Risk · Balance · Growth · Exchange · Timing · Momentum', objects:['jiryeok','balance','exchange'] }
   ],
   objects: {
@@ -29,6 +30,9 @@ window.DAMOLDA_DATA = {
     firewood:{ko:'장작',en:'Firewood',theme:'village',status:'soon'},
     jiryeok:{ko:'지략',en:'Tactic',theme:'strategy',status:'open',skus:['Dollar','Euro','Yen']},
     balance:{ko:'균형',en:'Balance',theme:'strategy',status:'soon'},
-    exchange:{ko:'교환',en:'Exchange',theme:'strategy',status:'soon'}
+    exchange:{ko:'교환',en:'Exchange',theme:'strategy',status:'soon'},
+    click:{ko:'클릭',en:'Click',theme:'quietplay',status:'open'},
+    drift:{ko:'만지작',en:'Drift',theme:'quietplay',status:'soon'},
+    loop:{ko:'반복',en:'Loop',theme:'quietplay',status:'soon'}
   }
 };
