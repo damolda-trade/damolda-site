@@ -523,3 +523,31 @@ body.themes{
   border-bottom: 0 !important;
   box-shadow: none !important;
 }
+
+/* final fix: use transparent handwritten logo and keep navigation visible */
+.top{
+  height:76px !important;
+  display:grid !important;
+  grid-template-columns:minmax(180px,1fr) auto minmax(260px,1fr) !important;
+  align-items:center !important;
+  background:rgba(248,241,232,.34) !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+}
+.brand{justify-self:start !important; display:inline-flex !important; align-items:center !important; min-width:0 !important;}
+.brand-handwordmark{height:58px !important; width:auto !important; display:block !important; object-fit:contain !important; background:transparent !important;}
+.nav{display:flex !important; justify-self:center !important; align-items:center !important; gap:0 !important; white-space:nowrap !important;}
+.right-tools{justify-self:end !important;}
+body[data-page="themes"],
+body[data-page="journal"],
+body[data-page="about"]{background:#f4ede3 !important;}
+body[data-page="themes"] .theme-shell{background:#f4ede3 !important; background-image:none !important;}
+body[data-page="themes"] .top{background:rgba(248,241,232,.34) !important;}
+body[data-page="themes"] .theme-card,
+body[data-page="journal"] .journal-card,
+body[data-page="about"] .about-panel{background:rgba(255,255,255,.42) !important;}
+@media(max-width:900px){
+  .top{grid-template-columns:1fr auto !important; padding:0 20px !important;}
+  .brand-handwordmark{height:48px !important;}
+  .nav{display:none !important;}
+}
