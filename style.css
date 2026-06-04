@@ -424,3 +424,29 @@ body[data-page="themes"] .top{
   .brand-ko,.brand-divider{font-size:14px;}
   .nav a + a::before{margin:0 18px;}
 }
+
+
+/* DAMOLDA warm apricot correction */
+.site-header,
+.topbar,
+.header {
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  background: rgba(244, 229, 211, 0.48) !important;
+}
+
+.theme-section,
+.themes-section,
+.theme-page,
+.themes-page,
+#themes,
+[data-page="themes"],
+body.theme,
+body.themes {
+  background: linear-gradient(180deg, #f6eadc 0%, #f2dfcc 100%) !important;
+}
+
+.theme-card,
+.themes-card {
+  background: rgba(255, 248, 240, 0.72) !important;
+}
