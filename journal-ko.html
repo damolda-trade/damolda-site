@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Journal — DAMOLDA</title>
+  <meta name="description" content="DAMOLDA Journal — 기억, 형태, 공간에 관한 기록." />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin:0; width:100%; min-height:100%; color:#2b2926; overflow-x:hidden; word-break:keep-all; overflow-wrap:break-word; font-family:"Iowan Old Style", "Palatino Linotype", "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", Georgia, serif; background:#efe0cf; }
+    body::before { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; background: radial-gradient(circle at 82% 16%, rgba(255,255,255,.46), transparent 27%), radial-gradient(circle at 12% 70%, rgba(164,95,35,.12), transparent 34%), linear-gradient(135deg,#f7eadb 0%,#ead4bf 47%,#d5b28c 100%); }
+    .page { position:relative; z-index:1; width:100%; min-height:100vh; padding:42px 48px 86px; }
+    .site-header { display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:32px; width:100%; letter-spacing:.34em; text-transform:uppercase; font-family:"Avenir Next", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size:12px; font-weight:600; }
+    .brand { justify-self:start; font-family:"Iowan Old Style", "Palatino Linotype", "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", Georgia, serif; font-size:27px; letter-spacing:.34em; font-weight:700; text-decoration:none; color:#221f1c; }
+    .nav { display:flex; align-items:center; justify-content:center; justify-self:center; gap:48px; min-width:0; }
+    .nav a { color:#221f1c; text-decoration:none; white-space:nowrap; }
+    .nav a[aria-current="page"] { color:#a45f23; }
+    .lang-switch { justify-self:end; display:flex; gap:12px; align-items:center; font-family:"Avenir Next", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size:12px; font-weight:600; letter-spacing:.08em; color:#8b6b50; }
+    .lang-switch a { color:#8b6b50; text-decoration:none; white-space:nowrap; }
+    .lang-switch a[aria-current="page"] { color:#a45f23; border-bottom:1px solid #a45f23; padding-bottom:3px; }
+    .intro { max-width:1120px; margin:112px auto 58px; display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,.55fr); gap:56px; align-items:end; }
+    .eyebrow { margin:0 0 25px; color:#a45f23; font-family:"Avenir Next", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size:13px; font-weight:700; letter-spacing:.36em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(48px,6.2vw,92px); line-height:1.02; font-weight:500; letter-spacing:-.055em; color:#282622; }
+    .intro-copy { margin:0 0 10px; font-size:clamp(18px,1.55vw,24px); line-height:1.58; color:#4a4239; }
+    .journal-grid { max-width:1120px; margin:0 auto; display:grid; grid-template-columns:1.15fr .85fr; gap:26px; }
+    .feature, .note, .small-note { border:1px solid rgba(72,55,39,.18); background:rgba(255,249,241,.43); box-shadow:0 30px 90px rgba(72,55,39,.09); backdrop-filter:blur(16px); }
+    .feature { min-height:520px; border-radius:38px; padding:42px; display:flex; flex-direction:column; justify-content:space-between; }
+    .note-stack { display:grid; gap:26px; }
+    .note { min-height:247px; border-radius:34px; padding:34px; }
+    .small-row { max-width:1120px; margin:26px auto 0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; }
+    .small-note { min-height:248px; border-radius:30px; padding:30px; }
+    .label { margin:0 0 24px; color:#a45f23; font-family:"Avenir Next", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size:12px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; }
+    h2, h3 { margin:0; font-weight:500; color:#282622; letter-spacing:-.04em; }
+    h2 { font-size:clamp(34px,4.2vw,62px); line-height:1.08; }
+    h3 { font-size:clamp(25px,2.4vw,38px); line-height:1.08; }
+    p { color:#4a4239; }
+    .feature p.body { max-width:680px; margin:36px 0 0; font-size:20px; line-height:1.68; }
+    .note p, .small-note p { margin:24px 0 0; font-size:17px; line-height:1.68; }
+    .status { margin-top:42px; padding-top:26px; border-top:1px solid rgba(164,95,35,.24); font-family:"Avenir Next", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#8b6b50; }
+    @media (max-width:980px){ .page{padding:28px 24px 58px;} .site-header{grid-template-columns:1fr auto; gap:18px;} .brand{font-size:20px;} .nav{display:none;} .intro{grid-template-columns:1fr; margin:86px auto 44px; gap:28px;} .journal-grid{grid-template-columns:1fr;} .small-row{grid-template-columns:1fr;} }
+    @media (max-width:560px){ .brand{font-size:20px; letter-spacing:.25em;} .feature{padding:28px; border-radius:28px; min-height:440px;} .note,.small-note{padding:26px; border-radius:24px;} }
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="DAMOLDA journal page">
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="./index-ko.html">DAMOLDA</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./about-ko.html">About</a>
+        <a href="./collections-ko.html">Collections</a>
+        <a href="./journal-ko.html" aria-current="page">Journal</a>
+      </nav>
+      <div class="lang-switch" aria-label="Language switch">
+        <a href="./journal-ko.html" aria-current="page">한국어</a>
+        <span>|</span>
+        <a href="./journal.html">EN</a>
+      </div>
+    </header>
+
+    <section class="intro" aria-label="Journal introduction">
+      <div>
+        <p class="eyebrow">Journal</p>
+        <h1>오브제가 되기 전의 기록.</h1>
+      </div>
+      <p class="intro-copy">기억, 형태, 계절, 방 안의 자리. 다몰다가 만들어지기 전에 남기는 조용한 기록입니다.</p>
+    </section>
+
+    <section class="journal-grid" aria-label="Journal entries">
+      <article class="feature">
+        <div>
+          <p class="label">Founding note</p>
+          <h2>기억은 먼저 설명될 필요가 없습니다.</h2>
+          <p class="body">어떤 것은 손에 쥐었기 때문에, 골랐기 때문에, 오래 두었기 때문에 중요해집니다. 다몰다는 장식보다 먼저, 개인의 흔적이 조용히 머무를 자리를 생각합니다.</p>
+        </div>
+        <div class="status">첫 번째 기록 · Draft archive</div>
+      </article>
+
+      <div class="note-stack">
+        <article class="note">
+          <p class="label">Theme study</p>
+          <h3>Sessile forms</h3>
+          <p>Shell과 Stone은 정적인 형태에 가깝습니다. 움직이기보다 가라앉고, 천천히 놓이는 기억을 위한 구조입니다.</p>
+        </article>
+        <article class="note">
+          <p class="label">Theme study</p>
+          <h3>Dynamic forms</h3>
+          <p>Sheets는 움직임을 담습니다. 페이지, 층, 표면처럼 손으로 배열되는 기억에 가깝습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="small-row" aria-label="Future journal categories">
+      <article class="small-note">
+        <p class="label">Making</p>
+        <h3>제작 기록</h3>
+        <p>스케치, 몰드, 테스트, 그리고 하나의 오브제가 되기 전의 실제 선택들을 남깁니다.</p>
+      </article>
+      <article class="small-note">
+        <p class="label">Rooms</p>
+        <h3>공간의 자리</h3>
+        <p>테이블, 선반, 모서리. 오브제가 생활의 일부가 되는 평범한 위치를 살핍니다.</p>
+      </article>
+      <article class="small-note">
+        <p class="label">Seasons</p>
+        <h3>계절 노트</h3>
+        <p>상품이 되기 전의 작은 계절감과 컬렉션의 방향을 기록합니다.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
