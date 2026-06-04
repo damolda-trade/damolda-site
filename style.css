@@ -471,3 +471,55 @@ body.themes{
   width: auto !important;
   background: transparent !important;
 }
+
+
+/* Theme page = Journal/About */
+.theme-page,
+.themes-page,
+.theme-section,
+.themes-section,
+[data-page="themes"],
+body.theme,
+body.themes{
+    background:#f4ede3 !important;
+    background-image:none !important;
+}
+
+.theme-card,
+.themes-card{
+    background:rgba(255,255,255,0.45) !important;
+}
+
+.theme-page *,
+.themes-page *{
+    border-color:rgba(0,0,0,0.08) !important;
+}
+
+
+/* Correct handwritten DAMOLDA wordmark */
+.brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  min-width: 0 !important;
+  text-decoration: none !important;
+}
+
+.brand-handwordmark,
+.brand img,
+.logo img {
+  height: 54px !important;
+  width: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.site-header,
+.topbar,
+.header {
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
