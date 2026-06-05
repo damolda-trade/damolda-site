@@ -1623,7 +1623,7 @@ html body[data-page="themes"] .gallery-theme-card.is-revealed .theme-copy {
    - Journal keeps the existing card layout.
    - Background becomes a warm workshop image.
    - Cards are translucent/frosted so the image softly shows through.
-   - Replace assets/journal-workshop-bg.png later with a clean workshop-only render
+   - Uses assets/journal-stage-bg.png as the Journal stage background
      if needed; CSS path can stay the same.
    ===================================================================== */
 
@@ -1636,7 +1636,7 @@ html body[data-page="journal"] .app {
   min-height:100vh !important;
   background:
     linear-gradient(180deg, rgba(24,14,9,.34), rgba(24,14,9,.48)),
-    url("assets/journal-workshop-bg.png") center center / cover no-repeat fixed !important;
+    url("assets/journal-stage-bg.png") center center / cover no-repeat fixed !important;
   color:#3c2b20 !important;
 }
 
@@ -1796,7 +1796,7 @@ html body[data-page="journal"] img {
 .journal-bg{
   background:
     linear-gradient(rgba(20,12,8,.45),rgba(20,12,8,.45)),
-    url('assets/theme-stage-bg.png') center center/cover no-repeat;
+    url('assets/journal-stage-bg.png') center center/cover no-repeat;
 }
 .journal-hero{
   text-align:center;
