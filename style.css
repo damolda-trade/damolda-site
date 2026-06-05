@@ -2208,3 +2208,36 @@ html body[data-page="journal"] .search::placeholder {
     width:auto !important;
   }
 }
+
+
+/* DAMOLDA FINAL: stable header separators.
+   Separator slash is real markup, not an absolute pseudo-element. */
+html body .nav {
+  gap:22px !important;
+}
+html body .nav a {
+  position:static !important;
+}
+html body .nav a + a::before,
+html body[data-page="themes"] .nav a + a::before,
+html body[data-page="theme"] .nav a + a::before,
+html body[data-page="journal"] .nav a + a::before {
+  content:none !important;
+  display:none !important;
+}
+html body .nav .nav-sep {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:76px !important;
+  margin:0 !important;
+  padding:0 !important;
+  font:700 14px/1 Georgia,'Noto Serif KR',serif !important;
+  letter-spacing:0 !important;
+  opacity:.82 !important;
+}
+html body[data-page="themes"] .nav .nav-sep,
+html body[data-page="theme"] .nav .nav-sep,
+html body[data-page="journal"] .nav .nav-sep {
+  color:#d39a61 !important;
+}
