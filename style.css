@@ -2241,3 +2241,19 @@ html body[data-page="theme"] .nav .nav-sep,
 html body[data-page="journal"] .nav .nav-sep {
   color:#d39a61 !important;
 }
+
+
+/* Transparent header */
+html body .top,
+html body[data-page="home"] .top,
+html body[data-page="themes"] .top,
+html body[data-page="theme"] .top,
+html body[data-page="journal"] .top,
+html body[data-page="about"] .top,
+html body[data-page="object"] .top{
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
