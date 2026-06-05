@@ -572,234 +572,1047 @@ body[data-page="about"] .about-panel{background:rgba(255,255,255,.42) !important
   margin: 0 0 0.72em;
 }
 
-/* v0.9: Theme hall as a warm studio stage.
-   The stage is fixed; later, set theme.heroImage in data.js to place one rendered product on the wood plate. */
+/* v0.9: Gallery-style themes page. No page title, no bordered cards, quiet first-view reveal. */
 body[data-page="themes"]{
-  --stage-ink:#f2d6b5;
-  --stage-muted:rgba(242,214,181,.74);
-  --stage-gold:#c9915f;
-  background:#21130d !important;
-  color:var(--stage-ink) !important;
-  height:100vh;
-  overflow:hidden;
+  background:#17120f;
 }
 body[data-page="themes"] .top{
-  background:linear-gradient(180deg,rgba(25,13,8,.82),rgba(25,13,8,.34)) !important;
-  border-bottom:0 !important;
-  box-shadow:none !important;
-  backdrop-filter:blur(12px);
+  background:rgba(23,18,15,.74);
+  border-bottom:0;
+  color:#ead9c5;
 }
-body[data-page="themes"] .brand img{filter:none;}
-body[data-page="themes"] .nav,
+body[data-page="themes"] .brand-handwordmark{
+  filter:brightness(1.28) sepia(.16);
+}
+body[data-page="themes"] .nav a,
 body[data-page="themes"] .lang,
-body[data-page="themes"] .search{
-  color:var(--stage-muted) !important;
+body[data-page="themes"] .lang a.active{
+  color:#ead9c5;
 }
 body[data-page="themes"] .search{
-  border-color:rgba(201,145,95,.32) !important;
-  background:rgba(33,19,13,.22) !important;
+  border-color:rgba(234,217,197,.22);
+  background:rgba(255,255,255,.08);
+  color:#ead9c5;
 }
-body[data-page="themes"] .search::placeholder{color:rgba(242,214,181,.44);}
-body[data-page="themes"] .app{
-  height:100vh;
-  overflow:hidden;
+body[data-page="themes"] .search::placeholder{
+  color:rgba(234,217,197,.68);
+}
+.gallery-theme-shell{
+  padding:96px 5vw 28px;
+  grid-template-rows:auto minmax(0,1fr) !important;
   background:
-    radial-gradient(circle at 27% 43%,rgba(220,150,88,.22),transparent 18%),
-    radial-gradient(circle at 72% 36%,rgba(255,210,158,.08),transparent 22%),
-    linear-gradient(90deg,rgba(16,8,5,.62),rgba(16,8,5,.06) 30%,rgba(16,8,5,.22) 70%,rgba(16,8,5,.72)),
-    repeating-linear-gradient(90deg,#24140d 0px,#332016 78px,#29170f 156px,#3a2317 235px);
+    radial-gradient(ellipse at center 12%, rgba(255,224,180,.20), transparent 42%),
+    radial-gradient(ellipse at center 62%, rgba(155,106,58,.10), transparent 58%),
+    linear-gradient(180deg,#211915 0%,#15110f 58%,#0f0d0c 100%);
 }
-body[data-page="themes"] .app::before{
-  content:'';
-  position:fixed;
-  left:0;right:0;bottom:0;
-  height:25vh;
-  z-index:0;
-  background:
-    linear-gradient(180deg,rgba(255,208,145,.07),rgba(0,0,0,.24)),
-    repeating-linear-gradient(6deg,#5b3823 0px,#6f472d 35px,#3d2417 70px,#734a2f 108px);
-  box-shadow:inset 0 20px 42px rgba(255,220,170,.08), inset 0 -50px 70px rgba(0,0,0,.26);
+.gallery-theme-shell .section-head{
+  display:none;
 }
-body[data-page="themes"] .theme-shell{
-  position:relative;
-  z-index:1;
-  height:100vh;
-  min-height:0;
-  padding:96px 5vw 34px !important;
-  display:grid;
-  grid-template-rows:auto minmax(0,1fr);
-  overflow:hidden;
-  background:transparent !important;
-}
-body[data-page="themes"] .section-head{display:none !important;}
-body[data-page="themes"] .theme-tabs{
-  position:relative !important;
-  top:auto !important;
-  z-index:2;
+.gallery-theme-shell .theme-tabs{
   justify-content:center;
   gap:34px;
-  padding:0 0 22px !important;
-  background:transparent !important;
-  overflow:visible;
-  color:var(--stage-muted) !important;
+  padding:0 0 18px;
+  color:#ead9c5;
 }
-body[data-page="themes"] .theme-tab{
+.gallery-theme-shell .theme-tab{
+  border:0;
+  border-radius:0;
+  padding:0 0 8px;
+  background:transparent;
+  font:700 12px/1 Arial,sans-serif;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(234,217,197,.64);
+}
+.gallery-theme-shell .theme-tab.active{
+  color:#ead9c5;
+  border:0;
+  background:transparent;
+  box-shadow:inset 0 -1px 0 rgba(234,217,197,.76);
+}
+.gallery-theme-shell .stage{
+  grid-template-columns:56px minmax(0,1fr) 56px;
+}
+.gallery-theme-shell .arrow{
+  border:0;
+  background:transparent;
+  color:rgba(234,217,197,.74);
+  font-size:30px;
+}
+.gallery-theme-shell .arrow:hover{
+  color:#ead9c5;
+}
+.gallery-theme-card{
   border:0 !important;
   border-radius:0 !important;
   background:transparent !important;
-  padding:0 0 7px !important;
-  color:var(--stage-muted) !important;
-  font-family:Arial,sans-serif;
-  font-size:12px !important;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:none;
-}
-body[data-page="themes"] .theme-tab.active{
-  color:var(--stage-ink) !important;
-  border-bottom:1px solid rgba(242,214,181,.72) !important;
-}
-body[data-page="themes"] .stage{
+  box-shadow:none;
   position:relative;
-  height:auto !important;
-  min-height:0 !important;
-  display:grid;
-  grid-template-columns:52px minmax(0,1fr) 52px !important;
-  gap:20px !important;
-  align-items:center;
 }
-body[data-page="themes"] .theme-card{
-  height:100% !important;
-  min-height:0 !important;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  overflow:visible !important;
-  border:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-}
-body[data-page="themes"] .theme-visual{
-  position:relative;
-  min-height:0 !important;
-  background:transparent !important;
-}
-body[data-page="themes"] .theme-visual::after{
-  display:none !important;
-}
-body[data-page="themes"] .wood-plate{
-  position:absolute;
-  left:16%;
-  bottom:8.2vh;
-  width:min(45vw,620px);
-  height:min(9.5vw,118px);
-  border-radius:50%;
-  background:
-    radial-gradient(ellipse at 45% 35%,rgba(255,220,160,.15),transparent 34%),
-    repeating-radial-gradient(ellipse at 48% 44%,rgba(120,75,43,.24) 0 8px,rgba(65,38,23,.18) 9px 18px),
-    linear-gradient(90deg,#7a4e31,#4a2b1a 64%,#2f1a10);
-  box-shadow:
-    inset 0 12px 26px rgba(255,214,154,.10),
-    inset 0 -28px 34px rgba(0,0,0,.34),
-    0 32px 55px rgba(0,0,0,.36);
-  transform:perspective(900px) rotateX(62deg);
-  transform-origin:center bottom;
-}
-body[data-page="themes"] .wood-plate::after{
+.gallery-theme-card::before{
   content:'';
   position:absolute;
-  left:4%; right:4%; bottom:-18%;
-  height:26%;
-  border-radius:50%;
-  background:rgba(10,5,3,.36);
-  filter:blur(18px);
+  inset:1% 8% 0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 34% 8%, rgba(255,235,206,.32), transparent 36%),
+    radial-gradient(ellipse at 34% 86%, rgba(0,0,0,.42), transparent 44%);
 }
-body[data-page="themes"] .theme-product{
-  position:absolute;
-  left:20%;
-  bottom:14.8vh;
-  width:min(31vw,440px);
-  max-height:54vh;
-  object-fit:contain;
-  filter:drop-shadow(0 32px 26px rgba(0,0,0,.40));
-  transform-origin:center bottom;
-}
-body[data-page="themes"] .theme-copy{
-  position:relative;
-  z-index:2;
+.gallery-theme-shell .theme-visual{
+  background:transparent;
+  display:flex;
+  align-items:center;
   justify-content:center;
-  padding:0 4vw 8vh 2vw !important;
-  color:var(--stage-ink);
+  overflow:visible;
 }
-body[data-page="themes"] .kicker{
-  color:var(--stage-gold) !important;
-  font-size:12px !important;
-  letter-spacing:.34em;
-  margin-bottom:14px !important;
+.gallery-theme-shell .theme-visual::before{
+  content:'';
+  position:absolute;
+  width:min(56vh,42vw);
+  height:min(56vh,42vw);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 40% 30%, rgba(255,255,255,.74), transparent 18%),
+    radial-gradient(circle at 48% 45%, rgba(234,217,197,.58), transparent 35%),
+    linear-gradient(145deg, rgba(255,255,255,.18), rgba(155,106,58,.24));
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.50),
+    0 0 120px rgba(255,220,176,.18);
+  filter:blur(.1px);
 }
-body[data-page="themes"] .theme-copy h2{
-  color:var(--stage-ink) !important;
-  font-size:clamp(54px,5.5vw,86px) !important;
-  line-height:1;
-  margin:0 0 24px !important;
-  font-weight:400;
-  text-shadow:0 2px 18px rgba(0,0,0,.20);
+.gallery-theme-shell .theme-visual::after{
+  content:'';
+  position:absolute;
+  inset:auto auto 13% auto;
+  width:min(42vh,34vw);
+  height:8px;
+  border:0;
+  border-radius:50%;
+  background:rgba(0,0,0,.46);
+  box-shadow:0 0 42px 18px rgba(0,0,0,.36);
 }
-body[data-page="themes"] .subthemes{
-  color:var(--stage-muted) !important;
-  font-size:clamp(18px,1.5vw,25px) !important;
-  line-height:1.55 !important;
+.gallery-theme-shell .theme-copy{
+  color:#ead9c5;
+  text-shadow:0 2px 20px rgba(0,0,0,.45);
 }
-body[data-page="themes"] .actions{margin-top:36px !important;}
-body[data-page="themes"] .linkline{
-  color:var(--stage-gold) !important;
-  border-bottom-color:rgba(201,145,95,.75) !important;
+.gallery-theme-shell .kicker,
+.gallery-theme-shell .linkline{
+  color:#c59664;
+  border-color:#c59664;
 }
-body[data-page="themes"] .soon{color:rgba(242,214,181,.55) !important;}
-body[data-page="themes"] .arrow{
-  position:relative;
-  z-index:5;
+.gallery-theme-shell .subthemes,
+.gallery-theme-shell .soon{
+  color:rgba(234,217,197,.72);
+}
+.gallery-theme-card.is-entering .theme-visual::before,
+.gallery-theme-card.is-entering .theme-copy{
+  animation:themeReveal 900ms ease-out both;
+}
+.gallery-theme-card.is-entering .theme-copy{
+  animation-delay:150ms;
+}
+.gallery-theme-card.is-revealed .theme-visual::before,
+.gallery-theme-card.is-revealed .theme-copy{
+  opacity:1;
+  transform:none;
+}
+@keyframes themeReveal{
+  from{opacity:0;transform:translateY(18px) scale(.985);filter:blur(10px);}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+}
+@media(max-width:900px){
+  .gallery-theme-shell{padding:104px 22px 34px;}
+  .gallery-theme-shell .theme-tabs{justify-content:flex-start;gap:24px;}
+  .gallery-theme-shell .theme-visual::before{width:250px;height:250px;}
+  .gallery-theme-shell .theme-visual::after{width:210px;bottom:10%;}
+}
+
+/* v1.0: Theme hall refinement — no white panel, no black shadow, no literal spotlight. */
+body[data-page="themes"]{
+  background:#2b1f18;
+}
+body[data-page="themes"] .top{
+  background:linear-gradient(180deg,rgba(37,27,21,.90),rgba(37,27,21,.62));
+  color:#d7ad7e;
+  backdrop-filter:blur(12px);
+}
+body[data-page="themes"] .nav a,
+body[data-page="themes"] .lang,
+body[data-page="themes"] .lang a.active{
+  color:#d7ad7e;
+}
+body[data-page="themes"] .search{
+  border-color:rgba(215,173,126,.26);
+  background:rgba(255,246,232,.045);
+  color:#d7ad7e;
+}
+body[data-page="themes"] .search::placeholder{
+  color:rgba(215,173,126,.58);
+}
+.gallery-theme-shell{
+  background:
+    linear-gradient(180deg,rgba(26,19,15,.18),rgba(26,19,15,.38)),
+    radial-gradient(ellipse at 42% 60%, rgba(132,91,58,.34), transparent 58%),
+    linear-gradient(115deg,#251a14 0%,#3a291f 45%,#211813 100%);
+}
+.gallery-theme-card::before{
+  display:none;
+}
+.gallery-theme-shell .theme-tabs{
+  color:#d7ad7e;
+}
+.gallery-theme-shell .theme-tab{
+  color:rgba(215,173,126,.64);
+}
+.gallery-theme-shell .theme-tab.active{
+  color:#f0c996;
+  box-shadow:inset 0 -1px 0 rgba(240,201,150,.72);
+}
+.gallery-theme-shell .arrow{
+  color:rgba(215,173,126,.72);
+  background:rgba(255,246,232,.045);
+  border:1px solid rgba(215,173,126,.08);
+}
+.gallery-theme-shell .arrow:hover{
+  color:#f0c996;
+  background:rgba(255,246,232,.07);
+}
+.gallery-theme-shell .theme-visual{
+  isolation:isolate;
+}
+.gallery-theme-shell .theme-visual::before{
+  width:min(52vh,38vw);
+  height:min(50vh,36vw);
+  border-radius:48% 52% 42% 42% / 34% 34% 56% 56%;
+  clip-path:polygon(36% 0,64% 0,70% 15%,83% 46%,76% 78%,61% 96%,39% 96%,24% 78%,17% 46%,30% 15%);
+  background:
+    radial-gradient(ellipse at 34% 28%, rgba(255,246,232,.62), transparent 24%),
+    radial-gradient(ellipse at 70% 74%, rgba(105,75,52,.22), transparent 44%),
+    linear-gradient(145deg,#ead5b9 0%,#c6a987 48%,#8f6b4b 100%);
+  box-shadow:
+    18px 26px 70px rgba(72,47,31,.34),
+    -18px -12px 42px rgba(255,232,198,.09);
+  opacity:.96;
+}
+.gallery-theme-shell .theme-visual::after{
+  width:min(44vh,32vw);
+  height:14px;
+  bottom:12%;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(139,97,67,.38),rgba(227,194,155,.18),rgba(139,97,67,.30),transparent);
+  box-shadow:0 10px 36px rgba(83,55,38,.20);
+}
+.gallery-theme-shell .theme-copy{
+  color:#ead0af;
+  text-shadow:none;
+}
+.gallery-theme-shell .theme-copy h2{
+  color:#efd5b2;
+}
+.gallery-theme-shell .kicker,
+.gallery-theme-shell .linkline{
+  color:#d19a63;
+  border-color:#d19a63;
+}
+.gallery-theme-shell .subthemes,
+.gallery-theme-shell .soon{
+  color:rgba(234,208,175,.76);
+}
+
+/* v1.1: corrected museum-dark theme hall. Kill older light-panel overrides. */
+html body[data-page="themes"]{
+  background:#211712 !important;
+  background-image:none !important;
+  color:#e9c99d !important;
+  overflow:hidden !important;
+}
+html body[data-page="themes"] .app{
+  min-height:100vh !important;
+  background:
+    linear-gradient(180deg, rgba(12,8,6,.18) 0%, rgba(12,8,6,.34) 100%),
+    radial-gradient(ellipse at 35% 58%, rgba(112,74,47,.62) 0%, rgba(64,42,29,.36) 34%, rgba(25,17,13,.12) 64%, transparent 78%),
+    linear-gradient(112deg,#18100c 0%,#302016 34%,#493323 58%,#211712 100%) !important;
+}
+html body[data-page="themes"] .top{
+  background:linear-gradient(180deg,rgba(30,20,15,.92),rgba(30,20,15,.58),rgba(30,20,15,0)) !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+  color:#d8aa76 !important;
+}
+html body[data-page="themes"] .brand-handwordmark{
+  filter:brightness(1.18) sepia(.22) saturate(.86) !important;
+}
+html body[data-page="themes"] .nav a,
+html body[data-page="themes"] .lang,
+html body[data-page="themes"] .lang a,
+html body[data-page="themes"] .lang a.active{
+  color:#d8aa76 !important;
+}
+html body[data-page="themes"] .nav a + a::before{
+  color:#c99561 !important;
+}
+html body[data-page="themes"] .search{
+  border-color:rgba(216,170,118,.28) !important;
+  background:rgba(255,244,226,.035) !important;
+  color:#d8aa76 !important;
+}
+html body[data-page="themes"] .search::placeholder{color:rgba(216,170,118,.55) !important;}
+
+html body[data-page="themes"] .gallery-theme-shell{
+  height:100vh !important;
+  min-height:0 !important;
+  padding:96px 3.8vw 28px !important;
+  display:grid !important;
+  grid-template-rows:auto minmax(0,1fr) !important;
+  background:transparent !important;
+  background-image:none !important;
+  overflow:hidden !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-tabs{
+  position:relative !important;
+  top:auto !important;
+  z-index:12 !important;
+  justify-content:center !important;
+  gap:42px !important;
+  padding:0 0 8px !important;
+  background:transparent !important;
+  overflow:visible !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-tab{
+  border:0 !important;
+  background:transparent !important;
+  border-radius:0 !important;
+  padding:0 0 9px !important;
+  font:700 12px/1 Arial,'Noto Sans KR',sans-serif !important;
+  letter-spacing:.18em !important;
+  text-transform:none !important;
+  color:rgba(222,181,131,.68) !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-tab.active{
+  color:#f1cc9b !important;
+  box-shadow:inset 0 -1px 0 rgba(241,204,155,.70) !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .stage{
+  height:auto !important;
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-columns:58px minmax(0,1fr) 58px !important;
+  gap:18px !important;
+  align-items:center !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .arrow{
   width:58px !important;
   height:58px !important;
   border:0 !important;
-  border-radius:50%;
-  background:rgba(242,214,181,.08) !important;
-  color:rgba(242,214,181,.82) !important;
+  border-radius:50% !important;
+  background:rgba(255,238,210,.055) !important;
+  color:rgba(233,201,157,.72) !important;
   box-shadow:none !important;
 }
-body[data-page="themes"] .arrow:hover{background:rgba(242,214,181,.14) !important;}
-body[data-page="themes"] .theme-card.is-fresh .wood-plate,
-body[data-page="themes"] .theme-card.is-fresh .theme-product,
-body[data-page="themes"] .theme-card.is-fresh .theme-copy{
-  animation:damoldaReveal .78s ease both;
+html body[data-page="themes"] .gallery-theme-shell .arrow:hover{
+  background:rgba(255,238,210,.09) !important;
+  color:#f1cc9b !important;
 }
-body[data-page="themes"] .theme-card.is-fresh .theme-copy{animation-delay:.08s;}
-@keyframes damoldaReveal{
-  from{opacity:0; transform:translateY(16px); filter:blur(10px);}
-  to{opacity:1; transform:translateY(0); filter:blur(0);}
+
+html body[data-page="themes"] .gallery-theme-card,
+html body[data-page="themes"] .theme-card,
+html body[data-page="themes"] .themes-card{
+  height:100% !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  display:grid !important;
+  grid-template-columns:1.04fr .96fr !important;
 }
-body[data-page="themes"] .theme-card.is-fresh .wood-plate{
-  animation-name:damoldaPlateReveal;
+html body[data-page="themes"] .gallery-theme-card::before{display:none !important;}
+html body[data-page="themes"] .gallery-theme-shell .theme-visual{
+  position:relative !important;
+  min-height:0 !important;
+  background:transparent !important;
+  overflow:visible !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  padding-bottom:8vh !important;
 }
-@keyframes damoldaPlateReveal{
-  from{opacity:0; transform:perspective(900px) rotateX(62deg) translateY(16px); filter:blur(10px);}
-  to{opacity:1; transform:perspective(900px) rotateX(62deg) translateY(0); filter:blur(0);}
+/* ceramic object */
+html body[data-page="themes"] .gallery-theme-shell .theme-visual::before{
+  content:'' !important;
+  position:relative !important;
+  display:block !important;
+  width:min(38vw,49vh) !important;
+  height:min(38vw,49vh) !important;
+  border-radius:48% 52% 44% 44% / 37% 37% 58% 58% !important;
+  clip-path:polygon(42% 0,58% 0,63% 7%,79% 41%,73% 76%,58% 96%,42% 96%,27% 76%,21% 41%,37% 7%) !important;
+  background:
+    radial-gradient(ellipse at 31% 25%, rgba(255,247,231,.86), transparent 25%),
+    radial-gradient(ellipse at 68% 76%, rgba(83,57,39,.30), transparent 42%),
+    linear-gradient(145deg,#ead5b7 0%,#c6a47e 48%,#7d5a3f 100%) !important;
+  box-shadow:22px 18px 54px rgba(42,28,19,.26) !important;
+  opacity:.98 !important;
+  filter:none !important;
+  transform:none;
+  z-index:2 !important;
 }
-body[data-page="themes"] .theme-card.is-seen .wood-plate,
-body[data-page="themes"] .theme-card.is-seen .theme-product,
-body[data-page="themes"] .theme-card.is-seen .theme-copy{
+/* stone shelf, not black shadow */
+html body[data-page="themes"] .gallery-theme-shell .theme-visual::after{
+  content:'' !important;
+  position:absolute !important;
+  bottom:6.5vh !important;
+  left:50% !important;
+  transform:translateX(-50%) perspective(480px) rotateX(58deg) !important;
+  width:min(41vw,56vh) !important;
+  height:5.5vh !important;
+  border-radius:10px 18px 28px 28px !important;
+  background:linear-gradient(90deg,#3b291d 0%,#6f4d33 38%,#8a6240 57%,#302117 100%) !important;
+  box-shadow:0 18px 38px rgba(30,20,14,.24) !important;
+  opacity:.92 !important;
+  z-index:1 !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-copy{
+  padding:5vh 7vw 7vh 3vw !important;
+  color:#e9c99d !important;
+  text-shadow:none !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .kicker{
+  color:#c88d56 !important;
+  font:700 12px/1 Arial,sans-serif !important;
+  letter-spacing:.32em !important;
+  margin-bottom:18px !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-copy h2{
+  color:#f0d3ab !important;
+  font-size:clamp(54px,5vw,86px) !important;
+  line-height:1 !important;
+  margin:0 0 22px !important;
+  letter-spacing:-.04em !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .subthemes{
+  color:rgba(239,211,171,.82) !important;
+  font-size:clamp(18px,1.45vw,24px) !important;
+  line-height:1.75 !important;
+  word-break:keep-all !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .actions{margin-top:34px !important;}
+html body[data-page="themes"] .gallery-theme-shell .linkline{
+  color:#d39a61 !important;
+  border-color:#d39a61 !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .soon{color:rgba(239,211,171,.58) !important;}
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-visual::before,
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy{
+  animation:themeReveal 900ms ease-out both !important;
+}
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy{animation-delay:150ms !important;}
+@media(max-width:900px){
+  html body[data-page="themes"]{overflow:auto !important;}
+  html body[data-page="themes"] .gallery-theme-shell{height:auto !important;min-height:100vh !important;padding:104px 22px 34px !important;overflow:visible !important;}
+  html body[data-page="themes"] .gallery-theme-shell .stage{grid-template-columns:1fr !important;}
+  html body[data-page="themes"] .gallery-theme-shell .arrow{display:none !important;}
+  html body[data-page="themes"] .gallery-theme-card{grid-template-columns:1fr !important;}
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual{min-height:330px !important;padding-bottom:44px !important;}
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual::before{width:250px !important;height:250px !important;}
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual::after{width:290px !important;bottom:32px !important;}
+  html body[data-page="themes"] .gallery-theme-shell .theme-copy{padding:22px 4px 28px !important;}
+}
+
+/* =====================================================================
+   DAMOLDA theme hall final mood patch — warm studio / craft gallery
+   No white panel. No spotlight. No black theatrical shadow.
+   ===================================================================== */
+html:has(body[data-page="themes"]),
+body[data-page="themes"]{
+  min-height:100%;
+  background:#2b1c14 !important;
+}
+body[data-page="themes"]{
+  --studio-ink:#e8c49a;
+  --studio-muted:rgba(232,196,154,.72);
+  --studio-dim:rgba(232,196,154,.48);
+  color:var(--studio-ink) !important;
+  overflow:hidden !important;
+}
+body[data-page="themes"]::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(180deg, rgba(21,13,9,.68) 0%, rgba(21,13,9,.18) 18%, rgba(38,24,17,0) 42%),
+    linear-gradient(90deg, rgba(19,12,9,.30) 0%, rgba(85,57,39,.18) 34%, rgba(40,25,17,.30) 100%),
+    linear-gradient(180deg, #4d3424 0%, #3e2a1e 48%, #2b1c14 100%);
+}
+body[data-page="themes"]::after{
+  content:'';
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:19vh;
+  z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(39,25,17,0) 0%, rgba(40,25,17,.44) 22%, rgba(39,24,16,.90) 100%),
+    linear-gradient(90deg, #3f2a1d 0%, #6b4a33 42%, #503622 100%);
+  box-shadow:0 -30px 90px rgba(20,12,8,.18);
+}
+body[data-page="themes"] .app{
+  min-height:100vh !important;
+  height:100vh !important;
+  background:transparent !important;
+  overflow:hidden !important;
+}
+body[data-page="themes"] .top{
+  height:92px !important;
+  background:linear-gradient(180deg, rgba(24,15,10,.58), rgba(24,15,10,.26) 72%, rgba(24,15,10,0)) !important;
+  border-bottom:0 !important;
+  backdrop-filter:blur(10px) !important;
+  color:var(--studio-ink) !important;
+}
+body[data-page="themes"] .brand-handwordmark{
+  filter:sepia(.28) saturate(1.1) brightness(1.12) !important;
+  opacity:.94 !important;
+}
+body[data-page="themes"] .nav,
+body[data-page="themes"] .right-tools,
+body[data-page="themes"] .lang,
+body[data-page="themes"] .lang a,
+body[data-page="themes"] .lang a.active{
+  color:var(--studio-ink) !important;
+}
+body[data-page="themes"] .nav a{
+  color:var(--studio-ink) !important;
+  opacity:.9 !important;
+}
+body[data-page="themes"] .search{
+  border:1px solid rgba(232,196,154,.24) !important;
+  background:rgba(33,20,14,.18) !important;
+  color:var(--studio-ink) !important;
+}
+body[data-page="themes"] .search::placeholder{color:rgba(232,196,154,.46) !important;}
+
+body[data-page="themes"] .gallery-theme-shell,
+body[data-page="themes"] .theme-shell,
+body[data-page="themes"] main.page{
+  position:relative !important;
+  width:100vw !important;
+  height:100vh !important;
+  min-height:100vh !important;
+  padding:100px 3vw 34px !important;
+  background:transparent !important;
+  overflow:hidden !important;
+}
+body[data-page="themes"] .gallery-theme-shell::before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:92px;
+  height:84px;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(28,17,12,.16), rgba(28,17,12,0));
+}
+body[data-page="themes"] .theme-tabs{
+  position:relative !important;
+  top:auto !important;
+  z-index:5 !important;
+  justify-content:center !important;
+  gap:34px !important;
+  padding:4px 0 0 !important;
+  margin:0 auto !important;
+  background:transparent !important;
+  overflow:visible !important;
+}
+body[data-page="themes"] .theme-tab{
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  color:rgba(232,196,154,.80) !important;
+  font:700 14px/1.2 Georgia,'Noto Serif KR',serif !important;
+  letter-spacing:.08em !important;
+  text-transform:none !important;
+  white-space:nowrap !important;
+}
+body[data-page="themes"] .theme-tab.active,
+body[data-page="themes"] .theme-tab:hover{
+  color:#f1cfaa !important;
+}
+body[data-page="themes"] .stage{
+  position:relative !important;
+  height:calc(100vh - 138px) !important;
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-columns:68px 1fr 68px !important;
+  align-items:center !important;
+  gap:12px !important;
+  padding:0 !important;
+  margin:0 !important;
+  background:transparent !important;
+}
+body[data-page="themes"] .arrow{
+  width:60px !important;
+  height:60px !important;
+  border:0 !important;
+  border-radius:999px !important;
+  background:rgba(255,224,183,.075) !important;
+  color:rgba(238,202,158,.76) !important;
+  font-size:24px !important;
+  box-shadow:none !important;
+  cursor:pointer !important;
+}
+body[data-page="themes"] .arrow:hover{
+  background:rgba(255,224,183,.12) !important;
+  color:#f4d3a9 !important;
+}
+body[data-page="themes"] .gallery-theme-card,
+body[data-page="themes"] .theme-card,
+body[data-page="themes"] .themes-card{
+  position:relative !important;
+  height:100% !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  display:grid !important;
+  grid-template-columns:1.04fr .96fr !important;
+  align-items:center !important;
+}
+body[data-page="themes"] .gallery-theme-card::before,
+body[data-page="themes"] .theme-card::before,
+body[data-page="themes"] .gallery-theme-card::after,
+body[data-page="themes"] .theme-card::after{
+  display:none !important;
+}
+body[data-page="themes"] .theme-visual{
+  position:relative !important;
+  height:100% !important;
+  min-height:0 !important;
+  background:transparent !important;
+  overflow:visible !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  padding:0 0 10.5vh !important;
+}
+body[data-page="themes"] .theme-visual::before{
+  content:'' !important;
+  position:relative !important;
+  display:block !important;
+  width:min(36vw,52vh) !important;
+  height:min(31vw,45vh) !important;
+  border-radius:48% 52% 44% 46% / 34% 34% 62% 62% !important;
+  clip-path:polygon(39% 0,61% 0,66% 11%,84% 56%,72% 88%,58% 100%,42% 100%,28% 88%,16% 56%,34% 11%) !important;
+  background:
+    radial-gradient(ellipse at 28% 24%, rgba(255,241,214,.78), transparent 28%),
+    radial-gradient(ellipse at 66% 84%, rgba(63,40,26,.46), transparent 50%),
+    linear-gradient(145deg, #dcc19a 0%, #b68b61 50%, #6d4a31 100%) !important;
+  box-shadow:none !important;
+  opacity:.97 !important;
+  filter:none !important;
+  z-index:3 !important;
+}
+body[data-page="themes"] .theme-visual::after{
+  content:'' !important;
+  position:absolute !important;
+  left:50% !important;
+  bottom:7.4vh !important;
+  width:min(42vw,58vh) !important;
+  height:7.2vh !important;
+  transform:translateX(-50%) perspective(520px) rotateX(62deg) !important;
+  border-radius:12px 16px 28px 28px !important;
+  background:
+    linear-gradient(90deg, rgba(40,25,16,.98) 0%, rgba(91,61,40,.98) 34%, rgba(112,76,50,.96) 56%, rgba(42,27,18,.98) 100%) !important;
+  box-shadow:0 16px 34px rgba(24,15,10,.20) !important;
+  opacity:.96 !important;
+  z-index:2 !important;
+}
+body[data-page="themes"] .theme-copy{
+  position:relative !important;
+  z-index:4 !important;
+  padding:4vh 7vw 6vh 3vw !important;
+  color:var(--studio-ink) !important;
+  text-shadow:none !important;
+}
+body[data-page="themes"] .kicker{
+  color:#d4945c !important;
+  font:700 12px/1 Arial,sans-serif !important;
+  letter-spacing:.34em !important;
+  margin-bottom:18px !important;
+}
+body[data-page="themes"] .theme-copy h2{
+  color:#efd1ad !important;
+  font-size:clamp(58px,5.15vw,88px) !important;
+  line-height:1 !important;
+  margin:0 0 22px !important;
+  letter-spacing:-.04em !important;
+  font-weight:400 !important;
+}
+body[data-page="themes"] .subthemes{
+  color:rgba(239,211,171,.86) !important;
+  font-size:clamp(18px,1.45vw,24px) !important;
+  line-height:1.72 !important;
+  word-break:keep-all !important;
+}
+body[data-page="themes"] .actions{
+  margin-top:34px !important;
+  display:flex !important;
+  gap:28px !important;
+  align-items:center !important;
+}
+body[data-page="themes"] .linkline{
+  color:#d4945c !important;
+  border-color:#d4945c !important;
+  padding-bottom:8px !important;
+}
+body[data-page="themes"] .soon{
+  color:rgba(239,211,171,.60) !important;
+}
+@keyframes damoldaSoftAppear{
+  from{opacity:0; transform:translateY(18px);}
+  to{opacity:1; transform:translateY(0);}
+}
+body[data-page="themes"] .gallery-theme-card.is-entering .theme-visual::before,
+body[data-page="themes"] .gallery-theme-card.is-entering .theme-visual::after,
+body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy{
+  animation:damoldaSoftAppear 850ms cubic-bezier(.22,.72,.18,1) both !important;
+}
+body[data-page="themes"] .gallery-theme-card.is-entering .theme-visual::after{animation-delay:60ms !important;}
+body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy{animation-delay:130ms !important;}
+body[data-page="themes"] .gallery-theme-card.is-revealed .theme-visual::before,
+body[data-page="themes"] .gallery-theme-card.is-revealed .theme-visual::after,
+body[data-page="themes"] .gallery-theme-card.is-revealed .theme-copy{
   animation:none !important;
 }
 @media(max-width:900px){
-  body[data-page="themes"]{height:auto;overflow:auto;}
-  body[data-page="themes"] .app{height:auto;min-height:100vh;overflow:visible;}
-  body[data-page="themes"] .theme-shell{height:auto;min-height:100vh;display:block;padding:104px 22px 36px !important;}
-  body[data-page="themes"] .theme-tabs{justify-content:flex-start;gap:18px;overflow-x:auto;}
-  body[data-page="themes"] .stage{display:block !important;}
-  body[data-page="themes"] .arrow{display:none;}
-  body[data-page="themes"] .theme-card{display:block;min-height:680px !important;}
-  body[data-page="themes"] .theme-visual{height:360px;}
-  body[data-page="themes"] .wood-plate{left:8%;bottom:32px;width:78vw;height:22vw;}
-  body[data-page="themes"] .theme-product{left:17%;bottom:78px;width:58vw;max-height:300px;}
-  body[data-page="themes"] .theme-copy{padding:20px 0 0 !important;}
+  body[data-page="themes"]{overflow:auto !important;}
+  body[data-page="themes"] .app{height:auto !important;min-height:100vh !important;overflow:visible !important;}
+  body[data-page="themes"] .gallery-theme-shell{height:auto !important;min-height:100vh !important;padding:104px 22px 34px !important;overflow:visible !important;}
+  body[data-page="themes"] .theme-tabs{gap:18px !important;overflow-x:auto !important;justify-content:flex-start !important;padding-bottom:14px !important;}
+  body[data-page="themes"] .stage{height:auto !important;display:grid !important;grid-template-columns:1fr !important;}
+  body[data-page="themes"] .arrow{display:none !important;}
+  body[data-page="themes"] .gallery-theme-card{grid-template-columns:1fr !important;}
+  body[data-page="themes"] .theme-visual{min-height:360px !important;padding-bottom:54px !important;}
+  body[data-page="themes"] .theme-visual::before{width:270px !important;height:245px !important;}
+  body[data-page="themes"] .theme-visual::after{width:310px !important;bottom:36px !important;}
+  body[data-page="themes"] .theme-copy{padding:18px 4px 28px !important;}
+}
+
+
+/* =====================================================================
+   DAMOLDA FINAL: real wooden stage background for Themes page
+   - Background is an actual image asset, not CSS imitation.
+   - No ceramic / hexagon / fake object.
+   - Left side is reserved for future theme representative product render.
+   - To add product later: add heroImage: "assets/themes/nature-product.webp"
+     to each theme object in data.js.
+   ===================================================================== */
+
+html body[data-page="themes"] {
+  background:#1b100b !important;
+  overflow:hidden !important;
+}
+
+html body[data-page="themes"] .app {
+  min-height:100vh !important;
+  height:100vh !important;
+  overflow:hidden !important;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.08), rgba(0,0,0,.03) 45%, rgba(0,0,0,.20)),
+    url("assets/theme-stage-bg.png") center center / cover no-repeat !important;
+}
+
+html body[data-page="themes"] .top {
+  height:92px !important;
+  background:linear-gradient(180deg, rgba(20,12,8,.54), rgba(20,12,8,.18) 74%, rgba(20,12,8,0)) !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .brand-handwordmark {
+  filter:sepia(.32) saturate(1.05) brightness(1.16) !important;
+  opacity:.96 !important;
+}
+
+html body[data-page="themes"] .nav a,
+html body[data-page="themes"] .lang,
+html body[data-page="themes"] .lang a,
+html body[data-page="themes"] .lang a.active {
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .nav a + a::before {
+  color:#d39a61 !important;
+}
+
+html body[data-page="themes"] .search {
+  border:1px solid rgba(228,189,139,.26) !important;
+  background:rgba(20,12,8,.16) !important;
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .search::placeholder {
+  color:rgba(228,189,139,.50) !important;
+}
+
+html body[data-page="themes"] .gallery-theme-shell,
+html body[data-page="themes"] .theme-shell,
+html body[data-page="themes"] main.page {
+  position:relative !important;
+  width:100vw !important;
+  height:100vh !important;
+  min-height:100vh !important;
+  padding:100px 3.2vw 32px !important;
+  background:transparent !important;
+  background-image:none !important;
+  overflow:hidden !important;
+}
+
+html body[data-page="themes"] .gallery-theme-shell::before,
+html body[data-page="themes"] .gallery-theme-card::before,
+html body[data-page="themes"] .gallery-theme-card::after,
+html body[data-page="themes"] .theme-card::before,
+html body[data-page="themes"] .theme-card::after {
+  display:none !important;
+  content:none !important;
+}
+
+html body[data-page="themes"] .theme-tabs {
+  position:relative !important;
+  top:auto !important;
+  z-index:8 !important;
+  justify-content:center !important;
+  gap:36px !important;
+  padding:4px 0 0 !important;
+  margin:0 auto !important;
+  background:transparent !important;
+  overflow:visible !important;
+}
+
+html body[data-page="themes"] .theme-tab {
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  padding:0 0 8px !important;
+  color:rgba(228,189,139,.78) !important;
+  font:700 14px/1.2 Georgia, 'Noto Serif KR', serif !important;
+  letter-spacing:.08em !important;
+  text-transform:none !important;
+  white-space:nowrap !important;
+}
+
+html body[data-page="themes"] .theme-tab.active,
+html body[data-page="themes"] .theme-tab:hover {
+  color:#f3d2a7 !important;
+  box-shadow:inset 0 -1px 0 rgba(243,210,167,.72) !important;
+}
+
+html body[data-page="themes"] .stage {
+  position:relative !important;
+  height:calc(100vh - 136px) !important;
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-columns:64px minmax(0,1fr) 64px !important;
+  align-items:center !important;
+  gap:12px !important;
+  background:transparent !important;
+  margin:0 !important;
+}
+
+html body[data-page="themes"] .arrow {
+  width:56px !important;
+  height:56px !important;
+  border:0 !important;
+  border-radius:999px !important;
+  background:rgba(255,224,183,.065) !important;
+  color:rgba(238,202,158,.76) !important;
+  box-shadow:none !important;
+  font-size:24px !important;
+  cursor:pointer !important;
+}
+
+html body[data-page="themes"] .arrow:hover {
+  background:rgba(255,224,183,.11) !important;
+  color:#f3d2a7 !important;
+}
+
+html body[data-page="themes"] .gallery-theme-card,
+html body[data-page="themes"] .theme-card,
+html body[data-page="themes"] .themes-card {
+  height:100% !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  display:grid !important;
+  grid-template-columns:1.06fr .94fr !important;
+  align-items:center !important;
+}
+
+/* Empty product zone: future rendered product appears here. */
+html body[data-page="themes"] .theme-visual {
+  position:relative !important;
+  height:100% !important;
+  min-height:0 !important;
+  background:transparent !important;
+  overflow:visible !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  padding:0 0 13.2vh !important;
+}
+
+/* Kill all previous CSS-made objects and fake plates. */
+html body[data-page="themes"] .theme-visual::before,
+html body[data-page="themes"] .theme-visual::after {
+  display:none !important;
+  content:none !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+/* Product render slot.
+   Use transparent PNG/WebP with object already cut out.
+   Recommended around 1200px wide source, transparent background. */
+html body[data-page="themes"] .theme-product {
+  display:block !important;
+  width:min(34vw,48vh) !important;
+  max-height:48vh !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+  filter:drop-shadow(18px 24px 26px rgba(15,8,5,.38)) !important;
+  transform:translateX(-2vw) !important;
+}
+
+html body[data-page="themes"] .theme-copy {
+  position:relative !important;
+  z-index:4 !important;
+  padding:6vh 7vw 6vh 3vw !important;
+  color:#e7c295 !important;
+  text-shadow:0 2px 18px rgba(0,0,0,.20) !important;
+}
+
+html body[data-page="themes"] .kicker {
+  color:#d4945c !important;
+  font:700 12px/1 Arial, sans-serif !important;
+  letter-spacing:.34em !important;
+  margin-bottom:18px !important;
+}
+
+html body[data-page="themes"] .theme-copy h2 {
+  color:#f1d0a8 !important;
+  font-size:clamp(58px,5.15vw,88px) !important;
+  line-height:1 !important;
+  margin:0 0 22px !important;
+  letter-spacing:-.04em !important;
+  font-weight:400 !important;
+}
+
+html body[data-page="themes"] .subthemes {
+  color:rgba(241,208,168,.86) !important;
+  font-size:clamp(18px,1.45vw,24px) !important;
+  line-height:1.72 !important;
+  word-break:keep-all !important;
+}
+
+html body[data-page="themes"] .actions {
+  margin-top:34px !important;
+  display:flex !important;
+  gap:28px !important;
+  align-items:center !important;
+}
+
+html body[data-page="themes"] .linkline {
+  color:#d4945c !important;
+  border-color:#d4945c !important;
+  padding-bottom:8px !important;
+}
+
+html body[data-page="themes"] .soon {
+  color:rgba(241,208,168,.60) !important;
+}
+
+/* First-view reveal only; once a theme has been viewed in the current session,
+   app.js marks it is-revealed and the animation stops. */
+@keyframes damoldaProductAppear {
+  from { opacity:0; transform:translateY(18px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-product,
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy {
+  animation:damoldaProductAppear 850ms cubic-bezier(.22,.72,.18,1) both !important;
+}
+
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy {
+  animation-delay:120ms !important;
+}
+
+html body[data-page="themes"] .gallery-theme-card.is-revealed .theme-product,
+html body[data-page="themes"] .gallery-theme-card.is-revealed .theme-copy {
+  animation:none !important;
+}
+
+@media(max-width:900px) {
+  html body[data-page="themes"] {
+    overflow:auto !important;
+  }
+
+  html body[data-page="themes"] .app {
+    height:auto !important;
+    min-height:100vh !important;
+    overflow:visible !important;
+    background-position:34% center !important;
+  }
+
+  html body[data-page="themes"] .gallery-theme-shell {
+    height:auto !important;
+    min-height:100vh !important;
+    padding:104px 22px 34px !important;
+    overflow:visible !important;
+  }
+
+  html body[data-page="themes"] .theme-tabs {
+    justify-content:flex-start !important;
+    gap:18px !important;
+    overflow-x:auto !important;
+    padding-bottom:14px !important;
+  }
+
+  html body[data-page="themes"] .stage {
+    height:auto !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+
+  html body[data-page="themes"] .arrow {
+    display:none !important;
+  }
+
+  html body[data-page="themes"] .gallery-theme-card {
+    grid-template-columns:1fr !important;
+  }
+
+  html body[data-page="themes"] .theme-visual {
+    min-height:360px !important;
+    padding-bottom:76px !important;
+  }
+
+  html body[data-page="themes"] .theme-product {
+    width:min(74vw,320px) !important;
+    max-height:320px !important;
+    transform:none !important;
+  }
+
+  html body[data-page="themes"] .theme-copy {
+    padding:18px 4px 28px !important;
+  }
 }
