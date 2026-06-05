@@ -1790,3 +1790,46 @@ html body[data-page="journal"] img {
     -webkit-backdrop-filter:blur(9px) !important;
   }
 }
+
+
+/* Journal redesign */
+.journal-bg{
+  background:
+    linear-gradient(rgba(20,12,8,.45),rgba(20,12,8,.45)),
+    url('assets/theme-stage-bg.png') center center/cover no-repeat;
+}
+.journal-hero{
+  text-align:center;
+  color:#f4ede4;
+  margin-bottom:24px;
+}
+.journal-hero h1{
+  font-size:72px;
+  font-weight:400;
+  margin:0 0 12px;
+}
+.journal-hero p{
+  margin:0;
+  font-size:18px;
+}
+.action-card{
+  background:rgba(248,241,232,.88);
+  backdrop-filter:blur(10px);
+  display:flex;
+  flex-direction:column;
+  padding:16px;
+  cursor:pointer;
+  transition:transform .2s ease;
+}
+.action-card:hover{transform:translateY(-4px);}
+.card-thumb{
+  height:180px;
+  border-radius:16px;
+  background-size:cover;
+  background-position:center;
+  margin-bottom:14px;
+}
+.card-body h2{
+  font-size:28px;
+  margin:8px 0;
+}
