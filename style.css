@@ -2257,3 +2257,29 @@ html body[data-page="object"] .top{
   border-bottom: 0 !important;
   box-shadow: none !important;
 }
+
+
+/* DAMOLDA dark glass header */
+html body .top,
+html body[data-page="home"] .top,
+html body[data-page="themes"] .top,
+html body[data-page="theme"] .top,
+html body[data-page="journal"] .top,
+html body[data-page="about"] .top,
+html body[data-page="object"] .top{
+  background: rgba(0,0,0,.70) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+html body .search{
+  background:rgba(255,255,255,.04) !important;
+  border:0 !important;
+}
+
+html body .search,
+html body .search::placeholder{
+  color:#d7ad7e !important;
+}
