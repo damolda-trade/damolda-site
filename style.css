@@ -2766,3 +2766,99 @@ html body[data-page="theme"] .search::placeholder{color:rgba(237,208,170,.52) !i
     margin-top:28px;
   }
 }
+
+
+/* v1.2: Emotion detail final background replacement + clean exhibit labels */
+body[data-page="theme"] .theme-detail-emotion{
+  grid-template-columns:minmax(520px, 700px) minmax(0, 1fr) !important;
+  padding:104px 7vw 48px !important;
+}
+body[data-page="theme"] .theme-detail-emotion .theme-detail-bg{
+  background:
+    linear-gradient(90deg,
+      rgba(18,11,7,.76) 0%,
+      rgba(18,11,7,.58) 29%,
+      rgba(18,11,7,.22) 52%,
+      rgba(18,11,7,.06) 74%,
+      rgba(18,11,7,.14) 100%),
+    linear-gradient(180deg,
+      rgba(13,8,5,.18) 0%,
+      rgba(13,8,5,.03) 38%,
+      rgba(13,8,5,.26) 100%),
+    var(--theme-bg) center center / cover no-repeat !important;
+}
+body[data-page="theme"] .theme-detail-emotion .theme-label-board{
+  grid-column:1 !important;
+  grid-row:2 !important;
+  align-self:start !important;
+  margin-left:0 !important;
+  padding-top:3.5vh !important;
+  max-width:640px !important;
+}
+body[data-page="theme"] .theme-detail-emotion .theme-label-board .kicker{
+  color:#d99e63 !important;
+  letter-spacing:.32em !important;
+}
+body[data-page="theme"] .theme-detail-emotion .theme-label-board h1{
+  font-size:clamp(66px,6.4vw,112px) !important;
+  margin-bottom:18px !important;
+  color:#f4d9b4 !important;
+}
+body[data-page="theme"] .theme-detail-emotion .theme-statement{
+  max-width:590px !important;
+  font-size:clamp(21px,1.9vw,30px) !important;
+  line-height:1.5 !important;
+}
+body[data-page="theme"] .theme-detail-emotion .theme-keywords{
+  margin-top:22px !important;
+  max-width:590px !important;
+  color:rgba(247,224,196,.64) !important;
+}
+body[data-page="theme"] .theme-detail-emotion .exhibit-label-list{
+  grid-column:1 !important;
+  grid-row:2 !important;
+  align-self:end !important;
+  justify-self:start !important;
+  width:min(590px,100%) !important;
+  gap:0 !important;
+  padding-bottom:0 !important;
+}
+body[data-page="theme"] .theme-detail-emotion .exhibit-label{
+  min-height:64px !important;
+  grid-template-columns:52px 1fr auto !important;
+  padding:14px 0 !important;
+  background:transparent !important;
+  border:0 !important;
+  border-top:1px solid rgba(246,221,185,.28) !important;
+  box-shadow:none !important;
+  color:#f4d9b4 !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+body[data-page="theme"] .theme-detail-emotion .exhibit-label:last-child{
+  border-bottom:1px solid rgba(246,221,185,.28) !important;
+}
+body[data-page="theme"] .theme-detail-emotion .exhibit-label:hover{
+  background:rgba(255,235,205,.07) !important;
+  transform:none !important;
+}
+body[data-page="theme"] .theme-detail-emotion .exhibit-name b{
+  font-size:clamp(23px,1.9vw,31px) !important;
+}
+body[data-page="theme"] .theme-detail-emotion .exhibit-name small{
+  display:none !important;
+}
+@media(max-width:1000px){
+  body[data-page="theme"] .theme-detail-emotion{
+    padding:104px 22px 44px !important;
+  }
+  body[data-page="theme"] .theme-detail-emotion .theme-label-board,
+  body[data-page="theme"] .theme-detail-emotion .exhibit-label-list{
+    grid-column:auto !important;
+    grid-row:auto !important;
+    align-self:auto !important;
+  }
+  body[data-page="theme"] .theme-detail-emotion .exhibit-label-list{
+    margin-top:28px !important;
+  }
+}
