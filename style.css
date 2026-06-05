@@ -2283,3 +2283,31 @@ html body .search,
 html body .search::placeholder{
   color:#d7ad7e !important;
 }
+
+
+/* DAMOLDA soft gradient header */
+html body .top,
+html body[data-page="home"] .top,
+html body[data-page="themes"] .top,
+html body[data-page="theme"] .top,
+html body[data-page="journal"] .top,
+html body[data-page="about"] .top,
+html body[data-page="object"] .top{
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.32) 0%,
+    rgba(0,0,0,.18) 55%,
+    rgba(0,0,0,0) 100%
+  ) !important;
+
+  backdrop-filter: blur(3px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+html body .search{
+  background:rgba(255,255,255,.025) !important;
+  border:0 !important;
+}
