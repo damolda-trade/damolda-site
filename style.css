@@ -2689,3 +2689,80 @@ html body[data-page="theme"] .search::placeholder{color:rgba(237,208,170,.52) !i
   .theme-statement{font-size:24px;}
   .exhibit-label-list{width:100%;justify-self:stretch;}
 }
+
+/* v1.1: Emotion theme detail uses a text-free gallery background.
+   The left side carries all labels; the right side stays visually open. */
+.theme-detail-emotion{
+  grid-template-columns:minmax(520px, 720px) minmax(0, 1fr);
+  column-gap:4vw;
+}
+.theme-detail-emotion .theme-detail-bg{
+  background:
+    linear-gradient(90deg, rgba(19,12,8,.68) 0%, rgba(19,12,8,.46) 31%, rgba(19,12,8,.10) 58%, rgba(19,12,8,.20) 100%),
+    linear-gradient(180deg, rgba(13,8,5,.16) 0%, rgba(13,8,5,.02) 42%, rgba(13,8,5,.26) 100%),
+    var(--theme-bg) center center / cover no-repeat;
+}
+.theme-detail-emotion .theme-label-board{
+  grid-column:1;
+  grid-row:2;
+  align-self:start;
+  margin-left:0;
+  padding-top:3vh;
+  max-width:680px;
+}
+.theme-detail-emotion .theme-label-board h1{
+  font-size:clamp(72px,7vw,126px);
+  margin-bottom:20px;
+}
+.theme-detail-emotion .theme-statement{
+  max-width:620px;
+}
+.theme-detail-emotion .theme-keywords{
+  margin-top:24px;
+}
+.theme-detail-emotion .exhibit-label-list{
+  grid-column:1;
+  grid-row:2;
+  align-self:end;
+  justify-self:start;
+  width:min(620px,100%);
+  gap:0;
+  padding-bottom:1vh;
+}
+.theme-detail-emotion .exhibit-label{
+  min-height:66px;
+  padding:14px 0;
+  background:transparent;
+  border:0;
+  border-top:1px solid rgba(246,221,185,.30);
+  box-shadow:none;
+  color:#f4d9b4;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.theme-detail-emotion .exhibit-label:last-child{
+  border-bottom:1px solid rgba(246,221,185,.30);
+}
+.theme-detail-emotion .exhibit-label:hover{
+  background:rgba(255,235,205,.08);
+  box-shadow:none;
+  transform:none;
+}
+.theme-detail-emotion .exhibit-no,
+.theme-detail-emotion .exhibit-arrow{
+  color:#d99e63;
+}
+.theme-detail-emotion .exhibit-name small{
+  color:rgba(247,224,196,.58);
+}
+@media(max-width:1000px){
+  .theme-detail-emotion .theme-label-board,
+  .theme-detail-emotion .exhibit-label-list{
+    grid-column:auto;
+    grid-row:auto;
+    align-self:auto;
+  }
+  .theme-detail-emotion .exhibit-label-list{
+    margin-top:28px;
+  }
+}
