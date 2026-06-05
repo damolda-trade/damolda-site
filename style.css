@@ -2453,3 +2453,23 @@ html body[data-page="journal"] .app,
     background-attachment:scroll !important;
   }
 }
+
+
+/* DAMOLDA asset backgrounds only */
+.hero-bg{
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+
+html body[data-page="themes"] .app{
+  background:
+    linear-gradient(180deg, rgba(12,8,6,.18), rgba(12,8,6,.30)),
+    url("assets/theme-stage-bg.png") center center / cover no-repeat !important;
+}
+
+html body[data-page="journal"] .app,
+.journal-bg{
+  background:
+    linear-gradient(180deg, rgba(18,9,5,.28), rgba(18,9,5,.38)),
+    url("assets/journal-stage-bg.png") center center / cover no-repeat !important;
+}
