@@ -2388,3 +2388,68 @@ html body[data-page="journal"] .app,
     background-attachment:scroll !important;
   }
 }
+
+
+/* DAMOLDA hero fix
+   Use cover again and keep the console table visible on most screens.
+*/
+.hero-bg{
+  object-fit: cover !important;
+  object-position: 72% center !important;
+}
+
+.hero{
+  background:none !important;
+}
+
+@media (min-width:1600px){
+  .hero-bg{
+    object-position:70% center !important;
+  }
+}
+
+@media (max-width:1200px){
+  .hero-bg{
+    object-position:75% center !important;
+  }
+}
+
+@media (max-width:900px){
+  .hero-bg{
+    object-position:78% center !important;
+  }
+}
+
+
+/* DAMOLDA safe-area backgrounds
+   Assets are rebuilt on a 2560x1440 safe canvas.
+   Use cover for full-screen brand-site rendering. */
+.hero-bg{
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+
+html body[data-page="themes"] .app,
+html body[data-page="theme"] .app{
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,.02) 45%, rgba(0,0,0,.18)),
+    url("assets/theme-stage-bg.png") center center / cover no-repeat !important;
+}
+
+html body[data-page="journal"] .app,
+.journal-bg{
+  background:
+    linear-gradient(180deg, rgba(18,9,5,.38), rgba(18,9,5,.46)),
+    url("assets/journal-stage-bg.png") center center / cover no-repeat fixed !important;
+}
+
+@media(max-width:900px){
+  .hero-bg{object-position:center center !important;}
+  html body[data-page="themes"] .app,
+  html body[data-page="theme"] .app,
+  html body[data-page="journal"] .app,
+  .journal-bg{
+    background-position:center center !important;
+    background-attachment:scroll !important;
+  }
+}
