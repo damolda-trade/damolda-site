@@ -1,0 +1,114 @@
+/* DAMOLDA FINAL: stable header separators.
+   Separator slash is real markup, not an absolute pseudo-element. */
+html body .nav {
+  gap:22px !important;
+}
+html body .nav a {
+  position:static !important;
+}
+html body .nav a + a::before,
+html body[data-page="themes"] .nav a + a::before,
+html body[data-page="theme"] .nav a + a::before,
+html body[data-page="journal"] .nav a + a::before {
+  content:none !important;
+  display:none !important;
+}
+html body .nav .nav-sep {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:76px !important;
+  margin:0 !important;
+  padding:0 !important;
+  font:700 14px/1 Georgia,'Noto Serif KR',serif !important;
+  letter-spacing:0 !important;
+  opacity:.82 !important;
+}
+html body[data-page="themes"] .nav .nav-sep,
+html body[data-page="theme"] .nav .nav-sep,
+html body[data-page="journal"] .nav .nav-sep {
+  color:#d39a61 !important;
+}
+
+
+/* Transparent header */
+html body .top,
+html body[data-page="home"] .top,
+html body[data-page="themes"] .top,
+html body[data-page="theme"] .top,
+html body[data-page="journal"] .top,
+html body[data-page="about"] .top,
+html body[data-page="object"] .top{
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* DAMOLDA dark glass header */
+html body .top,
+html body[data-page="home"] .top,
+html body[data-page="themes"] .top,
+html body[data-page="theme"] .top,
+html body[data-page="journal"] .top,
+html body[data-page="about"] .top,
+html body[data-page="object"] .top{
+  background: rgba(0,0,0,.70) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+html body .search{
+  background:rgba(255,255,255,.04) !important;
+  border:0 !important;
+}
+
+html body .search,
+html body .search::placeholder{
+  color:#d7ad7e !important;
+}
+
+
+/* DAMOLDA soft gradient header */
+html body .top,
+html body[data-page="home"] .top,
+html body[data-page="themes"] .top,
+html body[data-page="theme"] .top,
+html body[data-page="journal"] .top,
+html body[data-page="about"] .top,
+html body[data-page="object"] .top{
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.32) 0%,
+    rgba(0,0,0,.18) 55%,
+    rgba(0,0,0,0) 100%
+  ) !important;
+
+  backdrop-filter: blur(3px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+html body .search{
+  background:rgba(255,255,255,.025) !important;
+  border:0 !important;
+}
+
+
+/* Search box: soft white glass */
+html body .search{
+  background: rgba(255,255,255,.12) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  color: #f5e6d1 !important;
+}
+
+html body .search::placeholder{
+  color: rgba(245,230,209,.65) !important;
+}
+

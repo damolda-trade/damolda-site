@@ -1,0 +1,47 @@
+/* v0.7: Unify page title scale across Themes, Journal, and About. */
+.page-title,
+.theme-shell .section-head h1.page-title,
+.journal-shell .section-head h1.page-title,
+.about-shell .section-head h1.page-title{
+  font-size:clamp(30px,4.2vw,58px);
+  line-height:.98;
+  font-weight:400;
+  letter-spacing:-.035em;
+}
+.journal-shell .section-head,
+.about-shell .section-head{
+  margin-bottom:16px;
+  align-items:center;
+}
+.journal-shell .section-head p,
+.about-shell .section-head p{
+  font-size:13px;
+  font-family:Arial,sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.about-shell{
+  padding-top:92px;
+}
+.about-shell .about-panel{
+  min-height:calc(100vh - 190px);
+}
+.about-shell .about-title h1{
+  font-size:clamp(34px,4.8vw,64px);
+  line-height:1.04;
+  letter-spacing:-.04em;
+}
+@media(max-height:760px){
+  .page-title,
+  .theme-shell .section-head h1.page-title,
+  .journal-shell .section-head h1.page-title,
+  .about-shell .section-head h1.page-title{
+    font-size:clamp(28px,3.8vw,50px);
+  }
+  .about-shell{padding-top:84px;}
+  .about-shell .about-title h1{font-size:clamp(30px,4.2vw,54px);}
+}
+@media(max-width:900px){
+  .about-shell{padding:104px 22px 34px;}
+}
+

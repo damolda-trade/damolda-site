@@ -1,0 +1,314 @@
+/* =====================================================================
+   DAMOLDA FINAL: real wooden stage background for Themes page
+   - Background is an actual image asset, not CSS imitation.
+   - No ceramic / hexagon / fake object.
+   - Left side is reserved for future theme representative product render.
+   - To add product later: add heroImage: "assets/themes/nature-product.webp"
+     to each theme object in data.js.
+   ===================================================================== */
+
+html body[data-page="themes"] {
+  background:#1b100b !important;
+  overflow:hidden !important;
+}
+
+html body[data-page="themes"] .app {
+  min-height:100vh !important;
+  height:100vh !important;
+  overflow:hidden !important;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.08), rgba(0,0,0,.03) 45%, rgba(0,0,0,.20)),
+    url("../../../assets/theme-stage-bg.png") center center / cover no-repeat !important;
+}
+
+html body[data-page="themes"] .top {
+  height:92px !important;
+  background:linear-gradient(180deg, rgba(20,12,8,.54), rgba(20,12,8,.18) 74%, rgba(20,12,8,0)) !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .brand-handwordmark {
+  filter:sepia(.32) saturate(1.05) brightness(1.16) !important;
+  opacity:.96 !important;
+}
+
+html body[data-page="themes"] .nav a,
+html body[data-page="themes"] .lang,
+html body[data-page="themes"] .lang a,
+html body[data-page="themes"] .lang a.active {
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .nav a + a::before {
+  color:#d39a61 !important;
+}
+
+html body[data-page="themes"] .search {
+  border:1px solid rgba(228,189,139,.26) !important;
+  background:rgba(20,12,8,.16) !important;
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .search::placeholder {
+  color:rgba(228,189,139,.50) !important;
+}
+
+html body[data-page="themes"] .gallery-theme-shell,
+html body[data-page="themes"] .theme-shell,
+html body[data-page="themes"] main.page {
+  position:relative !important;
+  width:100vw !important;
+  height:100vh !important;
+  min-height:100vh !important;
+  padding:100px 3.2vw 32px !important;
+  background:transparent !important;
+  background-image:none !important;
+  overflow:hidden !important;
+}
+
+html body[data-page="themes"] .gallery-theme-shell::before,
+html body[data-page="themes"] .gallery-theme-card::before,
+html body[data-page="themes"] .gallery-theme-card::after,
+html body[data-page="themes"] .theme-card::before,
+html body[data-page="themes"] .theme-card::after {
+  display:none !important;
+  content:none !important;
+}
+
+html body[data-page="themes"] .theme-tabs {
+  position:relative !important;
+  top:auto !important;
+  z-index:8 !important;
+  justify-content:center !important;
+  gap:36px !important;
+  padding:4px 0 0 !important;
+  margin:0 auto !important;
+  background:transparent !important;
+  overflow:visible !important;
+}
+
+html body[data-page="themes"] .theme-tab {
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  padding:0 0 8px !important;
+  color:rgba(228,189,139,.78) !important;
+  font:700 14px/1.2 Georgia, 'Noto Serif KR', serif !important;
+  letter-spacing:.08em !important;
+  text-transform:none !important;
+  white-space:nowrap !important;
+}
+
+html body[data-page="themes"] .theme-tab.active,
+html body[data-page="themes"] .theme-tab:hover {
+  color:#f3d2a7 !important;
+  box-shadow:inset 0 -1px 0 rgba(243,210,167,.72) !important;
+}
+
+html body[data-page="themes"] .stage {
+  position:relative !important;
+  height:calc(100vh - 136px) !important;
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-columns:64px minmax(0,1fr) 64px !important;
+  align-items:center !important;
+  gap:12px !important;
+  background:transparent !important;
+  margin:0 !important;
+}
+
+html body[data-page="themes"] .arrow {
+  width:56px !important;
+  height:56px !important;
+  border:0 !important;
+  border-radius:999px !important;
+  background:rgba(255,224,183,.065) !important;
+  color:rgba(238,202,158,.76) !important;
+  box-shadow:none !important;
+  font-size:24px !important;
+  cursor:pointer !important;
+}
+
+html body[data-page="themes"] .arrow:hover {
+  background:rgba(255,224,183,.11) !important;
+  color:#f3d2a7 !important;
+}
+
+html body[data-page="themes"] .gallery-theme-card,
+html body[data-page="themes"] .theme-card,
+html body[data-page="themes"] .themes-card {
+  height:100% !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  display:grid !important;
+  grid-template-columns:1.06fr .94fr !important;
+  align-items:center !important;
+}
+
+/* Empty product zone: future rendered product appears here. */
+html body[data-page="themes"] .theme-visual {
+  position:relative !important;
+  height:100% !important;
+  min-height:0 !important;
+  background:transparent !important;
+  overflow:visible !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  padding:0 0 13.2vh !important;
+}
+
+/* Kill all previous CSS-made objects and fake plates. */
+html body[data-page="themes"] .theme-visual::before,
+html body[data-page="themes"] .theme-visual::after {
+  display:none !important;
+  content:none !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+/* Product render slot.
+   Use transparent PNG/WebP with object already cut out.
+   Recommended around 1200px wide source, transparent background. */
+html body[data-page="themes"] .theme-product {
+  display:block !important;
+  width:min(34vw,48vh) !important;
+  max-height:48vh !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+  filter:drop-shadow(18px 24px 26px rgba(15,8,5,.38)) !important;
+  transform:translateX(-2vw) !important;
+}
+
+html body[data-page="themes"] .theme-copy {
+  position:relative !important;
+  z-index:4 !important;
+  padding:6vh 7vw 6vh 3vw !important;
+  color:#e7c295 !important;
+  text-shadow:0 2px 18px rgba(0,0,0,.20) !important;
+}
+
+html body[data-page="themes"] .kicker {
+  color:#d4945c !important;
+  font:700 12px/1 Arial, sans-serif !important;
+  letter-spacing:.34em !important;
+  margin-bottom:18px !important;
+}
+
+html body[data-page="themes"] .theme-copy h2 {
+  color:#f1d0a8 !important;
+  font-size:clamp(58px,5.15vw,88px) !important;
+  line-height:1 !important;
+  margin:0 0 22px !important;
+  letter-spacing:-.04em !important;
+  font-weight:400 !important;
+}
+
+html body[data-page="themes"] .subthemes {
+  color:rgba(241,208,168,.86) !important;
+  font-size:clamp(18px,1.45vw,24px) !important;
+  line-height:1.72 !important;
+  word-break:keep-all !important;
+}
+
+html body[data-page="themes"] .actions {
+  margin-top:34px !important;
+  display:flex !important;
+  gap:28px !important;
+  align-items:center !important;
+}
+
+html body[data-page="themes"] .linkline {
+  color:#d4945c !important;
+  border-color:#d4945c !important;
+  padding-bottom:8px !important;
+}
+
+html body[data-page="themes"] .soon {
+  color:rgba(241,208,168,.60) !important;
+}
+
+/* First-view reveal only; once a theme has been viewed in the current session,
+   app.js marks it is-revealed and the animation stops. */
+@keyframes damoldaProductAppear {
+  from { opacity:0; transform:translateY(18px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-product,
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy {
+  animation:damoldaProductAppear 850ms cubic-bezier(.22,.72,.18,1) both !important;
+}
+
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy {
+  animation-delay:120ms !important;
+}
+
+html body[data-page="themes"] .gallery-theme-card.is-revealed .theme-product,
+html body[data-page="themes"] .gallery-theme-card.is-revealed .theme-copy {
+  animation:none !important;
+}
+
+@media(max-width:900px) {
+  html body[data-page="themes"] {
+    overflow:auto !important;
+  }
+
+  html body[data-page="themes"] .app {
+    height:auto !important;
+    min-height:100vh !important;
+    overflow:visible !important;
+    background-position:34% center !important;
+  }
+
+  html body[data-page="themes"] .gallery-theme-shell {
+    height:auto !important;
+    min-height:100vh !important;
+    padding:104px 22px 34px !important;
+    overflow:visible !important;
+  }
+
+  html body[data-page="themes"] .theme-tabs {
+    justify-content:flex-start !important;
+    gap:18px !important;
+    overflow-x:auto !important;
+    padding-bottom:14px !important;
+  }
+
+  html body[data-page="themes"] .stage {
+    height:auto !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+
+  html body[data-page="themes"] .arrow {
+    display:none !important;
+  }
+
+  html body[data-page="themes"] .gallery-theme-card {
+    grid-template-columns:1fr !important;
+  }
+
+  html body[data-page="themes"] .theme-visual {
+    min-height:360px !important;
+    padding-bottom:76px !important;
+  }
+
+  html body[data-page="themes"] .theme-product {
+    width:min(74vw,320px) !important;
+    max-height:320px !important;
+    transform:none !important;
+  }
+
+  html body[data-page="themes"] .theme-copy {
+    padding:18px 4px 28px !important;
+  }
+}
+

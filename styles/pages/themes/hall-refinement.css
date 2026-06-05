@@ -1,0 +1,91 @@
+/* v1.0: Theme hall refinement — no white panel, no black shadow, no literal spotlight. */
+body[data-page="themes"]{
+  background:#2b1f18;
+}
+body[data-page="themes"] .top{
+  background:linear-gradient(180deg,rgba(37,27,21,.90),rgba(37,27,21,.62));
+  color:#d7ad7e;
+  backdrop-filter:blur(12px);
+}
+body[data-page="themes"] .nav a,
+body[data-page="themes"] .lang,
+body[data-page="themes"] .lang a.active{
+  color:#d7ad7e;
+}
+body[data-page="themes"] .search{
+  border-color:rgba(215,173,126,.26);
+  background:rgba(255,246,232,.045);
+  color:#d7ad7e;
+}
+body[data-page="themes"] .search::placeholder{
+  color:rgba(215,173,126,.58);
+}
+.gallery-theme-shell{
+  background:
+    linear-gradient(180deg,rgba(26,19,15,.18),rgba(26,19,15,.38)),
+    radial-gradient(ellipse at 42% 60%, rgba(132,91,58,.34), transparent 58%),
+    linear-gradient(115deg,#251a14 0%,#3a291f 45%,#211813 100%);
+}
+.gallery-theme-card::before{
+  display:none;
+}
+.gallery-theme-shell .theme-tabs{
+  color:#d7ad7e;
+}
+.gallery-theme-shell .theme-tab{
+  color:rgba(215,173,126,.64);
+}
+.gallery-theme-shell .theme-tab.active{
+  color:#f0c996;
+  box-shadow:inset 0 -1px 0 rgba(240,201,150,.72);
+}
+.gallery-theme-shell .arrow{
+  color:rgba(215,173,126,.72);
+  background:rgba(255,246,232,.045);
+  border:1px solid rgba(215,173,126,.08);
+}
+.gallery-theme-shell .arrow:hover{
+  color:#f0c996;
+  background:rgba(255,246,232,.07);
+}
+.gallery-theme-shell .theme-visual{
+  isolation:isolate;
+}
+.gallery-theme-shell .theme-visual::before{
+  width:min(52vh,38vw);
+  height:min(50vh,36vw);
+  border-radius:48% 52% 42% 42% / 34% 34% 56% 56%;
+  clip-path:polygon(36% 0,64% 0,70% 15%,83% 46%,76% 78%,61% 96%,39% 96%,24% 78%,17% 46%,30% 15%);
+  background:
+    radial-gradient(ellipse at 34% 28%, rgba(255,246,232,.62), transparent 24%),
+    radial-gradient(ellipse at 70% 74%, rgba(105,75,52,.22), transparent 44%),
+    linear-gradient(145deg,#ead5b9 0%,#c6a987 48%,#8f6b4b 100%);
+  box-shadow:
+    18px 26px 70px rgba(72,47,31,.34),
+    -18px -12px 42px rgba(255,232,198,.09);
+  opacity:.96;
+}
+.gallery-theme-shell .theme-visual::after{
+  width:min(44vh,32vw);
+  height:14px;
+  bottom:12%;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(139,97,67,.38),rgba(227,194,155,.18),rgba(139,97,67,.30),transparent);
+  box-shadow:0 10px 36px rgba(83,55,38,.20);
+}
+.gallery-theme-shell .theme-copy{
+  color:#ead0af;
+  text-shadow:none;
+}
+.gallery-theme-shell .theme-copy h2{
+  color:#efd5b2;
+}
+.gallery-theme-shell .kicker,
+.gallery-theme-shell .linkline{
+  color:#d19a63;
+  border-color:#d19a63;
+}
+.gallery-theme-shell .subthemes,
+.gallery-theme-shell .soon{
+  color:rgba(234,208,175,.76);
+}

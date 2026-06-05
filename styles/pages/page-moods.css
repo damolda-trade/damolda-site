@@ -1,0 +1,249 @@
+/* =====================================================================
+   DAMOLDA FINAL HEADER ALIGNMENT
+   Keep logo, main menu, search box, and language switch in the exact
+   same position on every page. Page-specific mood/color may remain below.
+   ===================================================================== */
+html body .top,
+html body[data-page="home"] .top,
+html body[data-page="themes"] .top,
+html body[data-page="theme"] .top,
+html body[data-page="journal"] .top,
+html body[data-page="about"] .top,
+html body[data-page="object"] .top,
+html body[data-page="detail"] .top {
+  position:fixed !important;
+  z-index:50 !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  height:76px !important;
+  display:grid !important;
+  grid-template-columns:minmax(220px,1fr) auto minmax(360px,1fr) !important;
+  align-items:center !important;
+  column-gap:24px !important;
+  padding:0 42px !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+  box-sizing:border-box !important;
+}
+
+html body .brand,
+html body[data-page="home"] .brand,
+html body[data-page="themes"] .brand,
+html body[data-page="theme"] .brand,
+html body[data-page="journal"] .brand,
+html body[data-page="about"] .brand,
+html body[data-page="object"] .brand,
+html body[data-page="detail"] .brand {
+  justify-self:start !important;
+  align-self:center !important;
+  display:flex !important;
+  align-items:center !important;
+  width:160px !important;
+  min-width:160px !important;
+  height:76px !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+html body .brand-handwordmark,
+html body[data-page="home"] .brand-handwordmark,
+html body[data-page="themes"] .brand-handwordmark,
+html body[data-page="theme"] .brand-handwordmark,
+html body[data-page="journal"] .brand-handwordmark,
+html body[data-page="about"] .brand-handwordmark,
+html body[data-page="object"] .brand-handwordmark,
+html body[data-page="detail"] .brand-handwordmark {
+  display:block !important;
+  width:auto !important;
+  height:56px !important;
+  max-width:160px !important;
+  object-fit:contain !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+html body .nav,
+html body[data-page="home"] .nav,
+html body[data-page="themes"] .nav,
+html body[data-page="theme"] .nav,
+html body[data-page="journal"] .nav,
+html body[data-page="about"] .nav,
+html body[data-page="object"] .nav,
+html body[data-page="detail"] .nav {
+  justify-self:center !important;
+  align-self:center !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:28px !important;
+  height:76px !important;
+  margin:0 !important;
+  padding:0 !important;
+  white-space:nowrap !important;
+  font:700 14px/1 Georgia,'Noto Serif KR',serif !important;
+  letter-spacing:.08em !important;
+  text-transform:none !important;
+}
+
+html body .nav a {
+  position:relative !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  height:76px !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+html body .nav a + a::before {
+  content:'/' !important;
+  position:absolute !important;
+  left:-18px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  opacity:.82 !important;
+}
+
+html body .right-tools,
+html body[data-page="home"] .right-tools,
+html body[data-page="themes"] .right-tools,
+html body[data-page="theme"] .right-tools,
+html body[data-page="journal"] .right-tools,
+html body[data-page="about"] .right-tools,
+html body[data-page="object"] .right-tools,
+html body[data-page="detail"] .right-tools {
+  justify-self:end !important;
+  align-self:center !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:16px !important;
+  height:76px !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+html body .search,
+html body[data-page="home"] .search,
+html body[data-page="themes"] .search,
+html body[data-page="theme"] .search,
+html body[data-page="journal"] .search,
+html body[data-page="about"] .search,
+html body[data-page="object"] .search,
+html body[data-page="detail"] .search {
+  width:230px !important;
+  height:34px !important;
+  min-width:230px !important;
+  margin:0 !important;
+  padding:0 15px !important;
+  border-radius:999px !important;
+  box-sizing:border-box !important;
+  font:12px/34px Arial,'Noto Sans KR',sans-serif !important;
+  letter-spacing:.08em !important;
+}
+
+html body .lang,
+html body[data-page="home"] .lang,
+html body[data-page="themes"] .lang,
+html body[data-page="theme"] .lang,
+html body[data-page="journal"] .lang,
+html body[data-page="about"] .lang,
+html body[data-page="object"] .lang,
+html body[data-page="detail"] .lang {
+  display:flex !important;
+  align-items:center !important;
+  height:76px !important;
+  margin:0 !important;
+  padding:0 !important;
+  white-space:nowrap !important;
+  font:700 12px/1 Arial,'Noto Sans KR',sans-serif !important;
+  letter-spacing:.08em !important;
+}
+
+html body .search-panel {
+  top:76px !important;
+  right:42px !important;
+}
+
+/* Page mood colors only; geometry stays identical. */
+html body[data-page="themes"] .top,
+html body[data-page="theme"] .top,
+html body[data-page="journal"] .top {
+  background:linear-gradient(180deg, rgba(20,12,8,.58), rgba(20,12,8,.18) 74%, rgba(20,12,8,0)) !important;
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .nav a,
+html body[data-page="theme"] .nav a,
+html body[data-page="journal"] .nav a,
+html body[data-page="themes"] .lang,
+html body[data-page="theme"] .lang,
+html body[data-page="journal"] .lang,
+html body[data-page="themes"] .lang a,
+html body[data-page="theme"] .lang a,
+html body[data-page="journal"] .lang a,
+html body[data-page="themes"] .lang a.active,
+html body[data-page="theme"] .lang a.active,
+html body[data-page="journal"] .lang a.active {
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .nav a + a::before,
+html body[data-page="theme"] .nav a + a::before,
+html body[data-page="journal"] .nav a + a::before {
+  color:#d39a61 !important;
+}
+
+html body[data-page="themes"] .search,
+html body[data-page="theme"] .search,
+html body[data-page="journal"] .search {
+  border:1px solid rgba(228,189,139,.26) !important;
+  background:rgba(20,12,8,.16) !important;
+  color:#e4bd8b !important;
+}
+
+html body[data-page="themes"] .search::placeholder,
+html body[data-page="theme"] .search::placeholder,
+html body[data-page="journal"] .search::placeholder {
+  color:rgba(228,189,139,.50) !important;
+}
+
+@media(max-width:900px) {
+  html body .top,
+  html body[data-page="home"] .top,
+  html body[data-page="themes"] .top,
+  html body[data-page="theme"] .top,
+  html body[data-page="journal"] .top,
+  html body[data-page="about"] .top,
+  html body[data-page="object"] .top,
+  html body[data-page="detail"] .top {
+    grid-template-columns:1fr auto !important;
+    height:76px !important;
+    padding:0 20px !important;
+  }
+  html body .brand,
+  html body .brand-handwordmark {
+    height:48px !important;
+  }
+  html body .nav {
+    display:none !important;
+  }
+  html body .right-tools {
+    height:76px !important;
+  }
+  html body .search {
+    width:150px !important;
+    min-width:150px !important;
+  }
+  html body .search-panel {
+    top:76px !important;
+    right:16px !important;
+    left:16px !important;
+    width:auto !important;
+  }
+}
+

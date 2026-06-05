@@ -1,0 +1,341 @@
+/* =====================================================================
+   DAMOLDA Journal Workshop Background
+   - Journal keeps the existing card layout.
+   - Background becomes a warm workshop image.
+   - Cards are translucent/frosted so the image softly shows through.
+   - Replace assets/journal-workshop-bg.png later with a clean workshop-only render
+     if needed; CSS path can stay the same.
+   ===================================================================== */
+
+html body[data-page="journal"] {
+  background:#20140f !important;
+  overflow-x:hidden !important;
+}
+
+html body[data-page="journal"] .app {
+  min-height:100vh !important;
+  background:
+    linear-gradient(180deg, rgba(24,14,9,.34), rgba(24,14,9,.48)),
+    url("../../assets/journal-workshop-bg.png") center center / cover no-repeat fixed !important;
+  color:#3c2b20 !important;
+}
+
+html body[data-page="journal"] .app::before {
+  content:"" !important;
+  position:fixed !important;
+  inset:0 !important;
+  pointer-events:none !important;
+  z-index:0 !important;
+  background:
+    radial-gradient(circle at 22% 30%, rgba(255,214,158,.10), transparent 30%),
+    linear-gradient(90deg, rgba(22,12,7,.22), rgba(22,12,7,.08) 45%, rgba(22,12,7,.32));
+}
+
+html body[data-page="journal"] .top,
+html body[data-page="journal"] .page,
+html body[data-page="journal"] main,
+html body[data-page="journal"] footer {
+  position:relative !important;
+  z-index:1 !important;
+}
+
+html body[data-page="journal"] .top {
+  background:linear-gradient(180deg, rgba(24,14,9,.58), rgba(24,14,9,.20) 74%, rgba(24,14,9,0)) !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  color:#ecd1ad !important;
+}
+
+html body[data-page="journal"] .brand-handwordmark {
+  filter:sepia(.28) saturate(1.05) brightness(1.18) !important;
+  opacity:.97 !important;
+}
+
+html body[data-page="journal"] .nav a,
+html body[data-page="journal"] .lang,
+html body[data-page="journal"] .lang a,
+html body[data-page="journal"] .lang a.active {
+  color:#ecd1ad !important;
+}
+
+html body[data-page="journal"] .nav a + a::before {
+  color:rgba(236,209,173,.72) !important;
+}
+
+html body[data-page="journal"] .search {
+  border:1px solid rgba(236,209,173,.28) !important;
+  background:rgba(24,14,9,.22) !important;
+  color:#ecd1ad !important;
+}
+
+html body[data-page="journal"] .search::placeholder {
+  color:rgba(236,209,173,.54) !important;
+}
+
+html body[data-page="journal"] .page {
+  background:transparent !important;
+}
+
+html body[data-page="journal"] .section-head,
+html body[data-page="journal"] .journal-head,
+html body[data-page="journal"] .page-head {
+  color:#f4dfc3 !important;
+  text-shadow:0 2px 22px rgba(0,0,0,.32) !important;
+}
+
+html body[data-page="journal"] h1,
+html body[data-page="journal"] h2,
+html body[data-page="journal"] .page-title {
+  color:#f6e3ca !important;
+  text-shadow:0 2px 24px rgba(0,0,0,.34) !important;
+}
+
+html body[data-page="journal"] .lead,
+html body[data-page="journal"] .intro,
+html body[data-page="journal"] .page-subtitle {
+  color:rgba(246,227,202,.82) !important;
+  text-shadow:0 2px 18px rgba(0,0,0,.28) !important;
+}
+
+/* Broad card selectors to preserve current layout while changing material. */
+html body[data-page="journal"] .card,
+html body[data-page="journal"] .journal-card,
+html body[data-page="journal"] .post-card,
+html body[data-page="journal"] article,
+html body[data-page="journal"] .tile {
+  background:rgba(248,238,222,.68) !important;
+  border:1px solid rgba(255,244,228,.34) !important;
+  box-shadow:
+    0 24px 70px rgba(20,10,5,.24),
+    inset 0 1px 0 rgba(255,255,255,.28) !important;
+  backdrop-filter:blur(12px) saturate(.92) !important;
+  -webkit-backdrop-filter:blur(12px) saturate(.92) !important;
+}
+
+html body[data-page="journal"] .card:hover,
+html body[data-page="journal"] .journal-card:hover,
+html body[data-page="journal"] .post-card:hover,
+html body[data-page="journal"] article:hover,
+html body[data-page="journal"] .tile:hover {
+  background:rgba(250,241,228,.76) !important;
+  transform:translateY(-2px) !important;
+  box-shadow:
+    0 30px 84px rgba(20,10,5,.30),
+    inset 0 1px 0 rgba(255,255,255,.32) !important;
+}
+
+html body[data-page="journal"] .card h2,
+html body[data-page="journal"] .card h3,
+html body[data-page="journal"] .journal-card h2,
+html body[data-page="journal"] .journal-card h3,
+html body[data-page="journal"] .post-card h2,
+html body[data-page="journal"] .post-card h3,
+html body[data-page="journal"] article h2,
+html body[data-page="journal"] article h3 {
+  color:#4b3528 !important;
+}
+
+html body[data-page="journal"] .card p,
+html body[data-page="journal"] .journal-card p,
+html body[data-page="journal"] .post-card p,
+html body[data-page="journal"] article p {
+  color:rgba(69,48,36,.82) !important;
+}
+
+html body[data-page="journal"] .date,
+html body[data-page="journal"] .meta,
+html body[data-page="journal"] time,
+html body[data-page="journal"] .tag {
+  color:#936841 !important;
+}
+
+html body[data-page="journal"] img {
+  filter:saturate(.82) sepia(.08) contrast(.96) !important;
+}
+
+@media(max-width:900px) {
+  html body[data-page="journal"] .app {
+    background-attachment:scroll !important;
+    background-position:center top !important;
+  }
+
+  html body[data-page="journal"] .card,
+  html body[data-page="journal"] .journal-card,
+  html body[data-page="journal"] .post-card,
+  html body[data-page="journal"] article,
+  html body[data-page="journal"] .tile {
+    background:rgba(248,238,222,.78) !important;
+    backdrop-filter:blur(9px) !important;
+    -webkit-backdrop-filter:blur(9px) !important;
+  }
+}
+
+
+/* Journal redesign */
+.journal-bg{
+  background:
+    linear-gradient(rgba(20,12,8,.45),rgba(20,12,8,.45)),
+    url('../../assets/journal-stage-bg.png') center center/cover no-repeat;
+}
+.journal-hero{
+  text-align:center;
+  color:#f4ede4;
+  margin-bottom:24px;
+}
+.journal-hero h1{
+  font-size:72px;
+  font-weight:400;
+  margin:0 0 12px;
+}
+.journal-hero p{
+  margin:0;
+  font-size:18px;
+}
+.action-card{
+  background:rgba(248,241,232,.88);
+  backdrop-filter:blur(10px);
+  display:flex;
+  flex-direction:column;
+  padding:16px;
+  cursor:pointer;
+  transition:transform .2s ease;
+}
+.action-card:hover{transform:translateY(-4px);}
+.card-thumb{
+  height:180px;
+  border-radius:16px;
+  background-size:cover;
+  background-position:center;
+  margin-bottom:14px;
+}
+.card-body h2{
+  font-size:28px;
+  margin:8px 0;
+}
+
+
+/* Journal final override: clean workshop background + 6 clickable cards */
+html body[data-page="journal"]{
+  background:#1d1009 !important;
+  overflow:hidden !important;
+}
+html body[data-page="journal"] .app{
+  min-height:100vh !important;
+  background:
+    linear-gradient(180deg, rgba(18,9,5,.42), rgba(18,9,5,.50)),
+    url("../../assets/journal-stage-bg.png") center center / cover no-repeat fixed !important;
+  color:#4b3528 !important;
+}
+html body[data-page="journal"] .app::before{content:none !important;display:none !important;}
+html body[data-page="journal"] .top{
+  background:linear-gradient(180deg, rgba(22,10,5,.82), rgba(22,10,5,.58)) !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+}
+html body[data-page="journal"] .journal-shell{
+  height:100vh !important;
+  min-height:100vh !important;
+  padding:132px 6vw 34px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  gap:24px !important;
+  overflow:hidden !important;
+  background:transparent !important;
+}
+html body[data-page="journal"] .journal-title{
+  text-align:center !important;
+  color:#f3e4d0 !important;
+  text-shadow:0 3px 24px rgba(0,0,0,.42) !important;
+  margin:0 !important;
+}
+html body[data-page="journal"] .journal-title h1{
+  margin:0 0 10px !important;
+  font-size:clamp(48px,5vw,76px) !important;
+  line-height:.95 !important;
+  letter-spacing:.08em !important;
+  font-weight:400 !important;
+  color:#f3e4d0 !important;
+}
+html body[data-page="journal"] .journal-title p{
+  margin:0 !important;
+  font-size:clamp(14px,1.2vw,18px) !important;
+  color:rgba(243,228,208,.9) !important;
+}
+html body[data-page="journal"] .journal-action-grid{
+  width:min(1260px,100%) !important;
+  margin:0 auto !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:16px !important;
+}
+html body[data-page="journal"] .journal-card.journal-action-card{
+  height:178px !important;
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-columns:112px 1fr !important;
+  gap:18px !important;
+  align-items:center !important;
+  padding:18px !important;
+  border-radius:10px !important;
+  overflow:hidden !important;
+  cursor:pointer !important;
+  text-decoration:none !important;
+  background:rgba(246,238,224,.83) !important;
+  border:1px solid rgba(255,247,235,.34) !important;
+  box-shadow:0 18px 44px rgba(14,7,4,.24) !important;
+  backdrop-filter:blur(8px) saturate(.95) !important;
+  -webkit-backdrop-filter:blur(8px) saturate(.95) !important;
+  transform:none !important;
+}
+html body[data-page="journal"] .journal-card.journal-action-card:hover{
+  transform:translateY(-3px) !important;
+  background:rgba(248,241,229,.9) !important;
+}
+html body[data-page="journal"] .journal-thumb{
+  width:112px !important;
+  height:126px !important;
+  border-radius:6px !important;
+  background-size:cover !important;
+  background-position:center !important;
+  filter:saturate(.86) sepia(.1) contrast(.96) !important;
+}
+html body[data-page="journal"] .journal-card-copy{min-width:0 !important;}
+html body[data-page="journal"] .journal-card-copy time{
+  display:block !important;
+  margin-bottom:10px !important;
+  font-size:13px !important;
+  color:#9a714e !important;
+}
+html body[data-page="journal"] .journal-card-copy h2{
+  margin:0 0 10px !important;
+  font-size:clamp(20px,1.35vw,25px) !important;
+  line-height:1.35 !important;
+  font-weight:400 !important;
+  color:#4b3528 !important;
+  text-shadow:none !important;
+  word-break:keep-all !important;
+}
+html body[data-page="journal"] .journal-card-copy p{
+  margin:0 0 12px !important;
+  font-size:14px !important;
+  line-height:1.55 !important;
+  color:rgba(72,51,38,.82) !important;
+  word-break:keep-all !important;
+}
+html body[data-page="journal"] .journal-card-copy span{
+  display:inline-block !important;
+  padding:3px 8px !important;
+  border:1px solid rgba(139,97,58,.38) !important;
+  border-radius:4px !important;
+  font-size:12px !important;
+  color:#8d633d !important;
+  background:rgba(255,246,232,.42) !important;
+}
+@media(max-width:1100px){
+  html body[data-page="journal"]{overflow:auto !important;}
+  html body[data-page="journal"] .journal-shell{height:auto !important;overflow:visible !important;padding:112px 24px 34px !important;}
+  html body[data-page="journal"] .journal-action-grid{grid-template-columns:1fr !important;}
+}
+

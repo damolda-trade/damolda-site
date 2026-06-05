@@ -1,0 +1,148 @@
+/* DAMOLDA responsive background fit
+   Prevent key background images from being cropped differently by monitor ratio.
+   The full image is preserved; empty space is blended with matching color. */
+
+/* Home hero image */
+.hero{
+  background:
+    radial-gradient(circle at 50% 46%, rgba(248,241,232,.22), transparent 46%),
+    linear-gradient(135deg,#efe1cf 0%,#d9bea0 46%,#8d6547 100%) !important;
+}
+.hero-bg{
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:transparent !important;
+}
+
+/* Theme hall background image */
+html body[data-page="themes"] .app,
+html body[data-page="theme"] .app{
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,.02) 45%, rgba(0,0,0,.18)),
+    #24150e url("../../assets/theme-stage-bg.png") center center / contain no-repeat !important;
+}
+
+/* Journal background image */
+html body[data-page="journal"] .app,
+.journal-bg{
+  background:
+    linear-gradient(180deg, rgba(18,9,5,.38), rgba(18,9,5,.46)),
+    #20120c url("../../assets/journal-stage-bg.png") center center / contain no-repeat fixed !important;
+}
+
+/* Very wide monitors: preserve full image and avoid top/bottom loss */
+@media (min-aspect-ratio: 16/9){
+  .hero-bg{
+    object-fit:contain !important;
+  }
+  html body[data-page="themes"] .app,
+  html body[data-page="theme"] .app,
+  html body[data-page="journal"] .app,
+  .journal-bg{
+    background-size:contain !important;
+    background-position:center center !important;
+  }
+}
+
+/* Tall/narrow monitors and mobile: keep image visible rather than cutting sides */
+@media (max-aspect-ratio: 4/3){
+  .hero-bg{
+    object-fit:contain !important;
+  }
+  html body[data-page="themes"] .app,
+  html body[data-page="theme"] .app{
+    background-size:contain !important;
+    background-position:center center !important;
+  }
+  html body[data-page="journal"] .app,
+  .journal-bg{
+    background-size:contain !important;
+    background-position:center center !important;
+    background-attachment:scroll !important;
+  }
+}
+
+
+/* DAMOLDA hero fix
+   Use cover again and keep the console table visible on most screens.
+*/
+.hero-bg{
+  object-fit: cover !important;
+  object-position: 72% center !important;
+}
+
+.hero{
+  background:none !important;
+}
+
+@media (min-width:1600px){
+  .hero-bg{
+    object-position:70% center !important;
+  }
+}
+
+@media (max-width:1200px){
+  .hero-bg{
+    object-position:75% center !important;
+  }
+}
+
+@media (max-width:900px){
+  .hero-bg{
+    object-position:78% center !important;
+  }
+}
+
+
+/* DAMOLDA safe-area backgrounds
+   Assets are rebuilt on a 2560x1440 safe canvas.
+   Use cover for full-screen brand-site rendering. */
+.hero-bg{
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+
+html body[data-page="themes"] .app,
+html body[data-page="theme"] .app{
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,.02) 45%, rgba(0,0,0,.18)),
+    url("../../assets/theme-stage-bg.png") center center / cover no-repeat !important;
+}
+
+html body[data-page="journal"] .app,
+.journal-bg{
+  background:
+    linear-gradient(180deg, rgba(18,9,5,.38), rgba(18,9,5,.46)),
+    url("../../assets/journal-stage-bg.png") center center / cover no-repeat fixed !important;
+}
+
+@media(max-width:900px){
+  .hero-bg{object-position:center center !important;}
+  html body[data-page="themes"] .app,
+  html body[data-page="theme"] .app,
+  html body[data-page="journal"] .app,
+  .journal-bg{
+    background-position:center center !important;
+    background-attachment:scroll !important;
+  }
+}
+
+
+/* DAMOLDA asset backgrounds only */
+.hero-bg{
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+
+html body[data-page="themes"] .app{
+  background:
+    linear-gradient(180deg, rgba(12,8,6,.18), rgba(12,8,6,.30)),
+    url("../../assets/theme-stage-bg.png") center center / cover no-repeat !important;
+}
+
+html body[data-page="journal"] .app,
+.journal-bg{
+  background:
+    linear-gradient(180deg, rgba(18,9,5,.28), rgba(18,9,5,.38)),
+    url("../../assets/journal-stage-bg.png") center center / cover no-repeat !important;
+}
