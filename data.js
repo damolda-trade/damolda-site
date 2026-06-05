@@ -32,8 +32,8 @@ window.DAMOLDA_DATA = {
     jiryeok:{ko:'지략',en:'Tactic',theme:'strategy',status:'open',skus:['Dollar','Euro','Yen']},
     balance:{ko:'균형',en:'Balance',theme:'strategy',status:'soon'},
     exchange:{ko:'교환',en:'Exchange',theme:'strategy',status:'soon'},
-    click:{ko:'클릭',en:'Click',theme:'quietplay',status:'open'},
-    drift:{ko:'만지작',en:'Drift',theme:'quietplay',status:'soon'},
-    loop:{ko:'반복',en:'Loop',theme:'quietplay',status:'soon'}
+    click:{ko:'클릭',en:'Click',theme:'senses',status:'open'},
+    drift:{ko:'만지작',en:'Drift',theme:'senses',status:'soon'},
+    loop:{ko:'반복',en:'Loop',theme:'senses',status:'soon'}
   }
 };
