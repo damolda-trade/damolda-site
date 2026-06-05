@@ -1796,7 +1796,7 @@ html body[data-page="journal"] img {
 .journal-bg{
   background:
     linear-gradient(rgba(20,12,8,.45),rgba(20,12,8,.45)),
-    url('assets/theme-stage-bg.png') center center/cover no-repeat;
+    url('assets/journal-stage-bg.png') center center/cover no-repeat;
 }
 .journal-hero{
   text-align:center;
@@ -1844,7 +1844,7 @@ html body[data-page="journal"] .app{
   min-height:100vh !important;
   background:
     linear-gradient(180deg, rgba(18,9,5,.42), rgba(18,9,5,.50)),
-    url("assets/theme-stage-bg.png") center center / cover no-repeat fixed !important;
+    url("assets/journal-stage-bg.png") center center / cover no-repeat fixed !important;
   color:#4b3528 !important;
 }
 html body[data-page="journal"] .app::before{content:none !important;display:none !important;}
