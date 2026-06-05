@@ -818,3 +818,203 @@ body[data-page="themes"] .search::placeholder{
 .gallery-theme-shell .soon{
   color:rgba(234,208,175,.76);
 }
+
+/* v1.1: corrected museum-dark theme hall. Kill older light-panel overrides. */
+html body[data-page="themes"]{
+  background:#211712 !important;
+  background-image:none !important;
+  color:#e9c99d !important;
+  overflow:hidden !important;
+}
+html body[data-page="themes"] .app{
+  min-height:100vh !important;
+  background:
+    linear-gradient(180deg, rgba(12,8,6,.18) 0%, rgba(12,8,6,.34) 100%),
+    radial-gradient(ellipse at 35% 58%, rgba(112,74,47,.62) 0%, rgba(64,42,29,.36) 34%, rgba(25,17,13,.12) 64%, transparent 78%),
+    linear-gradient(112deg,#18100c 0%,#302016 34%,#493323 58%,#211712 100%) !important;
+}
+html body[data-page="themes"] .top{
+  background:linear-gradient(180deg,rgba(30,20,15,.92),rgba(30,20,15,.58),rgba(30,20,15,0)) !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+  color:#d8aa76 !important;
+}
+html body[data-page="themes"] .brand-handwordmark{
+  filter:brightness(1.18) sepia(.22) saturate(.86) !important;
+}
+html body[data-page="themes"] .nav a,
+html body[data-page="themes"] .lang,
+html body[data-page="themes"] .lang a,
+html body[data-page="themes"] .lang a.active{
+  color:#d8aa76 !important;
+}
+html body[data-page="themes"] .nav a + a::before{
+  color:#c99561 !important;
+}
+html body[data-page="themes"] .search{
+  border-color:rgba(216,170,118,.28) !important;
+  background:rgba(255,244,226,.035) !important;
+  color:#d8aa76 !important;
+}
+html body[data-page="themes"] .search::placeholder{color:rgba(216,170,118,.55) !important;}
+
+html body[data-page="themes"] .gallery-theme-shell{
+  height:100vh !important;
+  min-height:0 !important;
+  padding:96px 3.8vw 28px !important;
+  display:grid !important;
+  grid-template-rows:auto minmax(0,1fr) !important;
+  background:transparent !important;
+  background-image:none !important;
+  overflow:hidden !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-tabs{
+  position:relative !important;
+  top:auto !important;
+  z-index:12 !important;
+  justify-content:center !important;
+  gap:42px !important;
+  padding:0 0 8px !important;
+  background:transparent !important;
+  overflow:visible !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-tab{
+  border:0 !important;
+  background:transparent !important;
+  border-radius:0 !important;
+  padding:0 0 9px !important;
+  font:700 12px/1 Arial,'Noto Sans KR',sans-serif !important;
+  letter-spacing:.18em !important;
+  text-transform:none !important;
+  color:rgba(222,181,131,.68) !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-tab.active{
+  color:#f1cc9b !important;
+  box-shadow:inset 0 -1px 0 rgba(241,204,155,.70) !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .stage{
+  height:auto !important;
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-columns:58px minmax(0,1fr) 58px !important;
+  gap:18px !important;
+  align-items:center !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .arrow{
+  width:58px !important;
+  height:58px !important;
+  border:0 !important;
+  border-radius:50% !important;
+  background:rgba(255,238,210,.055) !important;
+  color:rgba(233,201,157,.72) !important;
+  box-shadow:none !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .arrow:hover{
+  background:rgba(255,238,210,.09) !important;
+  color:#f1cc9b !important;
+}
+
+html body[data-page="themes"] .gallery-theme-card,
+html body[data-page="themes"] .theme-card,
+html body[data-page="themes"] .themes-card{
+  height:100% !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+  display:grid !important;
+  grid-template-columns:1.04fr .96fr !important;
+}
+html body[data-page="themes"] .gallery-theme-card::before{display:none !important;}
+html body[data-page="themes"] .gallery-theme-shell .theme-visual{
+  position:relative !important;
+  min-height:0 !important;
+  background:transparent !important;
+  overflow:visible !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  padding-bottom:8vh !important;
+}
+/* ceramic object */
+html body[data-page="themes"] .gallery-theme-shell .theme-visual::before{
+  content:'' !important;
+  position:relative !important;
+  display:block !important;
+  width:min(38vw,49vh) !important;
+  height:min(38vw,49vh) !important;
+  border-radius:48% 52% 44% 44% / 37% 37% 58% 58% !important;
+  clip-path:polygon(42% 0,58% 0,63% 7%,79% 41%,73% 76%,58% 96%,42% 96%,27% 76%,21% 41%,37% 7%) !important;
+  background:
+    radial-gradient(ellipse at 31% 25%, rgba(255,247,231,.86), transparent 25%),
+    radial-gradient(ellipse at 68% 76%, rgba(83,57,39,.30), transparent 42%),
+    linear-gradient(145deg,#ead5b7 0%,#c6a47e 48%,#7d5a3f 100%) !important;
+  box-shadow:22px 18px 54px rgba(42,28,19,.26) !important;
+  opacity:.98 !important;
+  filter:none !important;
+  transform:none;
+  z-index:2 !important;
+}
+/* stone shelf, not black shadow */
+html body[data-page="themes"] .gallery-theme-shell .theme-visual::after{
+  content:'' !important;
+  position:absolute !important;
+  bottom:6.5vh !important;
+  left:50% !important;
+  transform:translateX(-50%) perspective(480px) rotateX(58deg) !important;
+  width:min(41vw,56vh) !important;
+  height:5.5vh !important;
+  border-radius:10px 18px 28px 28px !important;
+  background:linear-gradient(90deg,#3b291d 0%,#6f4d33 38%,#8a6240 57%,#302117 100%) !important;
+  box-shadow:0 18px 38px rgba(30,20,14,.24) !important;
+  opacity:.92 !important;
+  z-index:1 !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-copy{
+  padding:5vh 7vw 7vh 3vw !important;
+  color:#e9c99d !important;
+  text-shadow:none !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .kicker{
+  color:#c88d56 !important;
+  font:700 12px/1 Arial,sans-serif !important;
+  letter-spacing:.32em !important;
+  margin-bottom:18px !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .theme-copy h2{
+  color:#f0d3ab !important;
+  font-size:clamp(54px,5vw,86px) !important;
+  line-height:1 !important;
+  margin:0 0 22px !important;
+  letter-spacing:-.04em !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .subthemes{
+  color:rgba(239,211,171,.82) !important;
+  font-size:clamp(18px,1.45vw,24px) !important;
+  line-height:1.75 !important;
+  word-break:keep-all !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .actions{margin-top:34px !important;}
+html body[data-page="themes"] .gallery-theme-shell .linkline{
+  color:#d39a61 !important;
+  border-color:#d39a61 !important;
+}
+html body[data-page="themes"] .gallery-theme-shell .soon{color:rgba(239,211,171,.58) !important;}
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-visual::before,
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy{
+  animation:themeReveal 900ms ease-out both !important;
+}
+html body[data-page="themes"] .gallery-theme-card.is-entering .theme-copy{animation-delay:150ms !important;}
+@media(max-width:900px){
+  html body[data-page="themes"]{overflow:auto !important;}
+  html body[data-page="themes"] .gallery-theme-shell{height:auto !important;min-height:100vh !important;padding:104px 22px 34px !important;overflow:visible !important;}
+  html body[data-page="themes"] .gallery-theme-shell .stage{grid-template-columns:1fr !important;}
+  html body[data-page="themes"] .gallery-theme-shell .arrow{display:none !important;}
+  html body[data-page="themes"] .gallery-theme-card{grid-template-columns:1fr !important;}
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual{min-height:330px !important;padding-bottom:44px !important;}
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual::before{width:250px !important;height:250px !important;}
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual::after{width:290px !important;bottom:32px !important;}
+  html body[data-page="themes"] .gallery-theme-shell .theme-copy{padding:22px 4px 28px !important;}
+}
