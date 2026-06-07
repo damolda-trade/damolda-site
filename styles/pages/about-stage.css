@@ -39,6 +39,8 @@ html body[data-page="about"] .about-shell {
 }
 
 html body[data-page="about"] .top {
+  position:fixed !important;
+  z-index:100 !important;
   background:linear-gradient(
     180deg,
     rgba(0,0,0,.18) 0%,
@@ -90,6 +92,7 @@ html body[data-page="about"] .nav.is-open {
   background:rgba(28,16,9,.94) !important;
   color:#efd2a8 !important;
   box-shadow:0 22px 58px rgba(0,0,0,.30) !important;
+  z-index:120 !important;
 }
 
 html body[data-page="about"] .about-shell {
