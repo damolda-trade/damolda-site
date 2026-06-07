@@ -1,5 +1,3 @@
-@import url("./themes/gallery-intro.css");
-@import url("./themes/hall-refinement.css");
-@import url("./themes/museum-dark.css");
-@import url("./themes/studio-final.css");
+/* Theme hall is owned by the final product stage rules.
+   Older mood passes kept CSS-made placeholder objects in the render path. */
 @import url("./themes/product-stage.css");

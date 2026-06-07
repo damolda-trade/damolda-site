@@ -166,12 +166,24 @@ html body[data-page="themes"] .theme-visual {
 }
 
 /* Kill all previous CSS-made objects and fake plates. */
+html body[data-page="themes"] .gallery-theme-shell .theme-visual::before,
+html body[data-page="themes"] .gallery-theme-shell .theme-visual::after,
+html body[data-page="themes"] .theme-shell .theme-visual::before,
+html body[data-page="themes"] .theme-shell .theme-visual::after,
+html body[data-page="themes"] .theme-card .theme-visual::before,
+html body[data-page="themes"] .theme-card .theme-visual::after,
 html body[data-page="themes"] .theme-visual::before,
 html body[data-page="themes"] .theme-visual::after {
   display:none !important;
   content:none !important;
+  width:0 !important;
+  height:0 !important;
   background:none !important;
   box-shadow:none !important;
+  opacity:0 !important;
+  filter:none !important;
+  transform:none !important;
+  animation:none !important;
 }
 
 /* Product render slot.

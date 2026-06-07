@@ -247,7 +247,9 @@
   }
 
   .hero:after {
-    background:linear-gradient(180deg, rgba(248,241,232,.20) 0%, rgba(248,241,232,.42) 48%, rgba(248,241,232,.92) 100%) !important;
+    background:
+      linear-gradient(90deg, rgba(248,241,232,.64) 0%, rgba(248,241,232,.30) 48%, rgba(248,241,232,.06) 100%),
+      linear-gradient(180deg, rgba(248,241,232,.08) 0%, rgba(248,241,232,.20) 54%, rgba(248,241,232,.58) 100%) !important;
   }
 
   .hero-copy {
@@ -547,23 +549,23 @@
   }
 
   .hero-bg {
-    object-fit:contain !important;
-    object-position:center top !important;
+    object-fit:cover !important;
+    object-position:78% center !important;
   }
 
   html body[data-page="themes"] .app,
   html body[data-page="journal"] .app,
   html body[data-page="journal"] .journal-bg {
-    background-size:100% 100%, contain !important;
-    background-position:center center, center 76px !important;
+    background-size:100% 100%, cover !important;
+    background-position:center center, center center !important;
     background-repeat:no-repeat, no-repeat !important;
     background-color:#1b100b !important;
   }
 
   html body[data-page="theme"] .theme-detail-bg,
   html body[data-page="theme"] .theme-detail-emotion .theme-detail-bg {
-    background-size:100% 100%, 100% 100%, contain !important;
-    background-position:center center, center center, center 76px !important;
+    background-size:100% 100%, 100% 100%, cover !important;
+    background-position:center center, center center, center center !important;
     background-repeat:no-repeat, no-repeat, no-repeat !important;
     background-color:#20150f !important;
   }
@@ -604,6 +606,10 @@
   html body .mobile-menu-toggle {
     width:38px !important;
     height:38px !important;
+  }
+
+  .hero-bg {
+    object-position:82% center !important;
   }
 
   html body[data-page="themes"] .theme-copy h2,
