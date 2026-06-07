@@ -744,7 +744,7 @@
     clip-path:none !important;
     background:
       linear-gradient(180deg, rgba(12,8,6,0) 0%, rgba(12,8,6,.10) 72%, rgba(12,8,6,.24) 100%),
-      url("../../assets/theme-stage-bg.png") 28% 232% / auto 118svh no-repeat !important;
+      url("../../assets/theme-stage-bg.png") 34% 74% / auto 88svh no-repeat !important;
     box-shadow:none !important;
     opacity:1 !important;
     filter:none !important;
@@ -808,6 +808,14 @@
     font-size:10px !important;
     line-height:1.2 !important;
     letter-spacing:.08em !important;
+  }
+}
+
+@media(max-width:430px) and (orientation:portrait) {
+  html body[data-page="themes"] .theme-visual::before {
+    background:
+      linear-gradient(180deg, rgba(12,8,6,0) 0%, rgba(12,8,6,.10) 72%, rgba(12,8,6,.24) 100%),
+      url("../../assets/theme-stage-bg.png") 35% 76% / auto 86svh no-repeat !important;
   }
 }
 
