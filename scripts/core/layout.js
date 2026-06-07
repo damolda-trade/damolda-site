@@ -3,7 +3,7 @@ function layout(title = "DAMOLDA") {
 
   const nav = `
   <header class="top">
-    <a class="brand" href="${href("index.html")}"><img class="brand-handwordmark" src="assets/damolda-handwordmark.png" alt="다몰다"></a>
+    <a class="brand" href="${href("index.html")}"><img class="brand-handwordmark" src="assets/damolda-handwordmark.png" alt="DAMOLDA"></a>
     <nav id="siteNav" class="nav" aria-label="Main menu"><a href="${href("themes.html")}">${t[lang].themes}</a><span class="nav-sep">/</span><a href="${href("journal.html")}">${t[lang].journal}</a><span class="nav-sep">/</span><a href="${href("about.html")}">${t[lang].about}</a></nav>
     <div class="right-tools"><input id="search" class="search" placeholder="${t[lang].search}" autocomplete="off"><button class="mobile-menu-toggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button><div class="lang"><a class="${lang === "ko" ? "active" : ""}" href="?lang=ko">한국어</a> | <a class="${lang === "en" ? "active" : ""}" href="?lang=en">EN</a></div></div>
   </header><div id="searchPanel" class="search-panel"></div>`;
