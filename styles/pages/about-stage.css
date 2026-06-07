@@ -1,12 +1,19 @@
 /* About page: full-stage memory room background. */
 html body[data-page="about"] {
-  min-height:100vh !important;
-  overflow-x:hidden !important;
+  width:100% !important;
+  height:100vh !important;
+  height:100svh !important;
+  min-height:0 !important;
+  overflow:hidden !important;
   background:#21160f !important;
 }
 
 html body[data-page="about"] .app {
-  min-height:100vh !important;
+  width:100% !important;
+  height:100vh !important;
+  height:100svh !important;
+  min-height:0 !important;
+  overflow:hidden !important;
   color:#f7ead7 !important;
   background:
     linear-gradient(90deg, rgba(18,11,7,.78) 0%, rgba(18,11,7,.44) 34%, rgba(18,11,7,.18) 66%, rgba(18,11,7,.36) 100%),
@@ -32,42 +39,49 @@ html body[data-page="about"] .about-shell {
 }
 
 html body[data-page="about"] .top {
-  background:linear-gradient(180deg, rgba(25,15,9,.72), rgba(25,15,9,.28) 78%, rgba(25,15,9,0)) !important;
-  color:#efd2a8 !important;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.32) 0%,
+    rgba(0,0,0,.18) 55%,
+    rgba(0,0,0,0) 100%
+  ) !important;
+  backdrop-filter:blur(3px) !important;
+  -webkit-backdrop-filter:blur(3px) !important;
+  color:#f5e6d1 !important;
   border-bottom:0 !important;
   box-shadow:none !important;
-  backdrop-filter:none !important;
 }
 
 html body[data-page="about"] .brand-handwordmark {
-  filter:sepia(.22) saturate(1.04) brightness(1.14) !important;
-  opacity:.98 !important;
+  filter:none !important;
+  opacity:1 !important;
 }
 
 html body[data-page="about"] .nav a,
 html body[data-page="about"] .lang,
 html body[data-page="about"] .lang a,
 html body[data-page="about"] .lang a.active {
-  color:#efd2a8 !important;
+  color:#f5e6d1 !important;
 }
 
+html body[data-page="about"] .nav .nav-sep,
 html body[data-page="about"] .nav a + a::before {
-  color:#c68f56 !important;
+  color:rgba(245,230,209,.78) !important;
 }
 
 html body[data-page="about"] .search {
-  border:1px solid rgba(239,210,168,.28) !important;
-  background:rgba(20,12,7,.22) !important;
-  color:#efd2a8 !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  background:rgba(255,255,255,.12) !important;
+  color:#f5e6d1 !important;
 }
 
 html body[data-page="about"] .search::placeholder {
-  color:rgba(239,210,168,.56) !important;
+  color:rgba(245,230,209,.65) !important;
 }
 
 html body[data-page="about"] .mobile-menu-toggle {
-  border-color:rgba(239,210,168,.26) !important;
-  background:rgba(20,12,7,.20) !important;
+  border-color:rgba(255,255,255,.18) !important;
+  background:rgba(255,255,255,.12) !important;
 }
 
 html body[data-page="about"] .nav.is-open {
@@ -78,22 +92,27 @@ html body[data-page="about"] .nav.is-open {
 }
 
 html body[data-page="about"] .about-shell {
-  min-height:100vh !important;
-  padding:132px clamp(56px,7vw,136px) 62px !important;
+  width:100% !important;
+  height:100vh !important;
+  height:100svh !important;
+  min-height:0 !important;
+  padding:104px clamp(56px,7vw,136px) 42px !important;
   display:flex !important;
   align-items:center !important;
+  overflow:hidden !important;
   background:transparent !important;
 }
 
 html body[data-page="about"] .about-panel {
   width:min(1320px,100%) !important;
+  max-height:calc(100svh - 146px) !important;
   min-height:auto !important;
   height:auto !important;
   display:grid !important;
   grid-template-columns:minmax(420px,.82fr) minmax(520px,1fr) !important;
   gap:clamp(56px,8vw,136px) !important;
   align-items:center !important;
-  overflow:visible !important;
+  overflow:hidden !important;
   border:0 !important;
   border-radius:0 !important;
   background:transparent !important;
@@ -110,7 +129,7 @@ html body[data-page="about"] .about-title {
 }
 
 html body[data-page="about"] .kicker {
-  margin:0 0 22px !important;
+  margin:0 0 16px !important;
   color:#d9a66f !important;
   font:700 11px/1 Arial,'Noto Sans KR',sans-serif !important;
   letter-spacing:.24em !important;
@@ -122,8 +141,8 @@ html body[data-page="about"] .about-title h1 {
   margin:0 !important;
   color:#f8ead4 !important;
   font-family:'Noto Serif KR','Nanum Myeongjo','Apple SD Gothic Neo',Georgia,serif !important;
-  font-size:clamp(46px,4.05vw,76px) !important;
-  line-height:1.12 !important;
+  font-size:clamp(42px,3.7vw,68px) !important;
+  line-height:1.08 !important;
   letter-spacing:0 !important;
   font-weight:500 !important;
   word-break:keep-all !important;
@@ -133,11 +152,11 @@ html body[data-page="about"] .about-title h1 {
 
 html body[data-page="about"] .about-lead {
   max-width:600px !important;
-  margin:30px 0 0 !important;
+  margin:22px 0 0 !important;
   color:rgba(248,234,212,.90) !important;
   font-family:'Noto Serif KR','Nanum Myeongjo','Apple SD Gothic Neo',Georgia,serif !important;
-  font-size:clamp(18px,1.25vw,22px) !important;
-  line-height:1.72 !important;
+  font-size:clamp(17px,1.12vw,20px) !important;
+  line-height:1.58 !important;
   word-break:keep-all !important;
   text-shadow:0 3px 22px rgba(0,0,0,.36) !important;
 }
@@ -147,18 +166,18 @@ html body[data-page="about"] .about-text {
   justify-self:end !important;
   color:rgba(248,234,212,.86) !important;
   font-family:'Noto Serif KR','Nanum Myeongjo','Apple SD Gothic Neo',Georgia,serif !important;
-  font-size:clamp(15px,.95vw,17px) !important;
-  line-height:1.86 !important;
+  font-size:clamp(14px,.9vw,16px) !important;
+  line-height:1.68 !important;
   word-break:keep-all !important;
   text-shadow:0 2px 16px rgba(0,0,0,.34) !important;
 }
 
 html body[data-page="about"] .about-text p {
-  margin:0 0 18px !important;
+  margin:0 0 13px !important;
 }
 
 html body[data-page="about"] .about-notes {
-  margin:36px 0 0 !important;
+  margin:24px 0 0 !important;
   padding:0 !important;
   display:grid !important;
   grid-template-columns:repeat(3,minmax(0,1fr)) !important;
@@ -167,7 +186,7 @@ html body[data-page="about"] .about-notes {
 
 html body[data-page="about"] .about-notes div {
   min-width:0 !important;
-  padding:16px 0 0 !important;
+  padding:12px 0 0 !important;
   border-top:1px solid rgba(239,210,168,.28) !important;
 }
 
@@ -184,7 +203,7 @@ html body[data-page="about"] .about-notes dt {
 }
 
 html body[data-page="about"] .about-notes dd {
-  margin-top:10px !important;
+  margin-top:8px !important;
   color:rgba(248,234,212,.72) !important;
   font-size:13px !important;
   line-height:1.58 !important;
@@ -209,29 +228,83 @@ html body[data-page="about"] .about-notes dd {
   }
 }
 
+@media(min-width:1101px) and (max-height:760px) {
+  html body[data-page="about"] .about-shell {
+    padding-top:86px !important;
+    padding-bottom:24px !important;
+  }
+
+  html body[data-page="about"] .about-panel {
+    max-height:calc(100vh - 110px) !important;
+    max-height:calc(100svh - 110px) !important;
+    gap:clamp(42px,6vw,96px) !important;
+  }
+
+  html body[data-page="about"] .kicker {
+    margin-bottom:12px !important;
+  }
+
+  html body[data-page="about"] .about-title h1 {
+    font-size:clamp(36px,3.4vw,56px) !important;
+    line-height:1.06 !important;
+  }
+
+  html body[data-page="about"] .about-lead {
+    margin-top:16px !important;
+    font-size:clamp(15px,1vw,18px) !important;
+    line-height:1.45 !important;
+  }
+
+  html body[data-page="about"] .about-text {
+    font-size:clamp(12.5px,.82vw,14.5px) !important;
+    line-height:1.45 !important;
+  }
+
+  html body[data-page="about"] .about-text p {
+    margin-bottom:8px !important;
+  }
+
+  html body[data-page="about"] .about-notes {
+    margin-top:16px !important;
+    gap:14px !important;
+  }
+
+  html body[data-page="about"] .about-notes div {
+    padding-top:10px !important;
+  }
+}
+
 @media(max-width:1100px) {
   html body[data-page="about"] {
-    height:auto !important;
-    overflow:auto !important;
+    height:100vh !important;
+    height:100svh !important;
+    overflow:hidden !important;
   }
 
   html body[data-page="about"] .app {
-    min-height:100svh !important;
+    height:100vh !important;
+    height:100svh !important;
+    min-height:0 !important;
+    overflow:hidden !important;
     background:
       linear-gradient(180deg, rgba(18,10,6,.24) 0%, rgba(18,10,6,.36) 38%, rgba(18,10,6,.82) 100%),
       url("../../assets/about-stage-bg.png") 48% center / cover no-repeat scroll !important;
   }
 
   html body[data-page="about"] .about-shell {
-    min-height:100svh !important;
-    padding:118px clamp(22px,4vw,42px) 44px !important;
+    height:100vh !important;
+    height:100svh !important;
+    min-height:0 !important;
+    padding:92px clamp(22px,4vw,42px) 24px !important;
     align-items:flex-end !important;
+    overflow:hidden !important;
   }
 
   html body[data-page="about"] .about-panel {
     width:100% !important;
+    max-height:calc(100svh - 116px) !important;
     grid-template-columns:1fr !important;
-    gap:32px !important;
+    gap:18px !important;
     align-items:start !important;
   }
 
@@ -242,18 +315,27 @@ html body[data-page="about"] .about-notes dd {
   }
 
   html body[data-page="about"] .about-title h1 {
-    font-size:clamp(40px,6.6vw,62px) !important;
-    line-height:1.14 !important;
+    font-size:clamp(34px,5.8vw,52px) !important;
+    line-height:1.1 !important;
   }
 
   html body[data-page="about"] .about-lead {
-    margin-top:22px !important;
-    font-size:clamp(17px,2.2vw,21px) !important;
+    margin-top:14px !important;
+    font-size:clamp(15px,1.9vw,18px) !important;
+    line-height:1.5 !important;
   }
 
   html body[data-page="about"] .about-text {
-    font-size:clamp(15px,2vw,17px) !important;
-    line-height:1.68 !important;
+    font-size:clamp(13px,1.7vw,15px) !important;
+    line-height:1.5 !important;
+  }
+
+  html body[data-page="about"] .about-text p {
+    margin-bottom:9px !important;
+  }
+
+  html body[data-page="about"] .about-notes {
+    margin-top:16px !important;
   }
 }
 
@@ -272,32 +354,35 @@ html body[data-page="about"] .about-notes dd {
   }
 
   html body[data-page="about"] .about-shell {
-    min-height:100svh !important;
-    padding:92px 30px 24px !important;
+    height:100vh !important;
+    height:100svh !important;
+    min-height:0 !important;
+    padding:86px 28px 18px !important;
     align-items:center !important;
   }
 
   html body[data-page="about"] .about-panel {
     grid-template-columns:minmax(280px,.86fr) minmax(340px,1fr) !important;
-    gap:34px !important;
+    gap:26px !important;
+    max-height:calc(100svh - 104px) !important;
   }
 
   html body[data-page="about"] .about-title h1 {
-    font-size:clamp(32px,7svh,48px) !important;
+    font-size:clamp(28px,6.2svh,42px) !important;
   }
 
   html body[data-page="about"] .about-lead {
-    font-size:clamp(15px,3svh,18px) !important;
-    line-height:1.5 !important;
+    font-size:clamp(13px,2.7svh,16px) !important;
+    line-height:1.42 !important;
   }
 
   html body[data-page="about"] .about-text {
-    font-size:clamp(13px,2.65svh,15px) !important;
-    line-height:1.52 !important;
+    font-size:clamp(12px,2.35svh,14px) !important;
+    line-height:1.42 !important;
   }
 
   html body[data-page="about"] .about-text p {
-    margin-bottom:10px !important;
+    margin-bottom:7px !important;
   }
 }
 
@@ -310,45 +395,59 @@ html body[data-page="about"] .about-notes dd {
   }
 
   html body[data-page="about"] .about-shell {
-    min-height:100svh !important;
-    padding:46svh 22px 36px !important;
+    height:100vh !important;
+    height:100svh !important;
+    min-height:0 !important;
+    padding:32svh 18px 18px !important;
     align-items:flex-start !important;
   }
 
   html body[data-page="about"] .about-panel {
-    gap:22px !important;
+    max-height:calc(68svh - 18px) !important;
+    gap:12px !important;
   }
 
   html body[data-page="about"] .kicker {
-    margin-bottom:12px !important;
-    font-size:11px !important;
+    margin-bottom:8px !important;
+    font-size:10px !important;
     letter-spacing:.18em !important;
   }
 
   html body[data-page="about"] .about-title h1 {
-    font-size:clamp(31px,8.6vw,42px) !important;
-    line-height:1.16 !important;
+    font-size:clamp(26px,7.2vw,34px) !important;
+    line-height:1.12 !important;
   }
 
   html body[data-page="about"] .about-lead {
-    margin-top:18px !important;
-    font-size:clamp(16px,4vw,18px) !important;
-    line-height:1.62 !important;
+    margin-top:10px !important;
+    font-size:clamp(13px,3.45vw,15px) !important;
+    line-height:1.42 !important;
   }
 
   html body[data-page="about"] .about-text {
-    font-size:14.5px !important;
-    line-height:1.72 !important;
+    font-size:12.5px !important;
+    line-height:1.42 !important;
   }
 
   html body[data-page="about"] .about-notes {
-    grid-template-columns:1fr !important;
-    gap:2px !important;
-    margin-top:24px !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:8px !important;
+    margin-top:12px !important;
   }
 
   html body[data-page="about"] .about-notes div {
-    padding:12px 0 !important;
+    padding:8px 0 0 !important;
+  }
+
+  html body[data-page="about"] .about-notes dt {
+    font-size:9px !important;
+    letter-spacing:.08em !important;
+  }
+
+  html body[data-page="about"] .about-notes dd {
+    margin-top:5px !important;
+    font-size:10.5px !important;
+    line-height:1.28 !important;
   }
 }
 
@@ -359,6 +458,6 @@ html body[data-page="about"] .about-notes dd {
   }
 
   html body[data-page="about"] .about-title h1 {
-    font-size:clamp(29px,8.8vw,37px) !important;
+    font-size:clamp(24px,7vw,30px) !important;
   }
 }
