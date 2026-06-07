@@ -13,7 +13,7 @@ function renderThemes() {
       <main class="page theme-shell gallery-theme-shell">
         ${tabs(theme.id)}
         <section class="stage">
-          <button class="arrow" id="prev" aria-label="Previous theme">←</button>
+          <button class="arrow" id="prev" aria-label="Previous theme">&lsaquo;</button>
           <article class="theme-card gallery-theme-card ${firstView ? "is-entering" : "is-revealed"}">
             <div class="theme-visual">
               ${theme.heroImage ? `<img class="theme-product" src="${theme.heroImage}" alt="${L(theme)}">` : ""}
@@ -23,12 +23,12 @@ function renderThemes() {
               <h2>${L(theme)}</h2>
               <div class="subthemes">${lang === "ko" ? theme.noteKo : theme.noteEn}</div>
               <div class="actions">
-                <a class="linkline" href="${href("theme.html", `&id=${theme.id}`)}">${theme.open ? t[lang].enterGallery : t[lang].viewObjects} →</a>
+                <a class="linkline" href="${href("theme.html", `&id=${theme.id}`)}">${theme.open ? t[lang].enterGallery : t[lang].viewObjects} &rarr;</a>
                 ${!theme.open ? `<span class="soon">${t[lang].coming}</span>` : ""}
               </div>
             </div>
           </article>
-          <button class="arrow" id="next" aria-label="Next theme">→</button>
+          <button class="arrow" id="next" aria-label="Next theme">&rsaquo;</button>
         </section>
       </main>`;
 
