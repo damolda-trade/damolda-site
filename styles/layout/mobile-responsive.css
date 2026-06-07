@@ -682,19 +682,20 @@
   }
 
   html body[data-page="themes"] .stage {
+    position:relative !important;
     height:100% !important;
     min-height:0 !important;
     display:grid !important;
-    grid-template-columns:34px minmax(0,1fr) 34px !important;
+    grid-template-columns:1fr !important;
     align-items:stretch !important;
-    gap:6px !important;
+    gap:0 !important;
     overflow:hidden !important;
   }
 
   html body[data-page="themes"] .arrow {
+    position:absolute !important;
     display:inline-flex !important;
-    align-self:center !important;
-    justify-self:center !important;
+    top:31% !important;
     width:32px !important;
     height:56px !important;
     min-width:0 !important;
@@ -708,6 +709,14 @@
     font:400 31px/1 Georgia,'Times New Roman',serif !important;
     cursor:pointer !important;
     z-index:6 !important;
+  }
+
+  html body[data-page="themes"] #prev {
+    left:0 !important;
+  }
+
+  html body[data-page="themes"] #next {
+    right:0 !important;
   }
 
   html body[data-page="themes"] .gallery-theme-card,
@@ -733,6 +742,9 @@
     overflow:hidden !important;
   }
 
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual::before,
+  html body[data-page="themes"] .theme-shell .theme-visual::before,
+  html body[data-page="themes"] .gallery-theme-card .theme-visual::before,
   html body[data-page="themes"] .theme-visual::before {
     content:'' !important;
     position:absolute !important;
@@ -744,7 +756,7 @@
     clip-path:none !important;
     background:
       linear-gradient(180deg, rgba(12,8,6,0) 0%, rgba(12,8,6,.10) 72%, rgba(12,8,6,.24) 100%),
-      url("../../assets/theme-stage-bg.png") 34% 74% / auto 88svh no-repeat !important;
+      url("../../assets/theme-stage-bg.png") 24% 90% / auto 82svh no-repeat !important;
     box-shadow:none !important;
     opacity:1 !important;
     filter:none !important;
@@ -753,6 +765,9 @@
     z-index:1 !important;
   }
 
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual::after,
+  html body[data-page="themes"] .theme-shell .theme-visual::after,
+  html body[data-page="themes"] .gallery-theme-card .theme-visual::after,
   html body[data-page="themes"] .theme-visual::after {
     display:none !important;
     content:none !important;
@@ -769,9 +784,10 @@
 
   html body[data-page="themes"] .theme-copy {
     align-self:end !important;
+    width:100% !important;
     max-width:100% !important;
     min-height:0 !important;
-    padding:0 2px 2px !important;
+    padding:0 10px 2px !important;
     display:flex !important;
     flex-direction:column !important;
     justify-content:flex-end !important;
@@ -793,8 +809,12 @@
   }
 
   html body[data-page="themes"] .subthemes {
-    font-size:clamp(13px,2.2svh,15.5px) !important;
-    line-height:1.42 !important;
+    width:100% !important;
+    font-size:clamp(11.5px,1.9svh,14px) !important;
+    line-height:1.35 !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
   }
 
   html body[data-page="themes"] .actions {
@@ -812,10 +832,13 @@
 }
 
 @media(max-width:430px) and (orientation:portrait) {
+  html body[data-page="themes"] .gallery-theme-shell .theme-visual::before,
+  html body[data-page="themes"] .theme-shell .theme-visual::before,
+  html body[data-page="themes"] .gallery-theme-card .theme-visual::before,
   html body[data-page="themes"] .theme-visual::before {
     background:
       linear-gradient(180deg, rgba(12,8,6,0) 0%, rgba(12,8,6,.10) 72%, rgba(12,8,6,.24) 100%),
-      url("../../assets/theme-stage-bg.png") 35% 76% / auto 86svh no-repeat !important;
+      url("../../assets/theme-stage-bg.png") 24% 92% / auto 80svh no-repeat !important;
   }
 }
 
