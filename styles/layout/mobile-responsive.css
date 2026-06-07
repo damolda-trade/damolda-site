@@ -1,0 +1,628 @@
+/* Mobile and tablet polish. Desktop rules stay above 1100px. */
+.mobile-menu-toggle {
+  display:none;
+}
+
+@media(max-width:1100px) {
+  html body .top,
+  html body[data-page="home"] .top,
+  html body[data-page="themes"] .top,
+  html body[data-page="theme"] .top,
+  html body[data-page="journal"] .top,
+  html body[data-page="about"] .top,
+  html body[data-page="object"] .top,
+  html body[data-page="detail"] .top {
+    grid-template-columns:minmax(104px,1fr) auto !important;
+    height:76px !important;
+    padding:0 clamp(14px,3vw,30px) !important;
+    column-gap:12px !important;
+  }
+
+  html body .brand,
+  html body[data-page="home"] .brand,
+  html body[data-page="themes"] .brand,
+  html body[data-page="theme"] .brand,
+  html body[data-page="journal"] .brand,
+  html body[data-page="about"] .brand,
+  html body[data-page="object"] .brand,
+  html body[data-page="detail"] .brand {
+    width:clamp(112px,24vw,148px) !important;
+    min-width:0 !important;
+    height:76px !important;
+  }
+
+  html body .brand-handwordmark,
+  html body[data-page="home"] .brand-handwordmark,
+  html body[data-page="themes"] .brand-handwordmark,
+  html body[data-page="theme"] .brand-handwordmark,
+  html body[data-page="journal"] .brand-handwordmark,
+  html body[data-page="about"] .brand-handwordmark,
+  html body[data-page="object"] .brand-handwordmark,
+  html body[data-page="detail"] .brand-handwordmark {
+    max-width:100% !important;
+    height:46px !important;
+  }
+
+  html body .right-tools,
+  html body[data-page="home"] .right-tools,
+  html body[data-page="themes"] .right-tools,
+  html body[data-page="theme"] .right-tools,
+  html body[data-page="journal"] .right-tools,
+  html body[data-page="about"] .right-tools,
+  html body[data-page="object"] .right-tools,
+  html body[data-page="detail"] .right-tools {
+    gap:8px !important;
+    min-width:0 !important;
+    height:76px !important;
+  }
+
+  html body .search,
+  html body[data-page="home"] .search,
+  html body[data-page="themes"] .search,
+  html body[data-page="theme"] .search,
+  html body[data-page="journal"] .search,
+  html body[data-page="about"] .search,
+  html body[data-page="object"] .search,
+  html body[data-page="detail"] .search {
+    width:clamp(148px,31vw,220px) !important;
+    min-width:0 !important;
+    height:38px !important;
+    padding:0 13px !important;
+    font:12px/38px Arial,'Noto Sans KR',sans-serif !important;
+    letter-spacing:.02em !important;
+  }
+
+  html body .lang,
+  html body[data-page="home"] .lang,
+  html body[data-page="themes"] .lang,
+  html body[data-page="theme"] .lang,
+  html body[data-page="journal"] .lang,
+  html body[data-page="about"] .lang,
+  html body[data-page="object"] .lang,
+  html body[data-page="detail"] .lang {
+    display:none !important;
+  }
+
+  html body .mobile-menu-toggle {
+    display:inline-flex !important;
+    flex:0 0 auto !important;
+    width:40px !important;
+    height:40px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex-direction:column !important;
+    gap:4px !important;
+    padding:0 !important;
+    border:1px solid rgba(40,35,31,.18) !important;
+    border-radius:999px !important;
+    background:rgba(255,255,255,.18) !important;
+    color:currentColor !important;
+    cursor:pointer !important;
+  }
+
+  html body .mobile-menu-toggle span {
+    display:block !important;
+    width:17px !important;
+    height:2px !important;
+    border-radius:99px !important;
+    background:currentColor !important;
+    transition:transform 160ms ease, opacity 160ms ease !important;
+  }
+
+  html body .mobile-menu-toggle.is-open span:nth-child(1) {
+    transform:translateY(6px) rotate(45deg) !important;
+  }
+
+  html body .mobile-menu-toggle.is-open span:nth-child(2) {
+    opacity:0 !important;
+  }
+
+  html body .mobile-menu-toggle.is-open span:nth-child(3) {
+    transform:translateY(-6px) rotate(-45deg) !important;
+  }
+
+  html body .nav,
+  html body[data-page="home"] .nav,
+  html body[data-page="themes"] .nav,
+  html body[data-page="theme"] .nav,
+  html body[data-page="journal"] .nav,
+  html body[data-page="about"] .nav,
+  html body[data-page="object"] .nav,
+  html body[data-page="detail"] .nav {
+    position:fixed !important;
+    top:76px !important;
+    right:clamp(12px,3vw,24px) !important;
+    left:auto !important;
+    width:min(286px,calc(100vw - 24px)) !important;
+    height:auto !important;
+    max-height:calc(100svh - 96px) !important;
+    display:none !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    justify-content:flex-start !important;
+    gap:0 !important;
+    padding:10px !important;
+    margin:0 !important;
+    border:1px solid rgba(40,35,31,.12) !important;
+    border-radius:10px !important;
+    background:rgba(248,241,232,.96) !important;
+    color:#28231f !important;
+    box-shadow:0 18px 54px rgba(20,12,8,.22) !important;
+    backdrop-filter:blur(14px) !important;
+    -webkit-backdrop-filter:blur(14px) !important;
+    z-index:80 !important;
+    overflow:auto !important;
+    white-space:normal !important;
+  }
+
+  html body .nav.is-open,
+  html body[data-page="home"] .nav.is-open,
+  html body[data-page="themes"] .nav.is-open,
+  html body[data-page="theme"] .nav.is-open,
+  html body[data-page="journal"] .nav.is-open,
+  html body[data-page="about"] .nav.is-open,
+  html body[data-page="object"] .nav.is-open,
+  html body[data-page="detail"] .nav.is-open {
+    display:flex !important;
+  }
+
+  html body .nav a,
+  html body[data-page="home"] .nav a,
+  html body[data-page="themes"] .nav a,
+  html body[data-page="theme"] .nav a,
+  html body[data-page="journal"] .nav a,
+  html body[data-page="about"] .nav a,
+  html body[data-page="object"] .nav a,
+  html body[data-page="detail"] .nav a {
+    width:100% !important;
+    height:auto !important;
+    min-height:46px !important;
+    justify-content:flex-start !important;
+    padding:13px 14px !important;
+    border-radius:6px !important;
+    color:inherit !important;
+    font:700 15px/1.2 Georgia,'Noto Serif KR',serif !important;
+    letter-spacing:.02em !important;
+  }
+
+  html body .nav a:hover {
+    background:rgba(155,106,58,.10) !important;
+  }
+
+  html body .nav .nav-sep,
+  html body .nav a + a::before {
+    display:none !important;
+    content:none !important;
+  }
+
+  html body[data-page="themes"] .mobile-menu-toggle,
+  html body[data-page="theme"] .mobile-menu-toggle,
+  html body[data-page="journal"] .mobile-menu-toggle {
+    border-color:rgba(228,189,139,.28) !important;
+    background:rgba(20,12,8,.20) !important;
+  }
+
+  html body[data-page="themes"] .nav,
+  html body[data-page="theme"] .nav,
+  html body[data-page="journal"] .nav {
+    border-color:rgba(228,189,139,.20) !important;
+    background:rgba(28,15,9,.94) !important;
+    color:#e4bd8b !important;
+    box-shadow:0 22px 58px rgba(0,0,0,.30) !important;
+  }
+
+  html body .search-panel {
+    top:76px !important;
+    right:clamp(12px,3vw,24px) !important;
+    left:auto !important;
+    width:min(360px,calc(100vw - 24px)) !important;
+  }
+
+  html body .page,
+  html body[data-page="about"] .about-shell {
+    padding:110px clamp(18px,4vw,34px) 40px !important;
+  }
+
+  html body .section-head {
+    grid-template-columns:1fr !important;
+    align-items:start !important;
+    gap:8px !important;
+  }
+
+  html body .section-head h1,
+  html body .page-title {
+    font-size:clamp(34px,7vw,54px) !important;
+    line-height:1.04 !important;
+    letter-spacing:0 !important;
+  }
+
+  html body .section-head p {
+    justify-self:start !important;
+  }
+
+  .hero {
+    min-height:100svh !important;
+    align-items:flex-end !important;
+    padding:110px clamp(20px,5vw,44px) 48px !important;
+  }
+
+  .hero:after {
+    background:linear-gradient(180deg, rgba(248,241,232,.20) 0%, rgba(248,241,232,.42) 48%, rgba(248,241,232,.92) 100%) !important;
+  }
+
+  .hero-copy {
+    max-width:min(540px,100%) !important;
+    padding-bottom:2vh !important;
+  }
+
+  .hero h1 {
+    font-size:clamp(42px,10vw,68px) !important;
+    line-height:1 !important;
+    letter-spacing:0 !important;
+    margin-bottom:14px !important;
+    word-break:keep-all !important;
+  }
+
+  .hero p {
+    font-size:clamp(20px,4.8vw,30px) !important;
+    line-height:1.35 !important;
+    margin-bottom:30px !important;
+    word-break:keep-all !important;
+  }
+
+  .linkline {
+    max-width:100% !important;
+    gap:12px !important;
+    font-size:12px !important;
+    letter-spacing:.12em !important;
+    line-height:1.35 !important;
+    white-space:normal !important;
+  }
+
+  .theme-tabs {
+    scrollbar-width:none !important;
+  }
+
+  .theme-tabs::-webkit-scrollbar {
+    display:none !important;
+  }
+
+  html body[data-page="themes"] .app,
+  html body[data-page="journal"] .app,
+  html body[data-page="journal"] .journal-bg {
+    background-attachment:scroll !important;
+  }
+
+  html body[data-page="themes"] .gallery-theme-shell,
+  html body[data-page="themes"] .theme-shell,
+  html body[data-page="themes"] main.page {
+    height:auto !important;
+    min-height:100svh !important;
+    padding:108px clamp(18px,4vw,34px) 40px !important;
+    overflow:visible !important;
+  }
+
+  html body[data-page="themes"] .theme-tabs,
+  html body[data-page="theme"] .theme-detail-tabs .theme-tabs {
+    justify-content:flex-start !important;
+    gap:18px !important;
+    overflow-x:auto !important;
+    padding:0 0 14px !important;
+  }
+
+  html body[data-page="themes"] .stage {
+    height:auto !important;
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+  }
+
+  html body[data-page="themes"] .arrow {
+    display:none !important;
+  }
+
+  html body[data-page="themes"] .gallery-theme-card,
+  html body[data-page="themes"] .theme-card,
+  html body[data-page="themes"] .themes-card {
+    grid-template-columns:1fr !important;
+    min-height:calc(100svh - 158px) !important;
+    align-content:start !important;
+  }
+
+  html body[data-page="themes"] .theme-visual {
+    min-height:clamp(260px,42svh,430px) !important;
+    height:auto !important;
+    padding:0 0 clamp(42px,8svh,70px) !important;
+  }
+
+  html body[data-page="themes"] .theme-copy {
+    padding:10px 0 26px !important;
+    max-width:650px !important;
+  }
+
+  html body[data-page="themes"] .theme-copy h2 {
+    font-size:clamp(40px,9vw,64px) !important;
+    line-height:1.04 !important;
+    letter-spacing:0 !important;
+    margin-bottom:16px !important;
+  }
+
+  html body[data-page="themes"] .subthemes {
+    font-size:clamp(16px,3vw,21px) !important;
+    line-height:1.62 !important;
+  }
+
+  html body[data-page="themes"] .actions {
+    margin-top:24px !important;
+    gap:16px !important;
+    flex-wrap:wrap !important;
+  }
+
+  html body[data-page="theme"] {
+    overflow:auto !important;
+  }
+
+  html body[data-page="theme"] .app {
+    height:auto !important;
+    min-height:100svh !important;
+    overflow:visible !important;
+  }
+
+  html body[data-page="theme"] .theme-detail-page {
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:100svh !important;
+    padding:108px clamp(18px,4vw,34px) 40px !important;
+    overflow:visible !important;
+  }
+
+  html body[data-page="theme"] .theme-detail-bg {
+    position:fixed !important;
+    background-position:center top !important;
+  }
+
+  html body[data-page="theme"] .theme-label-board {
+    margin:34px 0 26px !important;
+    max-width:680px !important;
+    padding:0 !important;
+  }
+
+  html body[data-page="theme"] .theme-label-board h1 {
+    font-size:clamp(44px,10vw,74px) !important;
+    line-height:1 !important;
+    letter-spacing:0 !important;
+    margin-bottom:18px !important;
+  }
+
+  html body[data-page="theme"] .theme-statement {
+    font-size:clamp(18px,3.2vw,25px) !important;
+    line-height:1.5 !important;
+  }
+
+  html body[data-page="theme"] .theme-keywords {
+    font-size:clamp(14px,2.2vw,17px) !important;
+    line-height:1.7 !important;
+    margin-top:20px !important;
+  }
+
+  html body[data-page="theme"] .exhibit-label-list {
+    width:100% !important;
+    max-width:680px !important;
+    justify-self:stretch !important;
+    gap:10px !important;
+  }
+
+  html body[data-page="theme"] .exhibit-label {
+    grid-template-columns:42px 1fr auto !important;
+    min-height:66px !important;
+    gap:12px !important;
+    padding:14px 16px !important;
+  }
+
+  html body[data-page="theme"] .exhibit-name b {
+    font-size:clamp(21px,4.4vw,30px) !important;
+    letter-spacing:0 !important;
+  }
+
+  html body[data-page="theme"] .theme-detail-emotion .theme-label-board,
+  html body[data-page="theme"] .theme-detail-emotion .exhibit-label-list {
+    grid-column:auto !important;
+    grid-row:auto !important;
+    align-self:auto !important;
+    justify-self:stretch !important;
+  }
+
+  html body[data-page="theme"] .theme-detail-emotion .theme-label-board {
+    margin:34px 0 26px !important;
+    padding:0 !important;
+  }
+
+  html body[data-page="theme"] .theme-detail-emotion .exhibit-label-list {
+    width:100% !important;
+    max-width:680px !important;
+    margin-top:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  html body[data-page="journal"] {
+    height:auto !important;
+    overflow:auto !important;
+  }
+
+  html body[data-page="journal"] .app {
+    height:auto !important;
+    min-height:100svh !important;
+    overflow:visible !important;
+  }
+
+  html body[data-page="journal"] .journal-shell {
+    height:auto !important;
+    min-height:100svh !important;
+    display:flex !important;
+    justify-content:flex-start !important;
+    padding:108px clamp(18px,4vw,34px) 40px !important;
+    gap:20px !important;
+    overflow:visible !important;
+  }
+
+  html body[data-page="journal"] .journal-hero,
+  html body[data-page="journal"] .journal-title {
+    margin-bottom:4px !important;
+    text-align:left !important;
+  }
+
+  html body[data-page="journal"] .journal-hero h1,
+  html body[data-page="journal"] .journal-title h1 {
+    font-size:clamp(42px,8vw,66px) !important;
+    line-height:1 !important;
+    letter-spacing:.02em !important;
+  }
+
+  html body[data-page="journal"] .journal-hero p,
+  html body[data-page="journal"] .journal-title p {
+    font-size:clamp(15px,2.6vw,18px) !important;
+    line-height:1.55 !important;
+    word-break:keep-all !important;
+  }
+
+  html body[data-page="journal"] .journal-grid,
+  html body[data-page="journal"] .journal-action-grid {
+    width:100% !important;
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+    margin-top:0 !important;
+  }
+
+  html body[data-page="journal"] .journal-card,
+  html body[data-page="journal"] .journal-card.journal-action-card,
+  html body[data-page="journal"] .action-card {
+    height:auto !important;
+    min-height:150px !important;
+    padding:20px !important;
+    border-radius:10px !important;
+  }
+
+  html body[data-page="journal"] .journal-card h2,
+  html body[data-page="journal"] .card-body h2 {
+    font-size:clamp(24px,4.8vw,32px) !important;
+    line-height:1.18 !important;
+    letter-spacing:0 !important;
+  }
+
+  html body[data-page="journal"] .journal-card p,
+  html body[data-page="journal"] .card-body p {
+    font-size:15px !important;
+    line-height:1.55 !important;
+    word-break:keep-all !important;
+  }
+
+  html body[data-page="about"] .about-panel {
+    grid-template-columns:1fr !important;
+    min-height:0 !important;
+    border-radius:14px !important;
+  }
+
+  html body[data-page="about"] .about-title,
+  html body[data-page="about"] .about-text {
+    padding:28px clamp(20px,5vw,34px) !important;
+  }
+
+  html body[data-page="about"] .about-title h1 {
+    font-size:clamp(30px,6.8vw,48px) !important;
+    line-height:1.12 !important;
+    letter-spacing:0 !important;
+    word-break:keep-all !important;
+  }
+
+  html body[data-page="about"] .about-text {
+    font-size:clamp(16px,2.4vw,18px) !important;
+    line-height:1.68 !important;
+    word-break:keep-all !important;
+  }
+}
+
+@media(max-width:1100px) and (orientation:portrait) {
+  .hero {
+    background:#efe1cf !important;
+  }
+
+  .hero-bg {
+    object-fit:contain !important;
+    object-position:center top !important;
+  }
+
+  html body[data-page="themes"] .app,
+  html body[data-page="journal"] .app,
+  html body[data-page="journal"] .journal-bg {
+    background-size:100% 100%, contain !important;
+    background-position:center center, center 76px !important;
+    background-repeat:no-repeat, no-repeat !important;
+    background-color:#1b100b !important;
+  }
+
+  html body[data-page="theme"] .theme-detail-bg,
+  html body[data-page="theme"] .theme-detail-emotion .theme-detail-bg {
+    background-size:100% 100%, 100% 100%, contain !important;
+    background-position:center center, center center, center 76px !important;
+    background-repeat:no-repeat, no-repeat, no-repeat !important;
+    background-color:#20150f !important;
+  }
+}
+
+@media(max-width:560px) {
+  html body .top,
+  html body[data-page="home"] .top,
+  html body[data-page="themes"] .top,
+  html body[data-page="theme"] .top,
+  html body[data-page="journal"] .top,
+  html body[data-page="about"] .top,
+  html body[data-page="object"] .top,
+  html body[data-page="detail"] .top {
+    padding:0 14px !important;
+    column-gap:8px !important;
+  }
+
+  html body .brand {
+    width:clamp(92px,27vw,118px) !important;
+  }
+
+  html body .brand-handwordmark {
+    height:40px !important;
+  }
+
+  html body .search,
+  html body[data-page="home"] .search,
+  html body[data-page="themes"] .search,
+  html body[data-page="theme"] .search,
+  html body[data-page="journal"] .search,
+  html body[data-page="about"] .search,
+  html body[data-page="object"] .search,
+  html body[data-page="detail"] .search {
+    width:clamp(118px,39vw,158px) !important;
+  }
+
+  html body .mobile-menu-toggle {
+    width:38px !important;
+    height:38px !important;
+  }
+
+  html body[data-page="themes"] .theme-copy h2,
+  html body[data-page="theme"] .theme-label-board h1 {
+    font-size:clamp(38px,12vw,58px) !important;
+  }
+}
+
+@media(max-width:380px) {
+  html body .top {
+    padding:0 10px !important;
+  }
+
+  html body .brand {
+    width:86px !important;
+  }
+
+  html body .search {
+    width:112px !important;
+    padding:0 11px !important;
+  }
+}
