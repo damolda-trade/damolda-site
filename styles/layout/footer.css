@@ -1,17 +1,14 @@
 .site-footer {
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:18;
+  position:relative;
+  z-index:3;
   width:100%;
-  padding:16px clamp(26px,5vw,74px) 12px;
-  background:rgba(248,241,232,.64);
-  backdrop-filter:blur(16px) saturate(.92);
-  -webkit-backdrop-filter:blur(16px) saturate(.92);
+  padding:20px clamp(26px,5vw,74px) 14px;
+  background:rgba(248,241,232,.38);
+  backdrop-filter:blur(14px) saturate(.92);
+  -webkit-backdrop-filter:blur(14px) saturate(.92);
   color:var(--ink);
-  border-top:1px solid rgba(40,35,31,.16);
-  box-shadow:0 -18px 46px rgba(40,35,31,.08);
+  border-top:1px solid rgba(40,35,31,.12);
+  box-shadow:none;
 }
 
 .site-footer-inner {
@@ -90,43 +87,41 @@ html body .app {
   position:relative;
 }
 
-html body .hero {
-  padding-bottom:168px !important;
-}
-
-html body .page,
-html body[data-page="theme"] .theme-detail-page {
-  padding-bottom:154px !important;
-}
-
 html body[data-page="themes"],
-html body[data-page="theme"] {
+html body[data-page="theme"],
+html body[data-page="journal"],
+html body[data-page="about"] {
+  height:auto !important;
+  min-height:100vh !important;
   overflow:auto !important;
 }
 
 html body[data-page="themes"] .app,
-html body[data-page="theme"] .app {
+html body[data-page="theme"] .app,
+html body[data-page="journal"] .app,
+html body[data-page="about"] .app {
   height:auto !important;
   min-height:100vh !important;
   overflow:visible !important;
 }
 
-html body[data-page="theme"] .theme-detail-page {
+html body[data-page="theme"] .theme-detail-page,
+html body[data-page="journal"] .journal-shell,
+html body[data-page="about"] .about-shell {
   height:auto !important;
   min-height:100vh !important;
+  overflow:visible !important;
+}
+
+html body[data-page="about"] .about-panel {
+  max-height:none !important;
   overflow:visible !important;
 }
 
 @media(max-width:1100px) {
   .site-footer {
-    position:relative;
-    left:auto;
-    right:auto;
-    bottom:auto;
-    z-index:3;
     padding:28px clamp(20px,5vw,42px) 18px;
-    background:rgba(248,241,232,.78);
-    box-shadow:none;
+    background:rgba(248,241,232,.44);
   }
 
   .site-footer-inner {
@@ -169,12 +164,6 @@ html body[data-page="theme"] .theme-detail-page {
   .footer-brand p {
     font-size:12.5px;
     line-height:1.38;
-  }
-
-  html body .hero,
-  html body .page,
-  html body[data-page="theme"] .theme-detail-page {
-    padding-bottom:40px !important;
   }
 
   html body[data-page="themes"] .gallery-theme-shell,
