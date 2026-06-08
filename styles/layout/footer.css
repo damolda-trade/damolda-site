@@ -1,17 +1,23 @@
 .site-footer {
-  position:relative;
-  z-index:3;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:18;
   width:100%;
-  padding:58px clamp(24px,6vw,88px) 26px;
-  background:var(--paper);
+  padding:16px clamp(26px,5vw,74px) 12px;
+  background:rgba(248,241,232,.64);
+  backdrop-filter:blur(16px) saturate(.92);
+  -webkit-backdrop-filter:blur(16px) saturate(.92);
   color:var(--ink);
-  border-top:1px solid rgba(40,35,31,.14);
+  border-top:1px solid rgba(40,35,31,.16);
+  box-shadow:0 -18px 46px rgba(40,35,31,.08);
 }
 
 .site-footer-inner {
   display:grid;
-  grid-template-columns:minmax(230px,1.4fr) repeat(3,minmax(130px,.72fr));
-  gap:clamp(28px,5vw,82px);
+  grid-template-columns:minmax(210px,1.24fr) repeat(3,minmax(108px,.62fr));
+  gap:clamp(24px,4.2vw,68px);
   align-items:start;
   max-width:1160px;
   margin:0 auto;
@@ -21,15 +27,15 @@
   display:flex;
   min-width:0;
   flex-direction:column;
-  gap:12px;
+  gap:7px;
   max-width:340px;
 }
 
 .footer-brand h2,
 .footer-group h2 {
-  margin:0 0 3px;
+  margin:0 0 1px;
   color:var(--ink);
-  font:700 14px/1 Arial,'Noto Sans KR',sans-serif;
+  font:700 13px/1 Arial,'Noto Sans KR',sans-serif;
   letter-spacing:.08em;
   text-transform:none;
 }
@@ -38,7 +44,7 @@
   display:flex;
   min-width:0;
   flex-direction:column;
-  gap:12px;
+  gap:7px;
   font-style:normal;
 }
 
@@ -49,7 +55,7 @@
   max-width:100%;
   margin:0;
   color:rgba(40,35,31,.70);
-  font:14px/1.45 Arial,'Noto Sans KR',sans-serif;
+  font:12px/1.32 Arial,'Noto Sans KR',sans-serif;
   letter-spacing:.01em;
   overflow-wrap:anywhere;
 }
@@ -72,12 +78,25 @@
 
 .footer-bottom {
   max-width:1160px;
-  margin:48px auto 0;
-  padding-top:22px;
-  border-top:1px solid rgba(40,35,31,.28);
+  margin:14px auto 0;
+  padding-top:9px;
+  border-top:1px solid rgba(40,35,31,.24);
   color:rgba(40,35,31,.62);
-  font:12px/1.4 Arial,'Noto Sans KR',sans-serif;
+  font:11px/1.2 Arial,'Noto Sans KR',sans-serif;
   letter-spacing:.03em;
+}
+
+html body .app {
+  position:relative;
+}
+
+html body .hero {
+  padding-bottom:168px !important;
+}
+
+html body .page,
+html body[data-page="theme"] .theme-detail-page {
+  padding-bottom:154px !important;
 }
 
 html body[data-page="themes"],
@@ -100,16 +119,62 @@ html body[data-page="theme"] .theme-detail-page {
 
 @media(max-width:1100px) {
   .site-footer {
-    padding:46px clamp(20px,5vw,42px) 22px;
+    position:relative;
+    left:auto;
+    right:auto;
+    bottom:auto;
+    z-index:3;
+    padding:28px clamp(20px,5vw,42px) 18px;
+    background:rgba(248,241,232,.78);
+    box-shadow:none;
   }
 
   .site-footer-inner {
-    grid-template-columns:1.1fr repeat(3,minmax(112px,1fr));
-    gap:30px 22px;
+    display:flex;
+    gap:28px;
+    max-width:none;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding-bottom:8px;
+    scrollbar-width:thin;
+    scroll-snap-type:x proximity;
+  }
+
+  .site-footer-inner::-webkit-scrollbar {
+    height:6px;
+  }
+
+  .site-footer-inner::-webkit-scrollbar-thumb {
+    background:rgba(40,35,31,.22);
+    border-radius:99px;
+  }
+
+  .footer-brand,
+  .footer-group {
+    flex:0 0 clamp(138px,36vw,230px);
+    scroll-snap-align:start;
   }
 
   .footer-brand {
-    max-width:300px;
+    max-width:none;
+  }
+
+  .footer-brand h2,
+  .footer-group h2 {
+    font-size:13px;
+  }
+
+  .footer-brand a,
+  .footer-group a,
+  .footer-brand p {
+    font-size:12.5px;
+    line-height:1.38;
+  }
+
+  html body .hero,
+  html body .page,
+  html body[data-page="theme"] .theme-detail-page {
+    padding-bottom:40px !important;
   }
 
   html body[data-page="themes"] .gallery-theme-shell,
@@ -121,26 +186,27 @@ html body[data-page="theme"] .theme-detail-page {
 
 @media(max-width:640px) {
   .site-footer-inner {
-    grid-template-columns:1fr 1fr;
-    gap:28px 26px;
+    gap:24px;
   }
 
-  .footer-brand {
-    grid-column:1 / -1;
-    max-width:100%;
+  .footer-brand,
+  .footer-group {
+    flex-basis:68vw;
   }
 
   .footer-group {
-    gap:10px;
+    gap:8px;
   }
 
   .footer-bottom {
-    margin-top:34px;
+    margin-top:18px;
+    padding-top:12px;
   }
 }
 
 @media(max-width:420px) {
-  .site-footer-inner {
-    grid-template-columns:1fr;
+  .footer-brand,
+  .footer-group {
+    flex-basis:76vw;
   }
 }
