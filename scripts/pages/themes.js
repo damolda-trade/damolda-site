@@ -30,7 +30,8 @@ function renderThemes() {
           </article>
           <button class="arrow" id="next" aria-label="Next theme">&rsaquo;</button>
         </section>
-      </main>`;
+      </main>
+      ${siteFooter()}`;
 
     $("#prev").onclick = () => {
       index = (index + D.themes.length - 1) % D.themes.length;

@@ -18,5 +18,6 @@ function renderObject() {
           </div>
         </div>
       </section>
-    </main>`;
+    </main>
+    ${siteFooter()}`;
 }

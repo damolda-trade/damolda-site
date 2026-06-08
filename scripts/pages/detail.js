@@ -23,5 +23,6 @@ function renderDetail() {
           </div>
         </div>
       </div>
-    </main>`;
+    </main>
+    ${siteFooter()}`;
 }

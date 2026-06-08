@@ -61,5 +61,6 @@ function renderAbout() {
           </dl>
         </div>
       </section>
-    </main>`;
+    </main>
+    ${siteFooter()}`;
 }

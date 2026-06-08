@@ -27,5 +27,6 @@ function renderJournal() {
           )
           .join("")}
       </div>
-    </main>`;
+    </main>
+    ${siteFooter()}`;
 }

@@ -27,5 +27,6 @@ function renderTheme() {
           })
           .join("")}
       </section>
-    </main>`;
+    </main>
+    ${siteFooter()}`;
 }

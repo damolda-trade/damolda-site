@@ -12,5 +12,6 @@ function renderHome() {
         <p>${heroSub}</p>
         <a class="linkline" href="${href("themes.html")}">${t[lang].enterThemes} →</a>
       </div>
-    </section>`;
+    </section>
+    ${siteFooter()}`;
 }
